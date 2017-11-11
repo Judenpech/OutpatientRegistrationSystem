@@ -30,6 +30,6 @@ Various statistical reports can be generated for the top - management to view an
 
 ## Links
 
-- [segmentfault](https://segmentfault.com/u/jl223vy)
+[segmentfault](https://segmentfault.com/u/jl223vy)
 
 -----
