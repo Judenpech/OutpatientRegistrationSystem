@@ -12,6 +12,7 @@ namespace OutpatientRegistrationSystem
 {
     public partial class Frm_login : Form
     {
+        sqlHelper mysql = new sqlHelper();
         public Frm_login()
         {
             InitializeComponent();
@@ -21,10 +22,9 @@ namespace OutpatientRegistrationSystem
 
         private void btn_logIn_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server=(local);Database=ORSBase;Integrated Security=sspi";
+            SqlConnection conn = mysql.getcon();
             SqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "SELECT COUNT(1) FROM tb_operator WHERE No=@No AND Password=HASHBYTES('MD5',@Password);";
+            comm.CommandText = "SELECT COUNT(1) FROM tb_operator WHERE No=@No AND Password=HASHBYTES('SHA',@Password);";
             comm.Parameters.AddWithValue("@No", this.texbox_userName.Text.Trim());
             comm.Parameters["@No"].SqlDbType = SqlDbType.VarChar;
             comm.Parameters.AddWithValue("@Password", this.texbox_psw.Text.Trim());
@@ -36,7 +36,7 @@ namespace OutpatientRegistrationSystem
             {
                 MessageBox.Show("登录成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
-                userhelp.operaterNo = this.texbox_userName.Text.Trim();
+                userHelper.operaterNo = this.texbox_userName.Text.Trim();
                 this.Close();
             }
             else

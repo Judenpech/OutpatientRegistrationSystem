@@ -87,7 +87,7 @@
             this.tb_searchName = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_socialCard = new System.Windows.Forms.Button();
+            this.btn_patientNo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -172,7 +172,7 @@
             // cmb_cardtype
             // 
             this.cmb_cardtype.FormattingEnabled = true;
-            this.cmb_cardtype.Location = new System.Drawing.Point(260, 19);
+            this.cmb_cardtype.Location = new System.Drawing.Point(74, 54);
             this.cmb_cardtype.Name = "cmb_cardtype";
             this.cmb_cardtype.Size = new System.Drawing.Size(117, 20);
             this.cmb_cardtype.TabIndex = 91;
@@ -229,7 +229,7 @@
             // 
             // tb_id
             // 
-            this.tb_id.Location = new System.Drawing.Point(74, 59);
+            this.tb_id.Location = new System.Drawing.Point(74, 95);
             this.tb_id.Name = "tb_id";
             this.tb_id.Size = new System.Drawing.Size(159, 21);
             this.tb_id.TabIndex = 77;
@@ -278,7 +278,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(211, 22);
+            this.label20.Location = new System.Drawing.Point(25, 57);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(53, 12);
             this.label20.TabIndex = 70;
@@ -350,7 +350,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 62);
+            this.label5.Location = new System.Drawing.Point(1, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 12);
             this.label5.TabIndex = 55;
@@ -495,6 +495,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btn_patientNo);
             this.groupBox3.Controls.Add(this.tb_patientNo);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.tb_cardNo);
@@ -531,7 +532,7 @@
             // 
             // tb_cardNo
             // 
-            this.tb_cardNo.Location = new System.Drawing.Point(74, 95);
+            this.tb_cardNo.Location = new System.Drawing.Point(74, 131);
             this.tb_cardNo.Name = "tb_cardNo";
             this.tb_cardNo.Size = new System.Drawing.Size(117, 21);
             this.tb_cardNo.TabIndex = 93;
@@ -539,7 +540,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 99);
+            this.label7.Location = new System.Drawing.Point(12, 135);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 92;
@@ -628,7 +629,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.btn_socialCard);
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.tb_searchName);
             this.groupBox4.Controls.Add(this.tb_searchId);
@@ -642,14 +642,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "搜索已有病人信息";
             // 
-            // btn_socialCard
+            // btn_patientNo
             // 
-            this.btn_socialCard.Location = new System.Drawing.Point(457, 68);
-            this.btn_socialCard.Name = "btn_socialCard";
-            this.btn_socialCard.Size = new System.Drawing.Size(97, 23);
-            this.btn_socialCard.TabIndex = 105;
-            this.btn_socialCard.Text = "读取社保卡";
-            this.btn_socialCard.UseVisualStyleBackColor = true;
+            this.btn_patientNo.Location = new System.Drawing.Point(263, 20);
+            this.btn_patientNo.Name = "btn_patientNo";
+            this.btn_patientNo.Size = new System.Drawing.Size(103, 23);
+            this.btn_patientNo.TabIndex = 96;
+            this.btn_patientNo.Text = "生成患者编号";
+            this.btn_patientNo.UseVisualStyleBackColor = true;
+            this.btn_patientNo.Click += new System.EventHandler(this.btn_patientNo_Click);
             // 
             // Frm_patient
             // 
@@ -734,7 +735,7 @@
         private System.Windows.Forms.TextBox tb_searchName;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btn_socialCard;
+        private System.Windows.Forms.Button btn_patientNo;
 
 
     }

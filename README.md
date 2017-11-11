@@ -29,9 +29,9 @@ Various statistical reports can be generated for the top - management to view an
 [See Here](https://github.com/jl223vy/OutpatientRegSys/blob/master/Docs/Change%20Logs.md)
 
 ## Group Members
-- [Sikui Qiu](https://github.com/qskui1314)：Form Design and Programming
-- [Jing Li](https://github.com/jl223vy)：Data Collation and Programming
-- Can Cui：Database Design and Data Entry
+- [Sikui Qiu](https://github.com/qskui1314)
+- [Jing Li](https://github.com/jl223vy)
+- Can Cui
 
 ## Links
 

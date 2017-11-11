@@ -60,7 +60,7 @@ namespace OutpatientRegistrationSystem
             treeView1.Nodes.Add(tr3);
             tr3.ExpandAll();
 
-            toolStripStatusLabel_operater.Text  = "操作员："+userhelp.operaterNo;
+            toolStripStatusLabel_operater.Text  = "操作员："+userHelper.operaterNo;
             toolStripStatusLabel_loginTime.Text = "登录时间："+DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
             toolStripStatusLabel_curTime.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
             this.timer1.Interval=1000;

@@ -3,22 +3,22 @@
 */
 --创建数据库；
 USE master;
-IF DB_ID('ORSBase') IS NOT NULL
+IF DB_ID('OPRSBase') IS NOT NULL
 	BEGIN
-		ALTER DATABASE ORSBase
+		ALTER DATABASE OPRSBase
 			SET SINGLE_USER
 			WITH ROLLBACK IMMEDIATE;
-		DROP DATABASE ORSBase;
+		DROP DATABASE OPRSBase;
 	END
-CREATE DATABASE ORSBase
+CREATE DATABASE OPRSBase
 	ON
 		(NAME='Datafile'
-		,FILENAME='E:\ORSDataFile.mdf')
+		,FILENAME='E:\OPRSDataFile.mdf')
 	LOG ON
 		(NAME='Logfile'
-		,FILENAME='E:\ORSLogfile.ldf');
+		,FILENAME='E:\OPRSLogfile.ldf');
 GO
-USE ORSBase;
+USE OPRSBase;
 --创建表；
 ----操作员表；
 CREATE TABLE tb_operator
@@ -30,18 +30,17 @@ CREATE TABLE tb_operator
         VARCHAR(25)
         NOT NULL
     ,password
-        VARBINARY(128)
+        VARBINARY(160)
         NOT NULL);
 INSERT tb_operator
     (No,Name,Password)
     VALUES
-    ('3150707035','邱思奎',HASHBYTES('MD5','7035'))
-    ,('3150707012','李靖',HASHBYTES('MD5','7012'))
-    ,('3150707046','崔灿',HASHBYTES('MD5','7046'));
+        ('3150707012','李靖',HASHBYTES('SHA','7012'))
+        ,('1','test',HASHBYTES('SHA','1'));
 ----患者表；
 CREATE TABLE tb_patient
-    ([No]
-        CHAR(10)
+    (No
+        CHAR(15)
         NOT NULL
         PRIMARY KEY
     ,Name
@@ -67,11 +66,11 @@ CREATE TABLE tb_patient
         NOT NULL
     ,[Address]
         varchar(45)
-    ,fistMan1
+    ,firstMan1
         VARCHAR(25)
     ,firstManTel1
         CHAR(15)
-    ,fistMan2
+    ,firstMan2
         VARCHAR(25)
     ,firstManTel2
         CHAR(15)
@@ -85,7 +84,7 @@ CREATE TABLE tb_patient
 ----就诊卡表；
 CREATE TABLE tb_card
     (patientNo
-        CHAR(10)
+        CHAR(15)
         PRIMARY KEY
         FOREIGN KEY REFERENCES tb_patient(No)
     ,balance
@@ -105,7 +104,7 @@ CREATE TABLE tb_card
 ----社保卡表；
 CREATE TABLE tb_socialCard
     (patientNo
-        CHAR(10)
+        CHAR(15)
         PRIMARY KEY
         FOREIGN KEY REFERENCES tb_patient(No)
     ,balance
@@ -166,7 +165,7 @@ CREATE TABLE tb_register
         NOT NULL
         DEFAULT '0'
     ,patientNo
-        CHAR(10)
+        CHAR(15)
         NOT NULL
         FOREIGN KEY REFERENCES tb_patient(No)
     ,deptNo
@@ -202,7 +201,7 @@ CREATE TABLE tb_receipt
         NOT NULL
         FOREIGN KEY REFERENCES tb_register(No)
     ,patientNo
-        CHAR(10)
+        CHAR(15)
         NOT NULL
         FOREIGN KEY REFERENCES tb_patient(No)
     ,recDate

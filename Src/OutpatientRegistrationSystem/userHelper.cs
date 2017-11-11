@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OutpatientRegistrationSystem
 {
-    class userhelp
+    class userHelper
     {
         //public static string operaterName;  //记录操作员姓名
         public static string operaterNo;  //记录操作员工号
