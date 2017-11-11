@@ -26,7 +26,7 @@ Various statistical reports can be generated for the top - management to view an
 
 ## Change Logs
 
-[See Here](https://github.com/jl223vy/OutpatientRegSys/blob/master/Docs/Change%20Logs.md)
+[See Here](https://github.com/jl223vy/OutpatientRegistrationSystem/blob/master/Docs/Change%20Logs.md)
 
 ## Links
 
