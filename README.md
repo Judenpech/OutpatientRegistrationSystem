@@ -1,4 +1,4 @@
-# Outpatient Registration System
+﻿# Outpatient Registration System
 
 ## Overview
 
@@ -28,17 +28,8 @@ Various statistical reports can be generated for the top - management to view an
 
 [See Here](https://github.com/jl223vy/OutpatientRegSys/blob/master/Docs/Change%20Logs.md)
 
-## Group Members
-- [Sikui Qiu](https://github.com/qskui1314)
-- [Jing Li](https://github.com/jl223vy)
-- Can Cui
-
 ## Links
 
-- [Blog](https://www.cnblogs.com/qq1353842241)  
-
-- [Forum](http://my.csdn.net/qsining)
-
-- Article translations are update on [segmentfault](https://segmentfault.com/u/jl223vy)
+[segmentfault](https://segmentfault.com/u/jl223vy)
 
 -----
