@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace OutpatientRegistrationSystem
 {
@@ -32,11 +31,13 @@ namespace OutpatientRegistrationSystem
             TreeNode tr = new TreeNode("日常工作", 0, 1);
             tr.Nodes.Add("", "患者登记", 0, 1);
             tr.Nodes.Add("", "患者预约", 0, 1);
+            tr.Nodes.Add("", "患者挂号", 0, 1);
             tr.Nodes.Add("", "前台交费", 0, 1);
             tr.Nodes.Add("", "欠费催款", 0, 1);
+            tr.Nodes.Add("", "评价管理", 0, 1);
 
             TreeNode tr1 = new TreeNode("医师服务", 0, 1);
-            tr1.Nodes.Add("", "待添加", 0, 1);   //待添加
+            tr1.Nodes.Add("", "待添加", 0, 1);   
 
             TreeNode tr2 = new TreeNode("门诊统计", 0, 1);
             tr2.Nodes.Add("", "按科室统计", 0, 1);
@@ -60,10 +61,10 @@ namespace OutpatientRegistrationSystem
             treeView1.Nodes.Add(tr3);
             tr3.ExpandAll();
 
-            toolStripStatusLabel_operater.Text  = "操作员："+userHelper.operaterNo;
-            toolStripStatusLabel_loginTime.Text = "登录时间："+DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
+            toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operaterNo;
+            toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
             toolStripStatusLabel_curTime.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
-            this.timer1.Interval=1000;
+            this.timer1.Interval = 1000;
             this.timer1.Start();
         }
 
@@ -83,7 +84,7 @@ namespace OutpatientRegistrationSystem
             return false;
         }
 
-      private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             switch (e.Node.Text)
             {
@@ -105,6 +106,15 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
+                case "患者挂号":
+                    {
+                        if (this.checkchildfrm("Frm_registration") == true)
+                            return;
+                        Frm_registration frm = new Frm_registration();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
                 case "前台交费":
                     {
                         if (this.checkchildfrm("Frm_payment") == true)
@@ -119,6 +129,15 @@ namespace OutpatientRegistrationSystem
                         if (this.checkchildfrm("Frm_needpay") == true)
                             return;
                         Frm_needpay frm = new Frm_needpay();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
+                case "评价管理":
+                    {
+                        if (this.checkchildfrm("Frm_docScore") == true)
+                            return;
+                        Frm_docScore frm = new Frm_docScore();
                         frm.MdiParent = this;
                         frm.Show();
                         break;
@@ -204,7 +223,7 @@ namespace OutpatientRegistrationSystem
                 //        frm.Show();
                 //        break;
                 //    }
-                default: 
+                default:
                     return;
             }
         }
@@ -214,9 +233,23 @@ namespace OutpatientRegistrationSystem
             this.toolStripStatusLabel_curTime.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void 锁定toolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("您确定要锁定系统吗?", "锁定确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                Frm_lock frm = new Frm_lock();
+                this.Enabled = false;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    this.Enabled = true;
+                }
+            }
+        }
 
+        private void 关于我们toolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://github.com/jl223vy");
         }
 
     }

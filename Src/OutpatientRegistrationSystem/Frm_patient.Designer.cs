@@ -37,8 +37,6 @@
             this.tb_operate = new System.Windows.Forms.TextBox();
             this.tb_hispass = new System.Windows.Forms.TextBox();
             this.cmb_cardtype = new System.Windows.Forms.ComboBox();
-            this.tb_creditlimit = new System.Windows.Forms.TextBox();
-            this.tb_balance = new System.Windows.Forms.TextBox();
             this.tb_firstphone1 = new System.Windows.Forms.TextBox();
             this.tb_firstman1 = new System.Windows.Forms.TextBox();
             this.tb_email = new System.Windows.Forms.TextBox();
@@ -48,8 +46,6 @@
             this.dtp_recdate = new System.Windows.Forms.DateTimePicker();
             this.dtp_birthday = new System.Windows.Forms.DateTimePicker();
             this.cmb_sex = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -72,6 +68,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_patientNo = new System.Windows.Forms.Button();
             this.tb_patientNo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tb_cardNo = new System.Windows.Forms.TextBox();
@@ -84,10 +81,9 @@
             this.btn_searchId = new System.Windows.Forms.Button();
             this.tb_searchPatienNo = new System.Windows.Forms.TextBox();
             this.btn_searchPatientNo = new System.Windows.Forms.Button();
-            this.tb_searchName = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_patientNo = new System.Windows.Forms.Button();
+            this.cmb_searchName = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -122,6 +118,7 @@
             this.btn_regno.TabIndex = 3;
             this.btn_regno.Text = "病人挂号";
             this.btn_regno.UseVisualStyleBackColor = true;
+            this.btn_regno.Click += new System.EventHandler(this.btn_regno_Click);
             // 
             // btn_appointment
             // 
@@ -171,30 +168,17 @@
             // 
             // cmb_cardtype
             // 
+            this.cmb_cardtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cardtype.FormattingEnabled = true;
-            this.cmb_cardtype.Location = new System.Drawing.Point(74, 54);
+            this.cmb_cardtype.Location = new System.Drawing.Point(71, 33);
             this.cmb_cardtype.Name = "cmb_cardtype";
             this.cmb_cardtype.Size = new System.Drawing.Size(117, 20);
             this.cmb_cardtype.TabIndex = 91;
             this.cmb_cardtype.SelectedIndexChanged += new System.EventHandler(this.cmb_cardtype_SelectedIndexChanged);
             // 
-            // tb_creditlimit
-            // 
-            this.tb_creditlimit.Location = new System.Drawing.Point(286, 132);
-            this.tb_creditlimit.Name = "tb_creditlimit";
-            this.tb_creditlimit.Size = new System.Drawing.Size(91, 21);
-            this.tb_creditlimit.TabIndex = 90;
-            // 
-            // tb_balance
-            // 
-            this.tb_balance.Location = new System.Drawing.Point(286, 96);
-            this.tb_balance.Name = "tb_balance";
-            this.tb_balance.Size = new System.Drawing.Size(91, 21);
-            this.tb_balance.TabIndex = 89;
-            // 
             // tb_firstphone1
             // 
-            this.tb_firstphone1.Location = new System.Drawing.Point(313, 155);
+            this.tb_firstphone1.Location = new System.Drawing.Point(325, 158);
             this.tb_firstphone1.Name = "tb_firstphone1";
             this.tb_firstphone1.Size = new System.Drawing.Size(123, 21);
             this.tb_firstphone1.TabIndex = 87;
@@ -215,7 +199,7 @@
             // 
             // tb_cellphone
             // 
-            this.tb_cellphone.Location = new System.Drawing.Point(313, 87);
+            this.tb_cellphone.Location = new System.Drawing.Point(325, 89);
             this.tb_cellphone.Name = "tb_cellphone";
             this.tb_cellphone.Size = new System.Drawing.Size(123, 21);
             this.tb_cellphone.TabIndex = 80;
@@ -229,7 +213,7 @@
             // 
             // tb_id
             // 
-            this.tb_id.Location = new System.Drawing.Point(74, 95);
+            this.tb_id.Location = new System.Drawing.Point(74, 72);
             this.tb_id.Name = "tb_id";
             this.tb_id.Size = new System.Drawing.Size(159, 21);
             this.tb_id.TabIndex = 77;
@@ -251,34 +235,17 @@
             // 
             // cmb_sex
             // 
+            this.cmb_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_sex.FormattingEnabled = true;
             this.cmb_sex.Location = new System.Drawing.Point(212, 17);
             this.cmb_sex.Name = "cmb_sex";
             this.cmb_sex.Size = new System.Drawing.Size(75, 20);
             this.cmb_sex.TabIndex = 73;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(232, 135);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(53, 12);
-            this.label23.TabIndex = 72;
-            this.label23.Text = "透支额：";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(239, 99);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(41, 12);
-            this.label22.TabIndex = 71;
-            this.label22.Text = "余额：";
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(25, 57);
+            this.label20.Location = new System.Drawing.Point(22, 36);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(53, 12);
             this.label20.TabIndex = 70;
@@ -305,7 +272,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(242, 161);
+            this.label16.Location = new System.Drawing.Point(254, 164);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 12);
             this.label16.TabIndex = 66;
@@ -341,7 +308,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(242, 92);
+            this.label8.Location = new System.Drawing.Point(254, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 12);
             this.label8.TabIndex = 58;
@@ -350,7 +317,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 98);
+            this.label5.Location = new System.Drawing.Point(1, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 12);
             this.label5.TabIndex = 55;
@@ -454,7 +421,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(242, 199);
+            this.label17.Location = new System.Drawing.Point(254, 202);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 12);
             this.label17.TabIndex = 98;
@@ -462,7 +429,7 @@
             // 
             // tb_firstphone2
             // 
-            this.tb_firstphone2.Location = new System.Drawing.Point(313, 194);
+            this.tb_firstphone2.Location = new System.Drawing.Point(325, 197);
             this.tb_firstphone2.Name = "tb_firstphone2";
             this.tb_firstphone2.Size = new System.Drawing.Size(123, 21);
             this.tb_firstphone2.TabIndex = 100;
@@ -501,22 +468,28 @@
             this.groupBox3.Controls.Add(this.tb_cardNo);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.cmb_cardtype);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.tb_balance);
-            this.groupBox3.Controls.Add(this.tb_creditlimit);
             this.groupBox3.Controls.Add(this.tb_id);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(10, 222);
+            this.groupBox3.Location = new System.Drawing.Point(10, 234);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(387, 168);
+            this.groupBox3.Size = new System.Drawing.Size(387, 156);
             this.groupBox3.TabIndex = 93;
             this.groupBox3.TabStop = false;
             // 
+            // btn_patientNo
+            // 
+            this.btn_patientNo.Location = new System.Drawing.Point(264, 106);
+            this.btn_patientNo.Name = "btn_patientNo";
+            this.btn_patientNo.Size = new System.Drawing.Size(103, 23);
+            this.btn_patientNo.TabIndex = 96;
+            this.btn_patientNo.Text = "生成患者编号";
+            this.btn_patientNo.UseVisualStyleBackColor = true;
+            this.btn_patientNo.Click += new System.EventHandler(this.btn_patientNo_Click);
+            // 
             // tb_patientNo
             // 
-            this.tb_patientNo.Location = new System.Drawing.Point(74, 18);
+            this.tb_patientNo.Location = new System.Drawing.Point(264, 33);
             this.tb_patientNo.Name = "tb_patientNo";
             this.tb_patientNo.Size = new System.Drawing.Size(117, 21);
             this.tb_patientNo.TabIndex = 95;
@@ -524,7 +497,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 22);
+            this.label12.Location = new System.Drawing.Point(204, 37);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 12);
             this.label12.TabIndex = 94;
@@ -532,7 +505,7 @@
             // 
             // tb_cardNo
             // 
-            this.tb_cardNo.Location = new System.Drawing.Point(74, 131);
+            this.tb_cardNo.Location = new System.Drawing.Point(74, 108);
             this.tb_cardNo.Name = "tb_cardNo";
             this.tb_cardNo.Size = new System.Drawing.Size(117, 21);
             this.tb_cardNo.TabIndex = 93;
@@ -540,7 +513,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 135);
+            this.label7.Location = new System.Drawing.Point(12, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 92;
@@ -569,6 +542,7 @@
             this.tb_age.Name = "tb_age";
             this.tb_age.Size = new System.Drawing.Size(38, 21);
             this.tb_age.TabIndex = 65;
+            this.tb_age.Text = "0";
             // 
             // label6
             // 
@@ -594,6 +568,7 @@
             this.btn_searchId.TabIndex = 100;
             this.btn_searchId.Text = "根据身份证号搜索";
             this.btn_searchId.UseVisualStyleBackColor = true;
+            this.btn_searchId.Click += new System.EventHandler(this.btn_searchId_Click);
             // 
             // tb_searchPatienNo
             // 
@@ -610,13 +585,7 @@
             this.btn_searchPatientNo.TabIndex = 102;
             this.btn_searchPatientNo.Text = "根据患者编号搜索";
             this.btn_searchPatientNo.UseVisualStyleBackColor = true;
-            // 
-            // tb_searchName
-            // 
-            this.tb_searchName.Location = new System.Drawing.Point(488, 30);
-            this.tb_searchName.Name = "tb_searchName";
-            this.tb_searchName.Size = new System.Drawing.Size(152, 21);
-            this.tb_searchName.TabIndex = 103;
+            this.btn_searchPatientNo.Click += new System.EventHandler(this.btn_searchPatientNo_Click);
             // 
             // label25
             // 
@@ -629,8 +598,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cmb_searchName);
             this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.tb_searchName);
             this.groupBox4.Controls.Add(this.tb_searchId);
             this.groupBox4.Controls.Add(this.btn_searchPatientNo);
             this.groupBox4.Controls.Add(this.btn_searchId);
@@ -642,15 +611,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "搜索已有病人信息";
             // 
-            // btn_patientNo
+            // cmb_searchName
             // 
-            this.btn_patientNo.Location = new System.Drawing.Point(263, 20);
-            this.btn_patientNo.Name = "btn_patientNo";
-            this.btn_patientNo.Size = new System.Drawing.Size(103, 23);
-            this.btn_patientNo.TabIndex = 96;
-            this.btn_patientNo.Text = "生成患者编号";
-            this.btn_patientNo.UseVisualStyleBackColor = true;
-            this.btn_patientNo.Click += new System.EventHandler(this.btn_patientNo_Click);
+            this.cmb_searchName.FormattingEnabled = true;
+            this.cmb_searchName.Location = new System.Drawing.Point(488, 34);
+            this.cmb_searchName.Name = "cmb_searchName";
+            this.cmb_searchName.Size = new System.Drawing.Size(177, 20);
+            this.cmb_searchName.TabIndex = 105;
+            this.cmb_searchName.SelectedIndexChanged += new System.EventHandler(this.cmb_searchName_SelectedIndexChanged);
             // 
             // Frm_patient
             // 
@@ -685,8 +653,6 @@
         private System.Windows.Forms.TextBox tb_operate;
         private System.Windows.Forms.TextBox tb_hispass;
         private System.Windows.Forms.ComboBox cmb_cardtype;
-        private System.Windows.Forms.TextBox tb_creditlimit;
-        private System.Windows.Forms.TextBox tb_balance;
         private System.Windows.Forms.TextBox tb_firstphone1;
         private System.Windows.Forms.TextBox tb_firstman1;
         private System.Windows.Forms.TextBox tb_email;
@@ -696,8 +662,6 @@
         private System.Windows.Forms.DateTimePicker dtp_recdate;
         private System.Windows.Forms.DateTimePicker dtp_birthday;
         private System.Windows.Forms.ComboBox cmb_sex;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -732,10 +696,10 @@
         private System.Windows.Forms.Button btn_searchId;
         private System.Windows.Forms.TextBox tb_searchPatienNo;
         private System.Windows.Forms.Button btn_searchPatientNo;
-        private System.Windows.Forms.TextBox tb_searchName;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btn_patientNo;
+        private System.Windows.Forms.ComboBox cmb_searchName;
 
 
     }

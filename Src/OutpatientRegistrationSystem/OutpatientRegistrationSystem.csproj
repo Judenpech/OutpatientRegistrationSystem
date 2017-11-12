@@ -54,11 +54,17 @@
     <Compile Include="Frm_appointment.Designer.cs">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_infoReg.cs">
+    <Compile Include="Frm_docScore.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_infoReg.Designer.cs">
-      <DependentUpon>Frm_infoReg.cs</DependentUpon>
+    <Compile Include="Frm_docScore.Designer.cs">
+      <DependentUpon>Frm_docScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_lock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_lock.Designer.cs">
+      <DependentUpon>Frm_lock.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_login.cs">
       <SubType>Form</SubType>
@@ -90,13 +96,22 @@
     <Compile Include="Frm_payment.Designer.cs">
       <DependentUpon>Frm_payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_registration.Designer.cs">
+      <DependentUpon>Frm_registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_appointment.resx">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_infoReg.resx">
-      <DependentUpon>Frm_infoReg.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_docScore.resx">
+      <DependentUpon>Frm_docScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_lock.resx">
+      <DependentUpon>Frm_lock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_login.resx">
       <DependentUpon>Frm_login.cs</DependentUpon>
@@ -112,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_payment.resx">
       <DependentUpon>Frm_payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_registration.resx">
+      <DependentUpon>Frm_registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

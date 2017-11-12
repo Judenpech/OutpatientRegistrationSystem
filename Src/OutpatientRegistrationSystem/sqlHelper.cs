@@ -11,8 +11,8 @@ namespace OutpatientRegistrationSystem
     {
         public SqlConnection getcon()
         {
-            string sqlstr = "Server=(local);Database=OPRSBase;Integrated Security=sspi";
-           // string sqlstr = "Server=(local);Database=OPRSBase;Integrated Security=sspi";
+            string sqlstr = "Server=(local); Database=OPRSBase; Integrated Security=sspi";
+            // string sqlstr = "server=111.145.10.17; Initial Catalog=OPRSBase; User ID=sa; Password=3150707012";
             SqlConnection myconn = new SqlConnection(sqlstr);
             return myconn;
         }
@@ -34,6 +34,14 @@ namespace OutpatientRegistrationSystem
             sqlconn.Open();
             SqlDataReader sqlread = sqlcom.ExecuteReader(CommandBehavior.CloseConnection);
             return sqlread;
+        }
+        public DataSet getds(string tempstr, string temptable)
+        {
+            SqlConnection mycon = this.getcon();
+            SqlDataAdapter myadapter = new SqlDataAdapter(tempstr, mycon);
+            DataSet myds = new DataSet();
+            myadapter.Fill(myds, temptable);
+            return myds;
         }
     }
 }

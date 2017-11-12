@@ -64,7 +64,7 @@ CREATE TABLE tb_patient
     ,tel
         CHAR(15)
         NOT NULL
-    ,[Address]
+    ,Address
         varchar(45)
     ,firstMan1
         VARCHAR(25)
@@ -74,6 +74,12 @@ CREATE TABLE tb_patient
         VARCHAR(25)
     ,firstManTel2
         CHAR(15)
+    ,id --身份证号
+        CHAR(18)
+        UNIQUE
+    ,visitNo --就诊卡号
+        CHAR(15)
+        UNIQUE
     ,regDate
         DATE
         NOT NULL
@@ -81,35 +87,58 @@ CREATE TABLE tb_patient
         VARCHAR(255)
     ,operationHistory
         VARCHAR(255));
-----就诊卡表；
-CREATE TABLE tb_card
+INSERT dbo.tb_patient
+        ( No ,
+          Name ,
+          age ,
+          sex ,
+          birthday ,
+          nationality ,
+          nation ,
+          email ,
+          tel ,
+          Address ,
+          firstMan1 ,
+          firstManTel1 ,
+          firstMan2 ,
+          firstManTel2 ,
+          id,
+          visitNo,
+          regDate ,
+          allergyHistory ,
+          operationHistory
+        )
+VALUES  ( '20171112102319' , -- No - char(15)
+          '张三' , -- Name - varchar(25)
+          20 , -- age - int
+          0 , -- sex - bit
+          '1997-11-12 02:23:19' , -- birthday - date
+          '中国' , -- nationality - varchar(25)
+          '汉' , -- nation - varchar(15)
+          'asd@f.com' , -- email - char(45)
+          '18356438763' , -- tel - char(15)
+          '福建省福州市闽侯县上街镇邱阳路1号' , -- Address - varchar(45)
+          '张一' , -- firstMan1 - varchar(25)
+          '18276478345' , -- firstManTel1 - char(15)
+          '张二' , -- firstMan2 - varchar(25)
+          '18297346592' , -- firstManTel2 - char(15)
+          '365745199711126376' , -- id - char(18)
+          '20171112001' , -- visitId - char(15)
+          '2017-11-12 02:23:19' , -- regDate - date
+          '无' , -- allergyHistory - varchar(255)
+          '无'  -- operationHistory - varchar(255)
+        )
+----就诊表；
+CREATE TABLE tb_visit
     (patientNo
         CHAR(15)
         PRIMARY KEY
         FOREIGN KEY REFERENCES tb_patient(No)
+    ,cardType
+        BIT
+        NOT NULL
     ,balance
         money
-        NOT NULL
-        DEFAULT '0.00'
-    ,creditLimit
-        MONEY
-    ,enMoney
-        money
-    ,coMoney
-        money
-    ,enTime
-        date
-    ,coTime
-        date);
-----社保卡表；
-CREATE TABLE tb_socialCard
-    (patientNo
-        CHAR(15)
-        PRIMARY KEY
-        FOREIGN KEY REFERENCES tb_patient(No)
-    ,balance
-        money
-        NOT NULL
         DEFAULT '0.00'
     ,creditLimit
         MONEY
@@ -220,29 +249,6 @@ CREATE TABLE tb_drgs
         PRIMARY KEY
     ,NAME
         varchar(25)
-        NOT NULL);
-----家床登记表；
-CREATE TABLE tb_bedReg
-    (NO
-        CHAR(10)
-        NOT NULL
-        PRIMARY KEY
-    ,drgsNo
-        CHAR(10)
-        FOREIGN KEY REFERENCES tb_drgs(No)
-    ,deptNo
-        CHAR(10)
-        NOT NULL
-        FOREIGN KEY REFERENCES tb_dept(No)
-    ,receiptNo
-        CHAR(10)
-        NOT NULL
-        FOREIGN KEY REFERENCES tb_receipt(No)
-    ,beginDate
-        date
-        NOT NULL
-    ,endDate
-        date
         NOT NULL);
 ----排班表；
 CREATE TABLE tb_schedual
