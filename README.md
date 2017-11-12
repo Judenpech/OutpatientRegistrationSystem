@@ -1,4 +1,6 @@
-﻿# Outpatient Registration System
+# Outpatient Registration System
+
+Database Application Curriculum Design.
 
 ## Overview
 
