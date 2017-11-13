@@ -2,8 +2,8 @@
 
 #### 2017/11/13
 
-- 增加窗体，分别为Frm_registration,Frm_deptQuery,Frm_docQuery,Frm_printAppo,Frm_printReg;
-- 界面美化，添加图标;
+- 增加窗体，分别为Frm_registration,Frm_deptQuery,Frm_docQuery,Frm_printAppo,Frm_printReg；
+- 界面美化；
 - 修改建库脚本；
 - 完善OPRS操作；
 - 完善Frm_payment窗体功能，存在Bug。
