@@ -115,8 +115,9 @@
             this.Controls.Add(this.lab_psw);
             this.Controls.Add(this.lab_userName);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_login";
-            this.Text = "用户登录";
+            this.Text = "门诊预约挂号系统 -【用户登录】";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

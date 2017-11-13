@@ -30,7 +30,7 @@
         {
             this.btn_addappointment = new System.Windows.Forms.Button();
             this.btn_addreg = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_printReg = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmb_regfee = new System.Windows.Forms.ComboBox();
             this.cmb_optype = new System.Windows.Forms.ComboBox();
@@ -84,14 +84,15 @@
             this.btn_addreg.Text = "添加挂号";
             this.btn_addreg.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_printReg
             // 
-            this.button3.Location = new System.Drawing.Point(680, 462);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "打印挂号单";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_printReg.Location = new System.Drawing.Point(680, 462);
+            this.btn_printReg.Name = "btn_printReg";
+            this.btn_printReg.Size = new System.Drawing.Size(75, 23);
+            this.btn_printReg.TabIndex = 32;
+            this.btn_printReg.Text = "打印挂号单";
+            this.btn_printReg.UseVisualStyleBackColor = true;
+            this.btn_printReg.Click += new System.EventHandler(this.btn_printReg_Click);
             // 
             // groupBox2
             // 
@@ -371,7 +372,7 @@
             this.ClientSize = new System.Drawing.Size(852, 494);
             this.Controls.Add(this.btn_addappointment);
             this.Controls.Add(this.btn_addreg);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_printReg);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView2);
@@ -394,7 +395,7 @@
 
         private System.Windows.Forms.Button btn_addappointment;
         private System.Windows.Forms.Button btn_addreg;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_printReg;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmb_regfee;
         private System.Windows.Forms.ComboBox cmb_optype;

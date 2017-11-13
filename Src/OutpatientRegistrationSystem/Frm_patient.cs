@@ -208,8 +208,8 @@ namespace OutpatientRegistrationSystem
 
         private void dtp_birthday_ValueChanged(object sender, EventArgs e)
         {
-            //自动计算年龄
-            tb_age.Text = (DateTime.Now.Year - dtp_birthday.Value.Year).ToString(); 
+            //自动计算患者年龄
+            tb_age.Text = (DateTime.Now.Year - dtp_birthday.Value.Year+1).ToString(); 
         }
 
         private void cmb_cardtype_SelectedIndexChanged(object sender, EventArgs e)
@@ -375,17 +375,19 @@ namespace OutpatientRegistrationSystem
             if (this.checkchildfrm("Frm_registration") == true)
                 return;
             Frm_registration frm = new Frm_registration();
-            frm.MdiParent = this.Owner;
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btn_patientNo_Click(object sender, EventArgs e)
         {
+            //根据就诊日期时间自动生成患者编号
             tb_patientNo.Text = DateTime.Now.ToString("yyyyMMddhhmmss");
         }
 
         private void btn_searchId_Click(object sender, EventArgs e)
         {
+            //根据身份证号搜索
             string tempstr = tb_searchId.Text.Trim();
             DataSet Idds = mysql.getds("SELECT * FROM tb_patient WHERE id='" + tempstr + "'", "patientId");
             if (Idds.Tables[0].Rows.Count == 0)
@@ -420,6 +422,7 @@ namespace OutpatientRegistrationSystem
 
         private void btn_searchPatientNo_Click(object sender, EventArgs e)
         {
+            //根据患者编号搜索
             string tempstr = tb_searchPatienNo.Text.Trim();
             DataSet nods = mysql.getds("SELECT * FROM tb_patient WHERE No='" + tempstr + "'", "patientNo");
             if (nods.Tables[0].Rows.Count == 0)
@@ -454,6 +457,7 @@ namespace OutpatientRegistrationSystem
 
         private void cmb_searchName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //根据姓名搜索
             string tempstr = cmb_searchName.Text;
             DataSet chanagenameds = mysql.getds("SELECT * FROM tb_patient WHERE Name='" + tempstr + "'", "patient");
             tb_name.Text = chanagenameds.Tables[0].Rows[0]["name"].ToString();

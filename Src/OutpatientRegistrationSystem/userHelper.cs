@@ -7,8 +7,12 @@ namespace OutpatientRegistrationSystem
 {
     class userHelper
     {
+        //记录操作员
         //public static string operaterName;  
         public static string operaterNo;  
-        public static string operatePsw;
+        public static string operaterPsw;
+       
+        //记录当前操作的患者
+        public static string patientName;
     }
 }

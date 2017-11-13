@@ -31,6 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -53,6 +58,18 @@
     </Compile>
     <Compile Include="Frm_appointment.Designer.cs">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_deptQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_deptQuery.Designer.cs">
+      <DependentUpon>Frm_deptQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_docQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_docQuery.Designer.cs">
+      <DependentUpon>Frm_docQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_docScore.cs">
       <SubType>Form</SubType>
@@ -96,6 +113,18 @@
     <Compile Include="Frm_payment.Designer.cs">
       <DependentUpon>Frm_payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_printAppo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_printAppo.Designer.cs">
+      <DependentUpon>Frm_printAppo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_printReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_printReg.Designer.cs">
+      <DependentUpon>Frm_printReg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +135,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_appointment.resx">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_deptQuery.resx">
+      <DependentUpon>Frm_deptQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_docQuery.resx">
+      <DependentUpon>Frm_docQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_docScore.resx">
       <DependentUpon>Frm_docScore.cs</DependentUpon>
@@ -127,6 +162,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_payment.resx">
       <DependentUpon>Frm_payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_printAppo.resx">
+      <DependentUpon>Frm_printAppo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_printReg.resx">
+      <DependentUpon>Frm_printReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_registration.resx">
       <DependentUpon>Frm_registration.cs</DependentUpon>
@@ -151,6 +192,9 @@
     </Compile>
     <Compile Include="sqlHelper.cs" />
     <Compile Include="userHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

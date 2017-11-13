@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace OutpatientRegistrationSystem
 {
-    public partial class Frm_registration : Form
+    public partial class Frm_deptQuery : Form
     {
-        public Frm_registration()
+        public Frm_deptQuery()
         {
             InitializeComponent();
-        }
-
-        private void btn_printReg_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

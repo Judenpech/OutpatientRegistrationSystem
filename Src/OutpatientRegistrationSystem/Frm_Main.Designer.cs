@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_operater = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_zhanwei = new System.Windows.Forms.ToolStripStatusLabel();
@@ -41,6 +42,7 @@
             this.关于我们toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -99,28 +101,32 @@
             // 
             // 设置ToolStripMenuItem
             // 
+            this.设置ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("设置ToolStripMenuItem.Image")));
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
             this.设置ToolStripMenuItem.Text = "设置";
             // 
             // 锁定toolStripMenuItem
             // 
+            this.锁定toolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("锁定toolStripMenuItem.Image")));
             this.锁定toolStripMenuItem.Name = "锁定toolStripMenuItem";
-            this.锁定toolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.锁定toolStripMenuItem.Size = new System.Drawing.Size(60, 21);
             this.锁定toolStripMenuItem.Text = "锁定";
             this.锁定toolStripMenuItem.Click += new System.EventHandler(this.锁定toolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
+            this.退出ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出ToolStripMenuItem.Image")));
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
             // 关于我们toolStripMenuItem
             // 
+            this.关于我们toolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("关于我们toolStripMenuItem.Image")));
             this.关于我们toolStripMenuItem.Name = "关于我们toolStripMenuItem";
-            this.关于我们toolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.关于我们toolStripMenuItem.Size = new System.Drawing.Size(84, 21);
             this.关于我们toolStripMenuItem.Text = "关于我们";
             this.关于我们toolStripMenuItem.Click += new System.EventHandler(this.关于我们toolStripMenuItem_Click);
             // 
@@ -132,11 +138,26 @@
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.treeView1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.treeView1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageList1;
+            this.treeView1.ItemHeight = 30;
             this.treeView1.Location = new System.Drawing.Point(0, 25);
             this.treeView1.Name = "treeView1";
+            this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(198, 854);
             this.treeView1.TabIndex = 2;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "患者登记.png");
+            this.imageList1.Images.SetKeyName(1, "患者挂号.png");
+            this.imageList1.Images.SetKeyName(2, "患者预约.png");
+            this.imageList1.Images.SetKeyName(3, "前台缴费.png");
+            this.imageList1.Images.SetKeyName(4, "欠费催款.png");
+            this.imageList1.Images.SetKeyName(5, "评价管理.png");
             // 
             // Frm_Main
             // 
@@ -146,6 +167,7 @@
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Frm_Main";
@@ -176,6 +198,7 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolStripMenuItem 锁定toolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于我们toolStripMenuItem;
+        private System.Windows.Forms.ImageList imageList1;
         
     }
 }

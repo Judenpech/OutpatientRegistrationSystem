@@ -19,7 +19,7 @@ namespace OutpatientRegistrationSystem
 
         private void btn_unlock_Click(object sender, EventArgs e)
         {
-            if (tb_psw.Text.Trim() == userHelper.operatePsw)
+            if (tb_psw.Text.Trim() == userHelper.operaterPsw)
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -31,6 +31,5 @@ namespace OutpatientRegistrationSystem
                 tb_psw.SelectAll();
             }
         }
-
     }
 }

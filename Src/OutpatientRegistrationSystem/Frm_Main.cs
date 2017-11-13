@@ -30,17 +30,18 @@ namespace OutpatientRegistrationSystem
         {
             TreeNode tr = new TreeNode("日常工作", 0, 1);
             tr.Nodes.Add("", "患者登记", 0, 1);
-            tr.Nodes.Add("", "患者预约", 0, 1);
             tr.Nodes.Add("", "患者挂号", 0, 1);
-            tr.Nodes.Add("", "前台交费", 0, 1);
+            tr.Nodes.Add("", "患者预约", 0, 1);
+            tr.Nodes.Add("", "前台缴费", 0, 1);
             tr.Nodes.Add("", "欠费催款", 0, 1);
             tr.Nodes.Add("", "评价管理", 0, 1);
 
-            TreeNode tr1 = new TreeNode("医师服务", 0, 1);
-            tr1.Nodes.Add("", "待添加", 0, 1);   
+            TreeNode tr1 = new TreeNode("查询服务", 0, 1);
+            tr1.Nodes.Add("", "科室查询", 0, 1);
+            tr1.Nodes.Add("", "医生查询", 0, 1);   
 
             TreeNode tr2 = new TreeNode("门诊统计", 0, 1);
-            tr2.Nodes.Add("", "按科室统计", 0, 1);
+            tr2.Nodes.Add("", "科室统计", 0, 1);
             tr2.Nodes.Add("", "每日统计", 0, 1);
             tr2.Nodes.Add("", "交接班汇总", 0, 1);
 
@@ -60,6 +61,15 @@ namespace OutpatientRegistrationSystem
             tr2.ExpandAll();
             treeView1.Nodes.Add(tr3);
             tr3.ExpandAll();
+
+            for (int i = 0,k=0; i < treeView1.Nodes.Count; i++)
+            {
+                for (int j = 0; j < treeView1.Nodes[i].Nodes.Count; j++,k++)
+                {
+                    if (k == 5) break; //待修改删除
+                    treeView1.Nodes[i].Nodes[j].ImageIndex =k ;
+                }
+            }
 
             toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operaterNo;
             toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
@@ -115,7 +125,7 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                case "前台交费":
+                case "前台缴费":
                     {
                         if (this.checkchildfrm("Frm_payment") == true)
                             return;
@@ -142,16 +152,25 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                //case "开医令":
-                //    {
-                //        if (this.checkchildfrm("Frm_doccommand") == true)
-                //            return;
-                //        Frm_doccommand frm = new Frm_doccommand();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
-                //case "按科室统计":
+                case "科室查询":
+                    {
+                        if (this.checkchildfrm("Frm_deptQuery") == true)
+                            return;
+                        Frm_deptQuery frm = new Frm_deptQuery();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
+                case "医生查询":
+                    {
+                        if (this.checkchildfrm("Frm_docQuery") == true)
+                            return;
+                        Frm_docQuery frm = new Frm_docQuery();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
+                //case "科室统计":
                 //    {
                 //        if (this.checkchildfrm("Frm_countdepart") == true)
                 //            return;
