@@ -1,5 +1,13 @@
 # Change Logs
 
+#### 2017/11/13
+
+- 增加窗体，分别为Frm_registration,Frm_deptQuery,Frm_docQuery,Frm_printAppo,Frm_printReg;
+- 界面美化，添加图标;
+- 修改建库脚本；
+- 完善OPRS操作；
+- 完善Frm_payment窗体功能，存在Bug。
+
 #### 2017/11/12
 
 - 增加Frm_docScore窗体；
@@ -7,7 +15,7 @@
 - 完善sqlHelper.cs；
 - 修改建库脚本.sql；
 - 增加OPRS操作.sql；
-- 增加“系统锁定”功能；
+- 增加Frm_lock窗体，实现“系统锁定”功能；
 - 增加网站访问“关于我们”；
 - 实现Frm_patient窗体中"修改病人"功能。
 
