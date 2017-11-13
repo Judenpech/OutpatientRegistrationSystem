@@ -6,7 +6,7 @@ Database Application Curriculum Design.
 
    The Outpatient Registration System is an efficient patient management system that eases capturing of pertinent information of the patients. The patient administration functionalities of the hospital can be automated to provide proficient patient care. The scheduling of patient and physician appointments can be done from this module. The details about schedule of a physician, slots available in his schedule, scheduled slots, blocked slots, tracking of patients and their visits, scheduling appointments for unregistered patients and emergency patients can be viewed effortlessly. Scheduling, rescheduling and manipulating of appointments can be done easily from our patient registration module. Managing of patient records can also be handled effortlessly.
    
-- Patient Registration Details/Management
+- Patient Appointment and Registration Details/Management
 - Patient Information Management
 - Medical Card Management
 - Appointment Scheduling (Patient/Doctor wise)
@@ -32,6 +32,6 @@ Various statistical reports can be generated for the top - management to view an
 
 ## Links
 
-[segmentfault](https://segmentfault.com/u/jl223vy)
+[Segmentfault](https://segmentfault.com/u/jl223vy)
 
 -----
