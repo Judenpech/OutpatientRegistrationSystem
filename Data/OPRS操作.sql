@@ -117,4 +117,40 @@ ORDER BY r.NO,r.regDate,r.regTime;
 
 ----根据医生查询科室；
 SELECT d1.name FROM tb_dept d1,tb_doctor d2 WHERE d2.NAME='邹良能' AND d2.deptNo=d1.NO;
-        
+
+----查询所有科室；
+SELECT NO 科室编号,NAME 科室名称,DSCP 科室描述
+FROM dbo.tb_dept;
+
+----删除指定科室; --外键约束？
+DELETE FROM dbo.tb_dept
+WHERE NAME='测试科';
+
+----增加科室；
+INSERT dbo.tb_dept
+        ( NAME,DSCP )
+VALUES  ( '新增科室','描述' );
+
+----更新科室；
+UPDATE dbo.tb_dept 
+SET NAME='更新科室',dscp='更新科室描述'
+WHERE NO=16;
+
+----查询号别；
+SELECT id 编号,NAME 挂号名称,price 价格
+FROM dbo.tb_regType;
+
+----删除号别；
+DELETE FROM dbo.tb_regType
+WHERE id=3;
+
+----增加号别；
+INSERT dbo.tb_regType
+        ( NAME, price )
+VALUES  ( 'test', -- NAME - char(45)
+          100  -- price - money
+          );
+----修改号别；
+UPDATE dbo.tb_regType
+SET NAME='修改测试',price=100
+WHERE id=4;

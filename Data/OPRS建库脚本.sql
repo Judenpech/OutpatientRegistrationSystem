@@ -151,29 +151,33 @@ CREATE TABLE tb_visit
 ----科室表；
 CREATE TABLE tb_dept
     (NO
-        CHAR(10)
+        INT
+        IDENTITY(1,1)
         NOT NULL
         PRIMARY KEY
     ,NAME
         varchar(25)
-        NOT NULL);
+        NOT NULL
+    ,DSCP
+        VARCHAR(455));
 INSERT dbo.tb_dept
-        ( NO, NAME )
-VALUES  ( '1','内科')
-        ,('2','外科')
-        ,('3','妇产科')
-        ,('4','儿科')
-        ,('5','眼科')
-        ,('6','耳鼻咽喉科')
-        ,('7','口腔科')
-        ,('8','皮肤科')
-        ,('9','管理科室')
-        ,('10','精神科')
-        ,('11','康复医学科')
-        ,('12','全科医疗科')
-        ,('13','医学影像科')
-        ,('14','中医科')
-        ,('15','肿瘤科');
+        ( NAME )
+VALUES  ( '内科')
+        ,('外科')
+        ,('妇产科')
+        ,('儿科')
+        ,('眼科')
+        ,('耳鼻咽喉科')
+        ,('口腔科')
+        ,('皮肤科')
+        ,('管理科室')
+        ,('精神科')
+        ,('康复医学科')
+        ,('全科医疗科')
+        ,('医学影像科')
+        ,('中医科')
+        ,('肿瘤科')
+        ,('删除测试');
 ----医生表；
 CREATE TABLE tb_doctor
     (No
@@ -187,7 +191,7 @@ CREATE TABLE tb_doctor
         varchar(25)
         NOT NULL
     ,deptNo
-        CHAR(10)
+        INT
         FOREIGN KEY REFERENCES tb_dept(No)
     ,specialty
         VARCHAR(455));
@@ -240,7 +244,7 @@ CREATE TABLE tb_registration
         NOT NULL
         FOREIGN KEY REFERENCES tb_patient(No)
     ,deptNo
-        CHAR(10)
+        INT
         FOREIGN KEY REFERENCES dbo.tb_dept(NO)
     ,docNo
         CHAR(10)
@@ -261,19 +265,19 @@ CREATE TABLE tb_registration
 ----号别表；
 CREATE TABLE tb_regType
     (id
-        CHAR(10)
-        NOT NULL
+        INT
+        IDENTITY(1,1)
         PRIMARY KEY
     ,NAME
-        CHAR(45)
+        VARCHAR(45)
         NOT NULL
     ,price
         MONEY
         NOT NULL);
 INSERT dbo.tb_regType
-        ( id, NAME, price )
-VALUES  ('1','普通门诊',13)
-       ,('2','专家门诊',28);
+        ( NAME, price )
+VALUES  ('普通门诊',13)
+       ,('专家门诊',28);
 ----发票表；
 CREATE TABLE tb_receipt
     (NO
@@ -312,7 +316,7 @@ CREATE TABLE tb_schedual
         NOT NULL
         PRIMARY KEY
     ,deptNo
-        CHAR(10)
+        INT
         NOT NULL
         FOREIGN KEY REFERENCES tb_dept(No)
     ,docNo
