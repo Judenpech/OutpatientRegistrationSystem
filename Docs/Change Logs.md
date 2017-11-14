@@ -1,45 +1,54 @@
 # Change Logs
 
+#### 2017/11/14
+
+- 增加窗体，分别为Frm_department，Frm_operator，Frm_regsetting；
+- 实现Frm_regsetting窗体“挂号设置”功能，存在bug；
+- 实现Frm_department窗体“科室设置”功能，存在bug；
+- 完善Frm_registration窗体功能，存在bug；
+- 修改OPRS建库脚本；
+- 完善OPRS操作。
+
 #### 2017/11/13
 
 - 增加窗体，分别为Frm_registration,Frm_deptQuery,Frm_docQuery,Frm_printAppo,Frm_printReg；
+- 完善Frm_appointment窗体功能，存在Bug；
 - 界面美化；
-- 修改建库脚本；
-- 完善OPRS操作；
-- 完善Frm_payment窗体功能，存在Bug。
+- 修改OPRS建库脚本；
+- 完善OPRS操作。
 
 #### 2017/11/12
 
 - 增加Frm_docScore窗体；
-- 实现Frm_patient窗体中“根据身份证号搜索”、“根据患者编号搜索”和“输入姓名自动检索”功能；
-- 完善sqlHelper.cs；
-- 修改建库脚本.sql；
-- 增加OPRS操作.sql；
 - 增加Frm_lock窗体，实现“系统锁定”功能；
+- 实现Frm_patient窗体中“根据身份证号搜索”、“根据患者编号搜索”和“输入姓名自动检索”功能；
 - 增加网站访问“关于我们”；
-- 实现Frm_patient窗体中"修改病人"功能。
+- 实现Frm_patient窗体中"修改病人"功能；
+- 完善sqlHelper.cs；
+- 修改OPRS建库脚本；
+- 增加OPRS操作。
 
 #### 2017/11/11
 
-- 增加sqlHelper.cs；
-- 修改建库脚本.sql；
-- 实现Frm_patient窗体"添加病人"功能。
+- 增加类sqlHelper.cs；
+- 实现Frm_patient窗体"添加病人"功能；
+- 修改OPRS建库脚本。
 
 #### 2017/10/26
 
 - 完善Frm_main窗体功能；
 - 增加Frm_needpay窗体和Frm_payment窗体；
-- 修改建库脚本.sql，增加*社保卡表*。
+- 修改OPRS建库脚本。
 
 #### 2017/10/25
 
 - 完善Frm_main窗体功能；
 - 增加Frm_patient窗体和Frm_appointment窗体；
-- 增加userhelp.cs。
+- 增加类userhelp.cs。
 
 #### 2017/10/20
 
-- 完成门诊挂号系统建库，插入操作员数据，上传建库脚本；
+- 完成门诊挂号系统建库，插入操作员数据，上传OPRS建库脚本；
 - 实现操作员登录功能；
 - 完成UML用例图；
 - 整理完善开发文档；
@@ -52,7 +61,7 @@
 #### 2017/10/17
 
 - 完成数据库设计；
-- 上传数据字典，数据流图，ER图和一些icon，image文件。
+- 上传数据字典，数据流图，ER图和icon，image等文件。
 
 #### 2017/09/20
 
