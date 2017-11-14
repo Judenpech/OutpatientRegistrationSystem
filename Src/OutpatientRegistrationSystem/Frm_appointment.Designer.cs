@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_appointment));
             this.cmb_docname = new System.Windows.Forms.ComboBox();
             this.cmb_regname = new System.Windows.Forms.ComboBox();
             this.cmb_dept = new System.Windows.Forms.ComboBox();
@@ -285,11 +286,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(5, 191);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(842, 282);
+            this.dataGridView1.Size = new System.Drawing.Size(842, 308);
             this.dataGridView1.TabIndex = 17;
             // 
             // label14
@@ -350,7 +352,7 @@
             // 
             // btn_printAppo
             // 
-            this.btn_printAppo.Location = new System.Drawing.Point(754, 482);
+            this.btn_printAppo.Location = new System.Drawing.Point(754, 505);
             this.btn_printAppo.Name = "btn_printAppo";
             this.btn_printAppo.Size = new System.Drawing.Size(75, 23);
             this.btn_printAppo.TabIndex = 23;
@@ -361,7 +363,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 488);
+            this.label1.Location = new System.Drawing.Point(4, 510);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 25;
@@ -370,25 +372,25 @@
             // lb_operater
             // 
             this.lb_operater.AutoSize = true;
-            this.lb_operater.Location = new System.Drawing.Point(63, 488);
+            this.lb_operater.Location = new System.Drawing.Point(63, 510);
             this.lb_operater.Name = "lb_operater";
-            this.lb_operater.Size = new System.Drawing.Size(41, 12);
+            this.lb_operater.Size = new System.Drawing.Size(0, 12);
             this.lb_operater.TabIndex = 26;
-            this.lb_operater.Text = "label2";
             // 
             // Frm_appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 514);
+            this.ClientSize = new System.Drawing.Size(852, 531);
             this.Controls.Add(this.lb_operater);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_printAppo);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_appointment";
-            this.Text = " 患者预约 ";
+            this.Text = "患者预约 ";
             this.Load += new System.EventHandler(this.Frm_appointment_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

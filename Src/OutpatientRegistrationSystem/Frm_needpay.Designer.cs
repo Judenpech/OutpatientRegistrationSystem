@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_needpay));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_cellphone = new System.Windows.Forms.TextBox();
             this.txt_sidno = new System.Windows.Forms.TextBox();
@@ -96,7 +97,7 @@
             // 
             // txt_firstphone
             // 
-            this.txt_firstphone.Location = new System.Drawing.Point(153, 167);
+            this.txt_firstphone.Location = new System.Drawing.Point(153, 112);
             this.txt_firstphone.Name = "txt_firstphone";
             this.txt_firstphone.Size = new System.Drawing.Size(166, 21);
             this.txt_firstphone.TabIndex = 6;
@@ -104,7 +105,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 167);
+            this.label8.Location = new System.Drawing.Point(33, 112);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 12);
             this.label8.TabIndex = 5;
@@ -256,6 +257,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(5, 214);
             this.dataGridView1.Name = "dataGridView1";
@@ -271,6 +273,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_needpay";
             this.Text = "欠费查询";
             this.groupBox2.ResumeLayout(false);

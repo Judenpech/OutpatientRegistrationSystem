@@ -28,7 +28,7 @@ namespace OutpatientRegistrationSystem
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-            TreeNode tr = new TreeNode("日常工作", 0, 1);
+            TreeNode tr = new TreeNode("导医服务", 0, 1);
             tr.Nodes.Add("", "患者登记", 0, 1);
             tr.Nodes.Add("", "患者挂号", 0, 1);
             tr.Nodes.Add("", "患者预约", 0, 1);
@@ -46,12 +46,10 @@ namespace OutpatientRegistrationSystem
             tr2.Nodes.Add("", "交接班汇总", 0, 1);
 
             TreeNode tr3 = new TreeNode("基本设置", 0, 1);
-            tr3.Nodes.Add("", "检验设置", 0, 1);
-            tr3.Nodes.Add("", "检查设置", 0, 1);
-            tr3.Nodes.Add("", "科室设置", 0, 1);
-            tr3.Nodes.Add("", "员工值班设置", 0, 1);
             tr3.Nodes.Add("", "挂号设置", 0, 1);
-            tr3.Nodes.Add("", "用户管理", 0, 1);
+            tr3.Nodes.Add("", "科室管理", 0, 1);
+            tr3.Nodes.Add("", "医生管理", 0, 1);
+            tr3.Nodes.Add("", "操作员设置", 0, 1);
 
             treeView1.Nodes.Add(tr);
             tr.ExpandAll();
@@ -71,7 +69,7 @@ namespace OutpatientRegistrationSystem
                 }
             }
 
-            toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operaterNo;
+            toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operatorNo;
             toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
             toolStripStatusLabel_curTime.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
             this.timer1.Interval = 1000;
@@ -188,60 +186,42 @@ namespace OutpatientRegistrationSystem
                 //        frm.Show();
                 //        break;
                 //    }
-                //case "检验设置":
-                //    {
-                //        if (this.checkchildfrm("Frm_check") == true)
-                //            return;
-                //        Frm_check frm = new Frm_check();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
-                //case "检查设置":
-                //    {
-                //        if (this.checkchildfrm("Frm_treat") == true)
-                //            return;
-                //        Frm_treat frm = new Frm_treat();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
-                //case "科室设置":
-                //    {
-                //        if (this.checkchildfrm("Frm_department") == true)
-                //            return;
-                //        Frm_department frm = new Frm_department();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
-                //case "员工值班设置":
-                //    {
-                //        if (this.checkchildfrm("Frm_onduty") == true)
-                //            return;
-                //        Frm_onduty frm = new Frm_onduty();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
-                //case "挂号设置":
-                //    {
-                //        if (this.checkchildfrm("Frm_regmanage") == true)
-                //            return;
-                //        Frm_regmanage frm = new Frm_regmanage();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
-                //case "用户管理":
-                //    {
-                //        if (this.checkchildfrm("Frm_usermanage") == true)
-                //            return;
-                //        Frm_usermanage frm = new Frm_usermanage();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
+                case "挂号设置":
+                    {
+                        if (this.checkchildfrm("Frm_regsetting") == true)
+                            return;
+                        Frm_regsetting frm = new Frm_regsetting();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
+                case "科室管理":
+                    {
+                        if (this.checkchildfrm("Frm_department") == true)
+                            return;
+                        Frm_department frm = new Frm_department();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
+                case "医生管理":
+                    {
+                        if (this.checkchildfrm("Frm_doctor") == true)
+                            return;
+                        Frm_doctor frm = new Frm_doctor();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
+                case "操作员设置":
+                    {
+                        if (this.checkchildfrm("Frm_operator") == true)
+                            return;
+                        Frm_operator frm = new Frm_operator();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
                 default:
                     return;
             }
@@ -270,6 +250,5 @@ namespace OutpatientRegistrationSystem
         {
             System.Diagnostics.Process.Start("explorer.exe", "https://github.com/jl223vy");
         }
-
     }
 }

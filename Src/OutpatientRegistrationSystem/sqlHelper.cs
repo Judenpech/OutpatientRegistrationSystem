@@ -43,5 +43,13 @@ namespace OutpatientRegistrationSystem
             myadapter.Fill(myds, temptable);
             return myds;
         }
+        public DataSet getys(string tempsqlstr, string tempsqltable)
+        {
+            SqlConnection myconn = this.getcon();
+            SqlDataAdapter da = new SqlDataAdapter(tempsqlstr, myconn);
+            DataSet ds = new DataSet();
+            da.Fill(ds, tempsqltable);
+            return ds;
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_patient));
             this.tb_name = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_regno = new System.Windows.Forms.Button();
@@ -112,7 +113,7 @@
             // 
             // btn_regno
             // 
-            this.btn_regno.Location = new System.Drawing.Point(151, 49);
+            this.btn_regno.Location = new System.Drawing.Point(151, 18);
             this.btn_regno.Name = "btn_regno";
             this.btn_regno.Size = new System.Drawing.Size(75, 27);
             this.btn_regno.TabIndex = 3;
@@ -122,7 +123,7 @@
             // 
             // btn_appointment
             // 
-            this.btn_appointment.Location = new System.Drawing.Point(151, 17);
+            this.btn_appointment.Location = new System.Drawing.Point(151, 50);
             this.btn_appointment.Name = "btn_appointment";
             this.btn_appointment.Size = new System.Drawing.Size(75, 26);
             this.btn_appointment.TabIndex = 2;
@@ -628,6 +629,7 @@
             this.ClientSize = new System.Drawing.Size(714, 540);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_patient";
             this.Text = "患者登记";
             this.Load += new System.EventHandler(this.Frm_patient_Load);

@@ -56,7 +56,7 @@ namespace OutpatientRegistrationSystem
             this.cmb_name.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             //加载操作员
-            lb_operater.Text = userHelper.operaterNo;
+            lb_operater.Text = userHelper.operatorNo;
 
             //使病人信息不可用
             cmb_cardtype.Enabled = false;
@@ -160,7 +160,7 @@ namespace OutpatientRegistrationSystem
                         try
                         {//bug：d1附近有语法错误。sql serve中可成功插入;
                             rowAffected = mysql.getcom(" INSERT tb_registration ( patientNo , deptNo , docNo , regDate , regTime , operater )"
-                                + "SELECT '" + tb_patientNo.Text.Trim() + "',d2.NO, d1.No,'" + dtp_regDate.Value.ToShortDateString() + "','" + dtp_regTime.Value.ToShortTimeString() + "','" + userHelper.operaterNo + "'"
+                                + "SELECT '" + tb_patientNo.Text.Trim() + "',d2.NO, d1.No,'" + dtp_regDate.Value.ToShortDateString() + "','" + dtp_regTime.Value.ToShortTimeString() + "','" + userHelper.operatorNo + "'"
                                 + "FROM tb_doctor d1, tb_dept d2"
                                 + "WHERE d1.NAME='" + cmb_docname.SelectedItem.ToString() + "' AND d2.NAME='" + cmb_dept.SelectedItem.ToString() + "';");
                         }

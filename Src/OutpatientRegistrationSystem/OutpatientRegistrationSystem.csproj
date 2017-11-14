@@ -59,6 +59,12 @@
     <Compile Include="Frm_appointment.Designer.cs">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_department.Designer.cs">
+      <DependentUpon>Frm_department.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_deptQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="Frm_docScore.Designer.cs">
       <DependentUpon>Frm_docScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_doctor.Designer.cs">
+      <DependentUpon>Frm_doctor.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_lock.cs">
       <SubType>Form</SubType>
@@ -100,6 +112,12 @@
     </Compile>
     <Compile Include="Frm_needpay.Designer.cs">
       <DependentUpon>Frm_needpay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_operator.Designer.cs">
+      <DependentUpon>Frm_operator.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_patient.cs">
       <SubType>Form</SubType>
@@ -131,10 +149,19 @@
     <Compile Include="Frm_registration.Designer.cs">
       <DependentUpon>Frm_registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_regsetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_regsetting.Designer.cs">
+      <DependentUpon>Frm_regsetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_appointment.resx">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_department.resx">
+      <DependentUpon>Frm_department.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_deptQuery.resx">
       <DependentUpon>Frm_deptQuery.cs</DependentUpon>
@@ -144,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_docScore.resx">
       <DependentUpon>Frm_docScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_doctor.resx">
+      <DependentUpon>Frm_doctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_lock.resx">
       <DependentUpon>Frm_lock.cs</DependentUpon>
@@ -156,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_needpay.resx">
       <DependentUpon>Frm_needpay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_operator.resx">
+      <DependentUpon>Frm_operator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_patient.resx">
       <DependentUpon>Frm_patient.cs</DependentUpon>
@@ -171,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_registration.resx">
       <DependentUpon>Frm_registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_regsetting.resx">
+      <DependentUpon>Frm_regsetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
