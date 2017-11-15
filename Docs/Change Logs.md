@@ -2,7 +2,7 @@
 
 #### 2017/11/15
 
-- 新增水晶报表，分别为CRT_appo.rpt和CRT_reg.rpt;
+- 新增水晶报表，分别为CRT_appo.rpt和CRT_reg.rpt；
 - 实现Frm_operator窗体“修改密码”功能；
 - 新增应用程序配置文件App.config；
 - 实现Frm_doctor窗体“医生管理”功能；
