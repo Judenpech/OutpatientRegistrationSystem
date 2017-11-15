@@ -1,8 +1,17 @@
 # Change Logs
 
+#### 2017/11/15
+
+- 新增水晶报表，分别为CRT_appo.rpt和CRT_reg.rpt;
+- 实现Frm_operator窗体“修改密码”功能；
+- 新增应用程序配置文件App.config；
+- 实现Frm_doctor窗体“医生管理”功能；
+- 修改OPRS建库脚本；
+- 完善OPRS操作。
+
 #### 2017/11/14
 
-- 增加窗体，分别为Frm_department，Frm_operator，Frm_regsetting；
+- 新增窗体，分别为Frm_department，Frm_doctor，Frm_operator，Frm_regsetting；
 - 实现Frm_regsetting窗体“挂号设置”功能，存在bug；
 - 实现Frm_department窗体“科室设置”功能，存在bug；
 - 完善Frm_registration窗体功能，存在bug；
@@ -11,7 +20,7 @@
 
 #### 2017/11/13
 
-- 增加窗体，分别为Frm_registration,Frm_deptQuery,Frm_docQuery,Frm_printAppo,Frm_printReg；
+- 新增窗体，分别为Frm_registration,Frm_deptQuery,Frm_docQuery,Frm_printAppo,Frm_printReg；
 - 完善Frm_appointment窗体功能，存在Bug；
 - 界面美化；
 - 修改OPRS建库脚本；
@@ -19,25 +28,25 @@
 
 #### 2017/11/12
 
-- 增加Frm_docScore窗体；
-- 增加Frm_lock窗体，实现“系统锁定”功能；
+- 新增Frm_docScore窗体；
+- 新增Frm_lock窗体，实现“系统锁定”功能；
 - 实现Frm_patient窗体中“根据身份证号搜索”、“根据患者编号搜索”和“输入姓名自动检索”功能；
-- 增加网站访问“关于我们”；
+- 新增网站访问“关于我们”功能；
 - 实现Frm_patient窗体中"修改病人"功能；
 - 完善sqlHelper.cs；
 - 修改OPRS建库脚本；
-- 增加OPRS操作。
+- 新增OPRS操作。
 
 #### 2017/11/11
 
-- 增加类sqlHelper.cs；
+- 新增类sqlHelper.cs；
 - 实现Frm_patient窗体"添加病人"功能；
 - 修改OPRS建库脚本。
 
 #### 2017/10/26
 
 - 完善Frm_main窗体功能；
-- 增加Frm_needpay窗体和Frm_payment窗体；
+- 新增Frm_needpay窗体和Frm_payment窗体；
 - 修改OPRS建库脚本。
 
 #### 2017/10/25
