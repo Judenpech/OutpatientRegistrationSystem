@@ -181,11 +181,11 @@ VALUES  ( '内科')
 ----医生表；
 CREATE TABLE tb_doctor
     (No
-        CHAR(10)
+        VARCHAR(10)
         NOT NULL
         PRIMARY KEY
     ,NAME
-        CHAR(10)
+        VARCHAR(10)
         NOT NULL
     ,title
         varchar(25)
@@ -247,7 +247,7 @@ CREATE TABLE tb_registration
         INT
         FOREIGN KEY REFERENCES dbo.tb_dept(NO)
     ,docNo
-        CHAR(10)
+        VARCHAR(10)
         FOREIGN KEY REFERENCES dbo.tb_doctor(No)
     ,regDate
         date
@@ -320,7 +320,7 @@ CREATE TABLE tb_schedual
         NOT NULL
         FOREIGN KEY REFERENCES tb_dept(No)
     ,docNo
-        CHAR(10)
+        VARCHAR(10)
         NOT NULL
         UNIQUE
         FOREIGN KEY REFERENCES tb_doctor(No)

@@ -22,12 +22,16 @@ SELECT *
 FROM dbo.tb_patient
 WHERE No='20171112030327';
 
-----插入管理员；
+----插入操作员；
 INSERT tb_operator
     (No,Name,Password)
     VALUES('1','test',HASHBYTES('SHA','1'));
+----修改操作员密码；
+UPDATE dbo.tb_operator
+SET password=HASHBYTES('SHA','2')
+WHERE No='1';
 
-----添加病人；
+----新增病人；
 INSERT dbo.tb_patient
         ( No ,
           Name ,
@@ -92,7 +96,7 @@ UPDATE dbo.tb_patient
         operationHistory=''
     WHERE No='20171112104748';
     
-----添加预约;
+----新增预约;
 INSERT dbo.tb_registration
         ( patientNo ,
           deptNo ,
@@ -116,10 +120,15 @@ WHERE r.docNo=d2.No AND r.deptNo=d1.NO AND r.patientNo=p.No AND r.regDate='2017-
 ORDER BY r.NO,r.regDate,r.regTime;
 
 ----根据医生查询科室；
-SELECT d1.name FROM tb_dept d1,tb_doctor d2 WHERE d2.NAME='邹良能' AND d2.deptNo=d1.NO;
+SELECT d1.name 
+FROM tb_dept d1,tb_doctor d2 
+WHERE d2.NAME='邹良能' AND d2.deptNo=d1.NO;
 
 ----查询所有科室；
 SELECT NO 科室编号,NAME 科室名称,DSCP 科室描述
+FROM dbo.tb_dept;
+----查询所有科室名称；
+SELECT NAME 科室名称
 FROM dbo.tb_dept;
 
 ----删除指定科室; --外键约束？
@@ -154,3 +163,21 @@ VALUES  ( 'test', -- NAME - char(45)
 UPDATE dbo.tb_regType
 SET NAME='修改测试',price=100
 WHERE id=4;
+
+----查询所有医生信息；
+SELECT d1.No 工号,d1.NAME 姓名,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长
+FROM dbo.tb_doctor d1,dbo.tb_dept d2
+WHERE d1.deptNo=d2.NO;
+----新增医生；
+INSERT dbo.tb_doctor
+        ( No, NAME, title, deptNo, specialty )
+SELECT '0031','新增医生','实习生',d.NO,'擅长'
+FROM dbo.tb_dept d
+WHERE d.NAME='中医科';
+----修改医生；
+UPDATE dbo.tb_doctor
+SET No='0032',NAME='修改医生',title='实习生',specialty='修改擅长',deptNo=(SELECT deptNo FROM dbo.tb_dept WHERE NAME='中医科')
+WHERE No='0031';
+----删除医生；
+DELETE FROM dbo.tb_doctor
+WHERE No='0031';
