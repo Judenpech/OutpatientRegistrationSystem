@@ -1,11 +1,21 @@
 # Change Logs
 
+#### 2017/11/16
+
+- 修复Frm_appointment窗体Bug；
+- 修复Frm_registration窗体Bug；
+- 修复Frm_department窗体Bug；
+- 新增窗体，分别为Frm_countday，Frm_countdept；
+- 实现Frm_docScore窗体“评价管理”功能；
+- 修改OPRS建库脚本，新增“医生评价表”；
+- 完善OPRS操作。
+
 #### 2017/11/15
 
 - 新增水晶报表，分别为CRT_appo.rpt和CRT_reg.rpt；
 - 实现Frm_operator窗体“修改密码”功能；
-- 新增应用程序配置文件App.config；
 - 实现Frm_doctor窗体“医生管理”功能；
+- 新增应用程序配置文件App.config；
 - 修改OPRS建库脚本；
 - 完善OPRS操作。
 
