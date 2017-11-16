@@ -2,11 +2,12 @@
 
 #### 2017/11/16
 
-- 修复Frm_appointment窗体Bug；
-- 修复Frm_registration窗体Bug；
-- 修复Frm_department窗体Bug；
+- 修复Frm_appointment窗体bug；
+- 修复Frm_registration窗体bug；
+- 修复Frm_department窗体bug；
 - 新增窗体，分别为Frm_countday，Frm_countdept；
-- 实现Frm_docScore窗体“评价管理”功能；
+- 实现Frm_docScore窗体“评价管理”功能，存在bug；
+- 代码优化；
 - 修改OPRS建库脚本，新增“医生评价表”；
 - 完善OPRS操作。
 
