@@ -84,6 +84,7 @@
             this.btn_searchPatientNo = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.cmb_searchName = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,7 +95,7 @@
             // tb_name
             // 
             this.tb_name.Location = new System.Drawing.Point(82, 24);
-            this.tb_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_name.Margin = new System.Windows.Forms.Padding(4);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(164, 28);
             this.tb_name.TabIndex = 96;
@@ -105,10 +106,10 @@
             this.groupBox1.Controls.Add(this.btn_appointment);
             this.groupBox1.Controls.Add(this.btn_modifypatient);
             this.groupBox1.Controls.Add(this.btn_addpatient);
-            this.groupBox1.Location = new System.Drawing.Point(622, 459);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(622, 440);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(396, 126);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
@@ -117,7 +118,7 @@
             // btn_regno
             // 
             this.btn_regno.Location = new System.Drawing.Point(226, 27);
-            this.btn_regno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_regno.Margin = new System.Windows.Forms.Padding(4);
             this.btn_regno.Name = "btn_regno";
             this.btn_regno.Size = new System.Drawing.Size(112, 40);
             this.btn_regno.TabIndex = 3;
@@ -128,7 +129,7 @@
             // btn_appointment
             // 
             this.btn_appointment.Location = new System.Drawing.Point(226, 75);
-            this.btn_appointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_appointment.Margin = new System.Windows.Forms.Padding(4);
             this.btn_appointment.Name = "btn_appointment";
             this.btn_appointment.Size = new System.Drawing.Size(112, 39);
             this.btn_appointment.TabIndex = 2;
@@ -139,7 +140,7 @@
             // btn_modifypatient
             // 
             this.btn_modifypatient.Location = new System.Drawing.Point(63, 75);
-            this.btn_modifypatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_modifypatient.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modifypatient.Name = "btn_modifypatient";
             this.btn_modifypatient.Size = new System.Drawing.Size(106, 40);
             this.btn_modifypatient.TabIndex = 1;
@@ -150,7 +151,7 @@
             // btn_addpatient
             // 
             this.btn_addpatient.Location = new System.Drawing.Point(62, 27);
-            this.btn_addpatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_addpatient.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addpatient.Name = "btn_addpatient";
             this.btn_addpatient.Size = new System.Drawing.Size(106, 40);
             this.btn_addpatient.TabIndex = 0;
@@ -160,8 +161,8 @@
             // 
             // tb_operate
             // 
-            this.tb_operate.Location = new System.Drawing.Point(684, 290);
-            this.tb_operate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_operate.Location = new System.Drawing.Point(696, 271);
+            this.tb_operate.Margin = new System.Windows.Forms.Padding(4);
             this.tb_operate.Multiline = true;
             this.tb_operate.Name = "tb_operate";
             this.tb_operate.Size = new System.Drawing.Size(312, 152);
@@ -169,8 +170,8 @@
             // 
             // tb_hispass
             // 
-            this.tb_hispass.Location = new System.Drawing.Point(686, 108);
-            this.tb_hispass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_hispass.Location = new System.Drawing.Point(698, 89);
+            this.tb_hispass.Margin = new System.Windows.Forms.Padding(4);
             this.tb_hispass.Multiline = true;
             this.tb_hispass.Name = "tb_hispass";
             this.tb_hispass.Size = new System.Drawing.Size(312, 136);
@@ -181,7 +182,7 @@
             this.cmb_cardtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cardtype.FormattingEnabled = true;
             this.cmb_cardtype.Location = new System.Drawing.Point(106, 50);
-            this.cmb_cardtype.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_cardtype.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_cardtype.Name = "cmb_cardtype";
             this.cmb_cardtype.Size = new System.Drawing.Size(174, 26);
             this.cmb_cardtype.TabIndex = 91;
@@ -190,7 +191,7 @@
             // tb_firstphone1
             // 
             this.tb_firstphone1.Location = new System.Drawing.Point(488, 237);
-            this.tb_firstphone1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_firstphone1.Margin = new System.Windows.Forms.Padding(4);
             this.tb_firstphone1.Name = "tb_firstphone1";
             this.tb_firstphone1.Size = new System.Drawing.Size(182, 28);
             this.tb_firstphone1.TabIndex = 87;
@@ -198,7 +199,7 @@
             // tb_firstman1
             // 
             this.tb_firstman1.Location = new System.Drawing.Point(126, 237);
-            this.tb_firstman1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_firstman1.Margin = new System.Windows.Forms.Padding(4);
             this.tb_firstman1.Name = "tb_firstman1";
             this.tb_firstman1.Size = new System.Drawing.Size(174, 28);
             this.tb_firstman1.TabIndex = 85;
@@ -206,7 +207,7 @@
             // tb_email
             // 
             this.tb_email.Location = new System.Drawing.Point(126, 134);
-            this.tb_email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_email.Margin = new System.Windows.Forms.Padding(4);
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(198, 28);
             this.tb_email.TabIndex = 84;
@@ -214,7 +215,7 @@
             // tb_cellphone
             // 
             this.tb_cellphone.Location = new System.Drawing.Point(488, 134);
-            this.tb_cellphone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_cellphone.Margin = new System.Windows.Forms.Padding(4);
             this.tb_cellphone.Name = "tb_cellphone";
             this.tb_cellphone.Size = new System.Drawing.Size(182, 28);
             this.tb_cellphone.TabIndex = 80;
@@ -222,15 +223,15 @@
             // tb_address
             // 
             this.tb_address.Location = new System.Drawing.Point(126, 182);
-            this.tb_address.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_address.Margin = new System.Windows.Forms.Padding(4);
             this.tb_address.Name = "tb_address";
-            this.tb_address.Size = new System.Drawing.Size(343, 28);
+            this.tb_address.Size = new System.Drawing.Size(339, 28);
             this.tb_address.TabIndex = 78;
             // 
             // tb_id
             // 
             this.tb_id.Location = new System.Drawing.Point(111, 108);
-            this.tb_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_id.Margin = new System.Windows.Forms.Padding(4);
             this.tb_id.Name = "tb_id";
             this.tb_id.Size = new System.Drawing.Size(236, 28);
             this.tb_id.TabIndex = 77;
@@ -238,7 +239,7 @@
             // dtp_recdate
             // 
             this.dtp_recdate.Location = new System.Drawing.Point(826, 21);
-            this.dtp_recdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_recdate.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_recdate.Name = "dtp_recdate";
             this.dtp_recdate.Size = new System.Drawing.Size(170, 28);
             this.dtp_recdate.TabIndex = 75;
@@ -246,7 +247,7 @@
             // dtp_birthday
             // 
             this.dtp_birthday.Location = new System.Drawing.Point(507, 26);
-            this.dtp_birthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_birthday.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_birthday.Name = "dtp_birthday";
             this.dtp_birthday.Size = new System.Drawing.Size(164, 28);
             this.dtp_birthday.TabIndex = 74;
@@ -257,7 +258,7 @@
             this.cmb_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_sex.FormattingEnabled = true;
             this.cmb_sex.Location = new System.Drawing.Point(318, 26);
-            this.cmb_sex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_sex.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_sex.Name = "cmb_sex";
             this.cmb_sex.Size = new System.Drawing.Size(110, 26);
             this.cmb_sex.TabIndex = 73;
@@ -275,7 +276,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(681, 267);
+            this.label19.Location = new System.Drawing.Point(693, 248);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(80, 18);
@@ -285,7 +286,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(682, 80);
+            this.label18.Location = new System.Drawing.Point(694, 61);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(80, 18);
@@ -430,17 +431,17 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(13, 181);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1018, 597);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(1018, 581);
             this.groupBox2.TabIndex = 97;
             this.groupBox2.TabStop = false;
             // 
             // tb_firstman2
             // 
             this.tb_firstman2.Location = new System.Drawing.Point(126, 292);
-            this.tb_firstman2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_firstman2.Margin = new System.Windows.Forms.Padding(4);
             this.tb_firstman2.Name = "tb_firstman2";
             this.tb_firstman2.Size = new System.Drawing.Size(174, 28);
             this.tb_firstman2.TabIndex = 99;
@@ -468,7 +469,7 @@
             // tb_firstphone2
             // 
             this.tb_firstphone2.Location = new System.Drawing.Point(488, 296);
-            this.tb_firstphone2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_firstphone2.Margin = new System.Windows.Forms.Padding(4);
             this.tb_firstphone2.Name = "tb_firstphone2";
             this.tb_firstphone2.Size = new System.Drawing.Size(182, 28);
             this.tb_firstphone2.TabIndex = 100;
@@ -476,7 +477,7 @@
             // tb_nation
             // 
             this.tb_nation.Location = new System.Drawing.Point(543, 74);
-            this.tb_nation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_nation.Margin = new System.Windows.Forms.Padding(4);
             this.tb_nation.Name = "tb_nation";
             this.tb_nation.Size = new System.Drawing.Size(128, 28);
             this.tb_nation.TabIndex = 96;
@@ -513,20 +514,20 @@
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.tb_id);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(15, 351);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(18, 332);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(580, 234);
             this.groupBox3.TabIndex = 93;
             this.groupBox3.TabStop = false;
             // 
             // btn_patientNo
             // 
-            this.btn_patientNo.Location = new System.Drawing.Point(396, 159);
-            this.btn_patientNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_patientNo.Location = new System.Drawing.Point(420, 159);
+            this.btn_patientNo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_patientNo.Name = "btn_patientNo";
-            this.btn_patientNo.Size = new System.Drawing.Size(154, 34);
+            this.btn_patientNo.Size = new System.Drawing.Size(130, 34);
             this.btn_patientNo.TabIndex = 96;
             this.btn_patientNo.Text = "生成患者编号";
             this.btn_patientNo.UseVisualStyleBackColor = true;
@@ -535,7 +536,7 @@
             // tb_patientNo
             // 
             this.tb_patientNo.Location = new System.Drawing.Point(396, 50);
-            this.tb_patientNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_patientNo.Margin = new System.Windows.Forms.Padding(4);
             this.tb_patientNo.Name = "tb_patientNo";
             this.tb_patientNo.Size = new System.Drawing.Size(174, 28);
             this.tb_patientNo.TabIndex = 95;
@@ -553,7 +554,7 @@
             // tb_cardNo
             // 
             this.tb_cardNo.Location = new System.Drawing.Point(111, 162);
-            this.tb_cardNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_cardNo.Margin = new System.Windows.Forms.Padding(4);
             this.tb_cardNo.Name = "tb_cardNo";
             this.tb_cardNo.Size = new System.Drawing.Size(174, 28);
             this.tb_cardNo.TabIndex = 93;
@@ -570,10 +571,10 @@
             // 
             // tb_nationality
             // 
-            this.tb_nationality.Location = new System.Drawing.Point(332, 76);
-            this.tb_nationality.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_nationality.Location = new System.Drawing.Point(318, 76);
+            this.tb_nationality.Margin = new System.Windows.Forms.Padding(4);
             this.tb_nationality.Name = "tb_nationality";
-            this.tb_nationality.Size = new System.Drawing.Size(102, 28);
+            this.tb_nationality.Size = new System.Drawing.Size(110, 28);
             this.tb_nationality.TabIndex = 92;
             this.tb_nationality.Text = "中国";
             // 
@@ -590,7 +591,7 @@
             // tb_age
             // 
             this.tb_age.Location = new System.Drawing.Point(82, 76);
-            this.tb_age.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_age.Margin = new System.Windows.Forms.Padding(4);
             this.tb_age.Name = "tb_age";
             this.tb_age.Size = new System.Drawing.Size(55, 28);
             this.tb_age.TabIndex = 65;
@@ -609,7 +610,7 @@
             // tb_searchId
             // 
             this.tb_searchId.Location = new System.Drawing.Point(28, 44);
-            this.tb_searchId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_searchId.Margin = new System.Windows.Forms.Padding(4);
             this.tb_searchId.Name = "tb_searchId";
             this.tb_searchId.Size = new System.Drawing.Size(234, 28);
             this.tb_searchId.TabIndex = 99;
@@ -617,7 +618,7 @@
             // btn_searchId
             // 
             this.btn_searchId.Location = new System.Drawing.Point(294, 44);
-            this.btn_searchId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_searchId.Margin = new System.Windows.Forms.Padding(4);
             this.btn_searchId.Name = "btn_searchId";
             this.btn_searchId.Size = new System.Drawing.Size(190, 34);
             this.btn_searchId.TabIndex = 100;
@@ -628,7 +629,7 @@
             // tb_searchPatienNo
             // 
             this.tb_searchPatienNo.Location = new System.Drawing.Point(28, 102);
-            this.tb_searchPatienNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_searchPatienNo.Margin = new System.Windows.Forms.Padding(4);
             this.tb_searchPatienNo.Name = "tb_searchPatienNo";
             this.tb_searchPatienNo.Size = new System.Drawing.Size(234, 28);
             this.tb_searchPatienNo.TabIndex = 101;
@@ -636,7 +637,7 @@
             // btn_searchPatientNo
             // 
             this.btn_searchPatientNo.Location = new System.Drawing.Point(294, 102);
-            this.btn_searchPatientNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_searchPatientNo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_searchPatientNo.Name = "btn_searchPatientNo";
             this.btn_searchPatientNo.Size = new System.Drawing.Size(190, 34);
             this.btn_searchPatientNo.TabIndex = 102;
@@ -656,6 +657,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btn_clear);
             this.groupBox4.Controls.Add(this.cmb_searchName);
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.tb_searchId);
@@ -663,19 +665,29 @@
             this.groupBox4.Controls.Add(this.btn_searchId);
             this.groupBox4.Controls.Add(this.tb_searchPatienNo);
             this.groupBox4.Location = new System.Drawing.Point(13, 13);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(1018, 159);
             this.groupBox4.TabIndex = 105;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "搜索已有病人信息";
             // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(883, 97);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(113, 34);
+            this.btn_clear.TabIndex = 106;
+            this.btn_clear.Text = "清空";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
             // cmb_searchName
             // 
             this.cmb_searchName.FormattingEnabled = true;
             this.cmb_searchName.Location = new System.Drawing.Point(732, 51);
-            this.cmb_searchName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_searchName.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_searchName.Name = "cmb_searchName";
             this.cmb_searchName.Size = new System.Drawing.Size(264, 26);
             this.cmb_searchName.TabIndex = 105;
@@ -686,11 +698,12 @@
             this.AcceptButton = this.btn_addpatient;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 787);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1042, 767);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_patient";
             this.Text = "患者登记";
             this.Load += new System.EventHandler(this.Frm_patient_Load);
@@ -763,6 +776,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btn_patientNo;
         private System.Windows.Forms.ComboBox cmb_searchName;
+        private System.Windows.Forms.Button btn_clear;
 
 
     }

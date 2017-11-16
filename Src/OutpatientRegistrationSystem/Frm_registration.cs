@@ -96,6 +96,8 @@ namespace OutpatientRegistrationSystem
             cmb_cardtype.Items.Add("就诊卡");
             cmb_cardtype.Items.Add("社保卡");
             cmb_cardtype.SelectedIndex = 0;
+
+            this.gridviewinit();
         }
 
         private void getname()
@@ -158,11 +160,10 @@ namespace OutpatientRegistrationSystem
                     {
                         int rowAffected = 0;
                         try
-                        {//bug：d1附近有语法错误。sql serve中可成功插入;
-                            rowAffected = mysql.getcom(" INSERT tb_registration ( patientNo , deptNo , docNo , regDate , regTime , operater )"
-                                + "SELECT '" + tb_patientNo.Text.Trim() + "',d2.NO, d1.No,'" + dtp_regDate.Value.ToShortDateString() + "','" + dtp_regTime.Value.ToShortTimeString() + "','" + userHelper.operatorNo + "'"
-                                + "FROM tb_doctor d1, tb_dept d2"
-                                + "WHERE d1.NAME='" + cmb_docname.SelectedItem.ToString() + "' AND d2.NAME='" + cmb_dept.SelectedItem.ToString() + "';");
+                        {
+                            rowAffected = mysql.getcom("INSERT tb_registration ( patientNo , deptNo , docNo , regDate ,regTime ,operater ) SELECT '" + tb_patientNo.Text.Trim()
+                                + "',d2.NO,d1.No,'" + dtp_regDate.Value.ToShortDateString() + "','" + dtp_regTime.Value.ToShortTimeString() + "','" + userHelper.operatorNo
+                                + "' FROM tb_doctor d1 JOIN tb_dept d2 ON d1.deptNo = d2.NO WHERE d1.NAME='" + cmb_docname.SelectedItem.ToString() + "' AND d2.NAME='" + cmb_dept.SelectedItem.ToString() + "';");
                         }
                         catch (SqlException sqlEx)
                         {
@@ -182,13 +183,25 @@ namespace OutpatientRegistrationSystem
             }
         }
 
-        private void gridviewinit()//bug
+        private void gridviewinit()//bug：预约时间显示
         {
-            DataSet view1ds = mysql.getds("SELECT r.NO 预约号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 预约科室,d2.NAME 预约医生, r.regDate 预约日期,r.regTime 预约时间"
-                + "FROM dbo.tb_registration r,dbo.tb_patient p, dbo.tb_dept d1, dbo.tb_doctor d2"
-                + "WHERE r.docNo=d2.No AND r.deptNo=d1.NO AND r.patientNo=p.No AND r.regDate='" + dtp_regDate.Value.ToShortDateString() + "'"
-                + "ORDER BY r.NO,r.regDate,r.regTime;", "registration");
+            DataSet view1ds = mysql.getds("SELECT r.NO 排队号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 挂号科室,d2.NAME 挂号医生, r.regDate 挂号日期,r.regTime 挂号时间 "
+                + "FROM dbo.tb_registration r JOIN dbo.tb_patient p ON r.patientNo = p.No,dbo.tb_dept d1 JOIN dbo.tb_doctor d2 ON d1.NO = d2.deptNo WHERE r.patientNo=p.No AND r.docNo=d2.No "
+                + "AND r.done=0 ORDER BY r.NO,r.regDate,r.regTime;", "registration");
             this.dataGridView1.DataSource = view1ds.Tables[0];
+        }
+
+        private void cmb_docname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection conn = mysql.getcon();
+            SqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "SELECT d1.name FROM tb_dept d1,tb_doctor d2 WHERE d2.NAME='" + cmb_docname.SelectedItem.ToString() + "' AND d2.deptNo=d1.NO;";
+            conn.Open();
+            SqlDataReader dr = comm.ExecuteReader();
+            dr.Read();
+            cmb_dept.SelectedItem = dr["Name"].ToString();
+            dr.Close();
+            conn.Close();
         }
     }
 }

@@ -43,7 +43,6 @@ namespace OutpatientRegistrationSystem
             TreeNode tr2 = new TreeNode("门诊统计", 0, 1);
             tr2.Nodes.Add("", "科室统计", 0, 1);
             tr2.Nodes.Add("", "每日统计", 0, 1);
-            tr2.Nodes.Add("", "交接班汇总", 0, 1);
 
             TreeNode tr3 = new TreeNode("基本设置", 0, 1);
             tr3.Nodes.Add("", "挂号设置", 0, 1);
@@ -69,9 +68,9 @@ namespace OutpatientRegistrationSystem
                 }
             }
 
-            toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operatorNo+"（"+userHelper.operatorName+"）";
-            toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
-            toolStripStatusLabel_curTime.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
+            toolStripStatusLabel_operater.Text = "【操作员】" + userHelper.operatorNo+"（"+userHelper.operatorName+"）";
+            toolStripStatusLabel_loginTime.Text = "【登录时间】" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm:ss");
+            toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
             this.timer1.Interval = 1000;
             this.timer1.Start();
         }
@@ -168,24 +167,24 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                //case "科室统计":
-                //    {
-                //        if (this.checkchildfrm("Frm_countdepart") == true)
-                //            return;
-                //        Frm_countdepart frm = new Frm_countdepart();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
-                //case "每日统计":
-                //    {
-                //        if (this.checkchildfrm("Frm_countday") == true)
-                //            return;
-                //        Frm_countday frm = new Frm_countday();
-                //        frm.MdiParent = this;
-                //        frm.Show();
-                //        break;
-                //    }
+                case "科室统计":
+                    {
+                        if (this.checkchildfrm("Frm_countdept") == true)
+                            return;
+                        Frm_countdept frm = new Frm_countdept();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
+                case "每日统计":
+                    {
+                        if (this.checkchildfrm("Frm_countday") == true)
+                            return;
+                        Frm_countday frm = new Frm_countday();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
                 case "挂号设置":
                     {
                         if (this.checkchildfrm("Frm_regsetting") == true)
@@ -229,7 +228,7 @@ namespace OutpatientRegistrationSystem
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            this.toolStripStatusLabel_curTime.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
+            this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
         }
 
         private void 锁定toolStripMenuItem_Click(object sender, EventArgs e)

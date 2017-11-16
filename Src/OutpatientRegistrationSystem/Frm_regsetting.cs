@@ -25,11 +25,7 @@ namespace OutpatientRegistrationSystem
 
         private void Frm_regsetting_Load(object sender, EventArgs e)
         {
-            DataSet myds = mysql.getds(sqlstr, mytable);
-            mybdsource.DataSource = myds.Tables[0];
-
-            this.dataGridView1.DataSource = mybdsource;
-            this.bindingNavigator1.BindingSource = mybdsource;
+            this.init();
 
             tb_id.DataBindings.Add("text", mybdsource, "编号");
             tb_regname.DataBindings.Add("text", mybdsource, "挂号名称");
@@ -44,48 +40,8 @@ namespace OutpatientRegistrationSystem
         {
             DataSet myds = mysql.getds(sqlstr, mytable);
             mybdsource.DataSource = myds.Tables[0];
-
             this.dataGridView1.DataSource = mybdsource;
             this.bindingNavigator1.BindingSource = mybdsource;
-        }
-
-        private void 添加ToolStripButton_Click(object sender, EventArgs e) //bug：指针异常
-        {
-            tb_regname.Enabled = true;
-            nup_price.Enabled = true;
-            tb_regname.Focus();
-            savevalue = 1;
-        }
-
-        private void 删除ToolStripButton_Click(object sender, EventArgs e)
-        {
-            int rowAffected = 0;
-            if (tb_regname.Text != "")
-            {
-                try
-                {
-                    rowAffected = mysql.getcom("DELETE FROM tb_regType WHERE id=" + tb_id.Text.Trim() + ";");
-                }
-                catch (SqlException sqlEx)
-                {
-                    MessageBox.Show("数据库异常：" + sqlEx.Message, "数据库异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                if (rowAffected == 1)
-                {
-                    MessageBox.Show("删除挂号类别成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
-                }
-                else
-                {
-                    MessageBox.Show("删除挂号类别失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
-                }
-            }
-            else
-            {
-                MessageBox.Show("请选择要删除的挂号类别！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            tb_regname.Enabled = false;
-            nup_price.Enabled = false;
-            this.init();
         }
 
         private void 修改ToolStripButton_Click(object sender, EventArgs e)
@@ -133,7 +89,7 @@ namespace OutpatientRegistrationSystem
                     {
                         try
                         {
-                            rowAffected = mysql.getcom("UPDATE tb_regType SET NAME='" + tb_regname.Text.Trim() + "',price=" + Convert.ToDecimal(nup_price.Value) + " WHERE id="+Convert.ToInt32(tb_id.Text.Trim())+";");
+                            rowAffected = mysql.getcom("UPDATE tb_regType SET NAME='" + tb_regname.Text.Trim() + "',price=" + Convert.ToDecimal(nup_price.Value) + " WHERE id=" + Convert.ToInt32(tb_id.Text.Trim()) + ";");
                         }
                         catch (SqlException sqlEx)
                         {
@@ -155,6 +111,44 @@ namespace OutpatientRegistrationSystem
                     }
                 }
             }
+            this.init();
+        }
+
+        private void 新增ToolStripButton_Click(object sender, EventArgs e)//指针异常
+        {
+            tb_regname.Enabled = true;
+            nup_price.Enabled = true;
+            savevalue = 1;
+        }
+
+        private void 删除ToolStripButton_Click(object sender, EventArgs e)
+        {
+            int rowAffected = 0;
+            if (tb_regname.Text != "")
+            {
+                try
+                {
+                    rowAffected = mysql.getcom("DELETE FROM tb_regType WHERE id=" + tb_id.Text.Trim() + ";");
+                }
+                catch (SqlException sqlEx)
+                {
+                    MessageBox.Show("数据库异常：" + sqlEx.Message, "数据库异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (rowAffected == 1)
+                {
+                    MessageBox.Show("删除挂号类别成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+                else
+                {
+                    MessageBox.Show("删除挂号类别失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+            }
+            else
+            {
+                MessageBox.Show("请选择要删除的挂号类别！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            tb_regname.Enabled = false;
+            nup_price.Enabled = false;
             this.init();
         }
     }

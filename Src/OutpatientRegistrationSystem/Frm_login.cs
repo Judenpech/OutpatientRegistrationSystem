@@ -33,7 +33,6 @@ namespace OutpatientRegistrationSystem
             SqlDataReader dr = comm.ExecuteReader();
             if(dr.Read())
             {
-                MessageBox.Show("登录成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 userHelper.operatorNo = this.texbox_userName.Text.Trim();
                 userHelper.operatorName = dr["Name"].ToString();

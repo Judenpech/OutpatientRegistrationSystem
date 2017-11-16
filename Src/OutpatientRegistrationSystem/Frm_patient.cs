@@ -40,6 +40,11 @@ namespace OutpatientRegistrationSystem
             cmb_cardtype.SelectedIndex = 0;
 
             //只可查看
+            this.setFalse();
+        }
+
+        private void setFalse()
+        {
             tb_address.Enabled = false;
             tb_age.Enabled = false;
             tb_cardNo.Enabled = false;
@@ -63,9 +68,8 @@ namespace OutpatientRegistrationSystem
             btn_patientNo.Enabled = false;
         }
 
-        private void initAdd()
+        private void setTrue()
         {
-            //使控件可用
             tb_address.Enabled = true;
             tb_age.Enabled = true;
             tb_cardNo.Enabled = true;
@@ -87,6 +91,11 @@ namespace OutpatientRegistrationSystem
             cmb_sex.Enabled = true;
             cmb_cardtype.Enabled = true;
             btn_patientNo.Enabled = true;
+        }
+        private void initAdd()
+        {
+            //使控件可用
+            this.setTrue();
 
             //初始化原有值
             tb_address.Text = "";
@@ -173,28 +182,7 @@ namespace OutpatientRegistrationSystem
                                     {
                                         MessageBox.Show("添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
 
-                                        tb_address.Enabled = false;
-                                        tb_age.Enabled = false;
-                                        tb_cardNo.Enabled = false;
-                                        tb_cellphone.Enabled = false;
-                                        tb_email.Enabled = false;
-                                        tb_firstman1.Enabled = false;
-                                        tb_firstphone1.Enabled = false;
-                                        tb_firstman2.Enabled = false;
-                                        tb_firstphone2.Enabled = false;
-                                        tb_hispass.Enabled = false;
-                                        tb_id.Enabled = false;
-                                        tb_name.Enabled = false;
-                                        tb_nation.Enabled = false;
-                                        tb_operate.Enabled = false;
-                                        tb_patientNo.Enabled = false;
-                                        dtp_birthday.Enabled = false;
-                                        dtp_recdate.Enabled = false;
-                                        tb_nationality.Enabled = false;
-                                        cmb_sex.Enabled = false;
-                                        cmb_cardtype.Enabled = false;
-                                        btn_patientNo.Enabled = false;
-
+                                        this.setFalse();
                                         btn_appointment.Enabled = true;
                                         btn_regno.Enabled = true;
                                         btn_modifypatient.Enabled = true;
@@ -215,7 +203,7 @@ namespace OutpatientRegistrationSystem
         private void dtp_birthday_ValueChanged(object sender, EventArgs e)
         {
             //自动计算患者年龄
-            tb_age.Text = (DateTime.Now.Year - dtp_birthday.Value.Year+1).ToString(); 
+            tb_age.Text = (DateTime.Now.Year - dtp_birthday.Value.Year + 1).ToString();
         }
 
         private void cmb_cardtype_SelectedIndexChanged(object sender, EventArgs e)
@@ -237,27 +225,9 @@ namespace OutpatientRegistrationSystem
         {
             if (btn_modifypatient.Text == "修改病人")
             {
-                //使控件可用
-                tb_address.Enabled = true;
-                tb_age.Enabled = true;
-                tb_cardNo.Enabled = true;
-                tb_cellphone.Enabled = true;
-                tb_email.Enabled = true;
-                tb_firstman1.Enabled = true;
-                tb_firstphone1.Enabled = true;
-                tb_firstman2.Enabled = true;
-                tb_firstphone2.Enabled = true;
-                tb_hispass.Enabled = true;
-                tb_id.Enabled = true;
-                tb_name.Enabled = true;
-                tb_nation.Enabled = true;
-                tb_operate.Enabled = true;
-                dtp_birthday.Enabled = true;
-                dtp_recdate.Enabled = true;
-                tb_nationality.Enabled = true;
-                cmb_sex.Enabled = true;
-                cmb_cardtype.Enabled = true;
-
+                this.setTrue();
+                tb_patientNo.Enabled = false;
+                btn_patientNo.Enabled = false;
                 btn_appointment.Enabled = false;
                 btn_regno.Enabled = false;
                 btn_addpatient.Enabled = false;
@@ -318,28 +288,7 @@ namespace OutpatientRegistrationSystem
                                     {
                                         MessageBox.Show("修改成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
 
-                                        tb_address.Enabled = false;
-                                        tb_age.Enabled = false;
-                                        tb_cardNo.Enabled = false;
-                                        tb_cellphone.Enabled = false;
-                                        tb_email.Enabled = false;
-                                        tb_firstman1.Enabled = false;
-                                        tb_firstphone1.Enabled = false;
-                                        tb_firstman2.Enabled = false;
-                                        tb_firstphone2.Enabled = false;
-                                        tb_hispass.Enabled = false;
-                                        tb_id.Enabled = false;
-                                        tb_name.Enabled = false;
-                                        tb_nation.Enabled = false;
-                                        tb_operate.Enabled = false;
-                                        tb_patientNo.Enabled = false;
-                                        dtp_birthday.Enabled = false;
-                                        dtp_recdate.Enabled = false;
-                                        tb_nationality.Enabled = false;
-                                        cmb_sex.Enabled = false;
-                                        cmb_cardtype.Enabled = false;
-                                        btn_patientNo.Enabled = false;
-
+                                        this.setFalse();
                                         btn_appointment.Enabled = true;
                                         btn_regno.Enabled = true;
                                         btn_addpatient.Enabled = true;
@@ -491,6 +440,12 @@ namespace OutpatientRegistrationSystem
             dtp_recdate.Value = Convert.ToDateTime(chanagenameds.Tables[0].Rows[0]["regDate"]);
             tb_hispass.Text = chanagenameds.Tables[0].Rows[0]["allergyHistory"].ToString();
             tb_operate.Text = chanagenameds.Tables[0].Rows[0]["operationHistory"].ToString();
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            tb_searchId.Text = "";
+            tb_searchPatienNo.Text = "";
         }
     }
 }

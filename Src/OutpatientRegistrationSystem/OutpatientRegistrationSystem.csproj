@@ -78,6 +78,18 @@
     <Compile Include="Frm_appointment.Designer.cs">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_countday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_countday.Designer.cs">
+      <DependentUpon>Frm_countday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_countdept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_countdept.Designer.cs">
+      <DependentUpon>Frm_countdept.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_department.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +198,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_appointment.resx">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_countday.resx">
+      <DependentUpon>Frm_countday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_countdept.resx">
+      <DependentUpon>Frm_countdept.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_department.resx">
       <DependentUpon>Frm_department.cs</DependentUpon>

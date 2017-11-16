@@ -121,6 +121,7 @@ namespace OutpatientRegistrationSystem
         private void 修改ToolStripButton_Click(object sender, EventArgs e)
         {
             this.modifytext();
+            tb_no.Enabled = false;
             savevalue = 2;
         }
 

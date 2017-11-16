@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_doctor));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_title = new System.Windows.Forms.TextBox();
             this.rtb_spec = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.删除ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.修改ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.保存SToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.tb_title = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -74,12 +74,19 @@
             this.groupBox1.Controls.Add(this.tb_no);
             this.groupBox1.Controls.Add(this.tb_name);
             this.groupBox1.Controls.Add(this.cmb_dept);
-            this.groupBox1.Location = new System.Drawing.Point(1, 23);
+            this.groupBox1.Location = new System.Drawing.Point(6, 35);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(541, 274);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "医生信息";
+            // 
+            // tb_title
+            // 
+            this.tb_title.Location = new System.Drawing.Point(92, 68);
+            this.tb_title.Name = "tb_title";
+            this.tb_title.Size = new System.Drawing.Size(120, 28);
+            this.tb_title.TabIndex = 14;
             // 
             // rtb_spec
             // 
@@ -163,7 +170,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 303);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 315);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(541, 400);
@@ -195,7 +202,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(547, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(554, 27);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -306,18 +313,12 @@
             this.保存SToolStripButton.Text = "保存";
             this.保存SToolStripButton.Click += new System.EventHandler(this.保存SToolStripButton_Click);
             // 
-            // tb_title
-            // 
-            this.tb_title.Location = new System.Drawing.Point(92, 68);
-            this.tb_title.Name = "tb_title";
-            this.tb_title.Size = new System.Drawing.Size(120, 28);
-            this.tb_title.TabIndex = 14;
-            // 
             // Frm_doctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 704);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(554, 719);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bindingNavigator1);

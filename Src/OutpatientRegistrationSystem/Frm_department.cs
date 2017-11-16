@@ -57,14 +57,14 @@ namespace OutpatientRegistrationSystem
             savevalue = 1;
         }
 
-        private void 删除ToolStripButton_Click(object sender, EventArgs e)//bug: 外键约束，删除异常
+        private void 删除ToolStripButton_Click(object sender, EventArgs e)
         {
             int rowAffected = 0;
             if (tb_name.Text != "")
             {
                 try
                 {
-                    rowAffected = mysql.getcom("DELETE FROM tb_dept WHERE NAME='" + tb_name + "';");
+                    rowAffected = mysql.getcom("DELETE FROM tb_dept WHERE NAME='" + tb_name.Text.Trim() + "';");
                 }
                 catch (SqlException sqlEx)
                 {
@@ -104,7 +104,7 @@ namespace OutpatientRegistrationSystem
                 {
                     try
                     {
-                        rowAffected = mysql.getcom("INSERT dbo.tb_dept ( NAME,DSCP ) VALUES  ( '" + tb_name.Text.Trim() + "','" + rtb_dscp.Text.Trim() + "' );");
+                        rowAffected = mysql.getcom("INSERT tb_dept ( NAME,DSCP ) VALUES  ( '" + tb_name.Text.Trim() + "','" + rtb_dscp.Text.Trim() + "' );");
                     }
                     catch (SqlException sqlEx)
                     {
@@ -133,7 +133,7 @@ namespace OutpatientRegistrationSystem
                     {
                         try
                         {
-                            rowAffected = mysql.getcom("UPDATE dbo.tb_dept SET NAME='" + tb_name.Text.Trim() + "',dscp='" + rtb_dscp.Text.Trim() + "' WHERE NO=" + Convert.ToInt32(tb_id.Text.Trim()) + ";");
+                            rowAffected = mysql.getcom("UPDATE tb_dept SET NAME='" + tb_name.Text.Trim() + "',dscp='" + rtb_dscp.Text.Trim() + "' WHERE NO=" + Convert.ToInt32(tb_id.Text.Trim()) + ";");
                         }
                         catch (SqlException sqlEx)
                         {
