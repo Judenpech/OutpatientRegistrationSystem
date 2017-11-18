@@ -87,7 +87,7 @@
             // 
             this.cmb_paymentallman.FormattingEnabled = true;
             this.cmb_paymentallman.Location = new System.Drawing.Point(492, 18);
-            this.cmb_paymentallman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_paymentallman.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_paymentallman.Name = "cmb_paymentallman";
             this.cmb_paymentallman.Size = new System.Drawing.Size(180, 26);
             this.cmb_paymentallman.TabIndex = 16;
@@ -116,7 +116,7 @@
             // 
             this.cmb_listfee.FormattingEnabled = true;
             this.cmb_listfee.Location = new System.Drawing.Point(471, 410);
-            this.cmb_listfee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_listfee.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_listfee.Name = "cmb_listfee";
             this.cmb_listfee.Size = new System.Drawing.Size(180, 26);
             this.cmb_listfee.TabIndex = 13;
@@ -140,9 +140,9 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(6, 9);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(314, 648);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
@@ -151,7 +151,7 @@
             // txt_regno
             // 
             this.txt_regno.Location = new System.Drawing.Point(111, 42);
-            this.txt_regno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_regno.Margin = new System.Windows.Forms.Padding(4);
             this.txt_regno.Name = "txt_regno";
             this.txt_regno.Size = new System.Drawing.Size(148, 28);
             this.txt_regno.TabIndex = 21;
@@ -171,7 +171,7 @@
             this.dtp_paydate.CustomFormat = "yyyy-MM-dd";
             this.dtp_paydate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_paydate.Location = new System.Drawing.Point(111, 590);
-            this.dtp_paydate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_paydate.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_paydate.Name = "dtp_paydate";
             this.dtp_paydate.Size = new System.Drawing.Size(148, 28);
             this.dtp_paydate.TabIndex = 19;
@@ -179,7 +179,7 @@
             // txt_discipline
             // 
             this.txt_discipline.Location = new System.Drawing.Point(111, 309);
-            this.txt_discipline.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_discipline.Margin = new System.Windows.Forms.Padding(4);
             this.txt_discipline.Name = "txt_discipline";
             this.txt_discipline.Size = new System.Drawing.Size(148, 28);
             this.txt_discipline.TabIndex = 18;
@@ -187,7 +187,7 @@
             // txt_paydoctor
             // 
             this.txt_paydoctor.Location = new System.Drawing.Point(111, 256);
-            this.txt_paydoctor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_paydoctor.Margin = new System.Windows.Forms.Padding(4);
             this.txt_paydoctor.Name = "txt_paydoctor";
             this.txt_paydoctor.Size = new System.Drawing.Size(148, 28);
             this.txt_paydoctor.TabIndex = 17;
@@ -195,7 +195,7 @@
             // txt_cardname
             // 
             this.txt_cardname.Location = new System.Drawing.Point(111, 362);
-            this.txt_cardname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_cardname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cardname.Name = "txt_cardname";
             this.txt_cardname.Size = new System.Drawing.Size(148, 28);
             this.txt_cardname.TabIndex = 16;
@@ -203,7 +203,7 @@
             // txt_patientname
             // 
             this.txt_patientname.Location = new System.Drawing.Point(111, 150);
-            this.txt_patientname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_patientname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_patientname.Name = "txt_patientname";
             this.txt_patientname.Size = new System.Drawing.Size(148, 28);
             this.txt_patientname.TabIndex = 12;
@@ -211,7 +211,7 @@
             // txt_patientno
             // 
             this.txt_patientno.Location = new System.Drawing.Point(111, 96);
-            this.txt_patientno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_patientno.Margin = new System.Windows.Forms.Padding(4);
             this.txt_patientno.Name = "txt_patientno";
             this.txt_patientno.Size = new System.Drawing.Size(148, 28);
             this.txt_patientno.TabIndex = 11;
@@ -219,7 +219,7 @@
             // txt_payno
             // 
             this.txt_payno.Location = new System.Drawing.Point(111, 202);
-            this.txt_payno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_payno.Margin = new System.Windows.Forms.Padding(4);
             this.txt_payno.Name = "txt_payno";
             this.txt_payno.Size = new System.Drawing.Size(148, 28);
             this.txt_payno.TabIndex = 10;
@@ -320,9 +320,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(6, 666);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1208, 171);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
@@ -331,7 +331,7 @@
             // btn_chanagemoney
             // 
             this.btn_chanagemoney.Location = new System.Drawing.Point(914, 75);
-            this.btn_chanagemoney.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_chanagemoney.Margin = new System.Windows.Forms.Padding(4);
             this.btn_chanagemoney.Name = "btn_chanagemoney";
             this.btn_chanagemoney.Size = new System.Drawing.Size(112, 34);
             this.btn_chanagemoney.TabIndex = 22;
@@ -341,7 +341,7 @@
             // txt_diafee
             // 
             this.txt_diafee.Location = new System.Drawing.Point(999, 28);
-            this.txt_diafee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_diafee.Margin = new System.Windows.Forms.Padding(4);
             this.txt_diafee.Name = "txt_diafee";
             this.txt_diafee.Size = new System.Drawing.Size(148, 28);
             this.txt_diafee.TabIndex = 21;
@@ -359,7 +359,7 @@
             // nup_nowpaymoney
             // 
             this.nup_nowpaymoney.Location = new System.Drawing.Point(716, 126);
-            this.nup_nowpaymoney.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nup_nowpaymoney.Margin = new System.Windows.Forms.Padding(4);
             this.nup_nowpaymoney.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -373,7 +373,7 @@
             // 
             this.cmb_paytype.FormattingEnabled = true;
             this.cmb_paytype.Location = new System.Drawing.Point(447, 126);
-            this.cmb_paytype.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_paytype.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_paytype.Name = "cmb_paytype";
             this.cmb_paytype.Size = new System.Drawing.Size(148, 26);
             this.cmb_paytype.TabIndex = 18;
@@ -381,7 +381,7 @@
             // txt_regfee
             // 
             this.txt_regfee.Location = new System.Drawing.Point(716, 78);
-            this.txt_regfee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_regfee.Margin = new System.Windows.Forms.Padding(4);
             this.txt_regfee.Name = "txt_regfee";
             this.txt_regfee.Size = new System.Drawing.Size(148, 28);
             this.txt_regfee.TabIndex = 17;
@@ -389,7 +389,7 @@
             // btn_payprint
             // 
             this.btn_payprint.Location = new System.Drawing.Point(914, 123);
-            this.btn_payprint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_payprint.Margin = new System.Windows.Forms.Padding(4);
             this.btn_payprint.Name = "btn_payprint";
             this.btn_payprint.Size = new System.Drawing.Size(112, 34);
             this.btn_payprint.TabIndex = 16;
@@ -399,7 +399,7 @@
             // btn_pay
             // 
             this.btn_pay.Location = new System.Drawing.Point(1065, 75);
-            this.btn_pay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_pay.Margin = new System.Windows.Forms.Padding(4);
             this.btn_pay.Name = "btn_pay";
             this.btn_pay.Size = new System.Drawing.Size(112, 31);
             this.btn_pay.TabIndex = 15;
@@ -409,7 +409,7 @@
             // txt_total
             // 
             this.txt_total.Location = new System.Drawing.Point(129, 129);
-            this.txt_total.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_total.Margin = new System.Windows.Forms.Padding(4);
             this.txt_total.Name = "txt_total";
             this.txt_total.Size = new System.Drawing.Size(175, 28);
             this.txt_total.TabIndex = 14;
@@ -417,7 +417,7 @@
             // txt_limit
             // 
             this.txt_limit.Location = new System.Drawing.Point(447, 78);
-            this.txt_limit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_limit.Margin = new System.Windows.Forms.Padding(4);
             this.txt_limit.Name = "txt_limit";
             this.txt_limit.Size = new System.Drawing.Size(148, 28);
             this.txt_limit.TabIndex = 13;
@@ -425,7 +425,7 @@
             // txt_paytreatfee
             // 
             this.txt_paytreatfee.Location = new System.Drawing.Point(716, 27);
-            this.txt_paytreatfee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_paytreatfee.Margin = new System.Windows.Forms.Padding(4);
             this.txt_paytreatfee.Name = "txt_paytreatfee";
             this.txt_paytreatfee.Size = new System.Drawing.Size(148, 28);
             this.txt_paytreatfee.TabIndex = 12;
@@ -433,7 +433,7 @@
             // txt_paycheckfee
             // 
             this.txt_paycheckfee.Location = new System.Drawing.Point(447, 27);
-            this.txt_paycheckfee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_paycheckfee.Margin = new System.Windows.Forms.Padding(4);
             this.txt_paycheckfee.Name = "txt_paycheckfee";
             this.txt_paycheckfee.Size = new System.Drawing.Size(148, 28);
             this.txt_paycheckfee.TabIndex = 11;
@@ -441,7 +441,7 @@
             // txt_balance
             // 
             this.txt_balance.Location = new System.Drawing.Point(129, 78);
-            this.txt_balance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_balance.Margin = new System.Windows.Forms.Padding(4);
             this.txt_balance.Name = "txt_balance";
             this.txt_balance.Size = new System.Drawing.Size(175, 28);
             this.txt_balance.TabIndex = 10;
@@ -449,7 +449,7 @@
             // txt_medcipayfee
             // 
             this.txt_medcipayfee.Location = new System.Drawing.Point(129, 27);
-            this.txt_medcipayfee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_medcipayfee.Margin = new System.Windows.Forms.Padding(4);
             this.txt_medcipayfee.Name = "txt_medcipayfee";
             this.txt_medcipayfee.Size = new System.Drawing.Size(175, 28);
             this.txt_medcipayfee.TabIndex = 9;
@@ -549,7 +549,7 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(330, 448);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 23;
@@ -561,7 +561,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(330, 57);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
@@ -572,6 +572,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1220, 846);
             this.Controls.Add(this.cmb_paymentallman);
             this.Controls.Add(this.label21);
@@ -582,7 +583,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_payment";
             this.Text = "前台缴费";
             this.groupBox2.ResumeLayout(false);

@@ -124,6 +124,7 @@
             // 
             // cmb_docname
             // 
+            this.cmb_docname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_docname.FormattingEnabled = true;
             this.cmb_docname.Location = new System.Drawing.Point(428, 26);
             this.cmb_docname.Margin = new System.Windows.Forms.Padding(4);
@@ -145,11 +146,12 @@
             // 
             // cmb_dept
             // 
+            this.cmb_dept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_dept.FormattingEnabled = true;
             this.cmb_dept.Location = new System.Drawing.Point(120, 26);
             this.cmb_dept.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_dept.Name = "cmb_dept";
-            this.cmb_dept.Size = new System.Drawing.Size(180, 26);
+            this.cmb_dept.Size = new System.Drawing.Size(184, 26);
             this.cmb_dept.TabIndex = 10;
             // 
             // dtp_regDate
@@ -215,7 +217,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 31);
+            this.label5.Location = new System.Drawing.Point(7, 32);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 18);

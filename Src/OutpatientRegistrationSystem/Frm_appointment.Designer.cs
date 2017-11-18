@@ -68,6 +68,7 @@
             // 
             // cmb_docname
             // 
+            this.cmb_docname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_docname.FormattingEnabled = true;
             this.cmb_docname.Location = new System.Drawing.Point(426, 30);
             this.cmb_docname.Margin = new System.Windows.Forms.Padding(4);
@@ -89,6 +90,7 @@
             // 
             // cmb_dept
             // 
+            this.cmb_dept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_dept.FormattingEnabled = true;
             this.cmb_dept.ItemHeight = 18;
             this.cmb_dept.Location = new System.Drawing.Point(118, 32);

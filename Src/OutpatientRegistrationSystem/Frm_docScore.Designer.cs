@@ -120,6 +120,8 @@
             // 
             // dtp_date
             // 
+            this.dtp_date.CustomFormat = "yyyy-MM-dd";
+            this.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_date.Location = new System.Drawing.Point(436, 92);
             this.dtp_date.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_date.Name = "dtp_date";

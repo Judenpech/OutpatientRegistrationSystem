@@ -19,10 +19,10 @@ namespace OutpatientRegistrationSystem
 
         private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("您确定要退出系统吗?", "退出确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("您确定要注销登录吗?", "退出确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-                Application.Exit();
+                Application.Restart();
             }
         }
 
@@ -34,7 +34,6 @@ namespace OutpatientRegistrationSystem
             tr.Nodes.Add("", "患者预约", 0, 1);
             tr.Nodes.Add("", "前台缴费", 0, 1);
             tr.Nodes.Add("", "欠费催款", 0, 1);
-            tr.Nodes.Add("", "评价管理", 0, 1);
 
             TreeNode tr1 = new TreeNode("查询服务", 0, 1);
             tr1.Nodes.Add("", "科室查询", 0, 1);
@@ -48,6 +47,7 @@ namespace OutpatientRegistrationSystem
             tr3.Nodes.Add("", "挂号设置", 0, 1);
             tr3.Nodes.Add("", "科室管理", 0, 1);
             tr3.Nodes.Add("", "医生管理", 0, 1);
+            tr3.Nodes.Add("", "评价管理", 0, 1);
             tr3.Nodes.Add("", "操作员设置", 0, 1);
 
             treeView1.Nodes.Add(tr);
@@ -69,8 +69,8 @@ namespace OutpatientRegistrationSystem
             }
 
             toolStripStatusLabel_operater.Text = "【操作员】" + userHelper.operatorNo+"（"+userHelper.operatorName+"）";
-            toolStripStatusLabel_loginTime.Text = "【登录时间】" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm:ss");
-            toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
+            toolStripStatusLabel_loginTime.Text = "【登录时间】" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
+            toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("HH:mm");
             this.timer1.Interval = 1000;
             this.timer1.Start();
         }
@@ -228,7 +228,7 @@ namespace OutpatientRegistrationSystem
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("yyyy年MM月dd日 hh:mm");
+            this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("HH:mm");
         }
 
         private void 锁定toolStripMenuItem_Click(object sender, EventArgs e)

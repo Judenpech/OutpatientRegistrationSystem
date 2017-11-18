@@ -64,30 +64,31 @@
             // 
             this.toolStripStatusLabel_operater.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.toolStripStatusLabel_operater.Name = "toolStripStatusLabel_operater";
-            this.toolStripStatusLabel_operater.Size = new System.Drawing.Size(199, 28);
-            this.toolStripStatusLabel_operater.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel_operater.Size = new System.Drawing.Size(68, 28);
+            this.toolStripStatusLabel_operater.Text = "操作员";
             // 
             // toolStripStatusLabel_zhanwei
             // 
             this.toolStripStatusLabel_zhanwei.Name = "toolStripStatusLabel_zhanwei";
-            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(556, 28);
+            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(877, 28);
             this.toolStripStatusLabel_zhanwei.Spring = true;
             // 
             // toolStripStatusLabel_loginTime
             // 
             this.toolStripStatusLabel_loginTime.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.toolStripStatusLabel_loginTime.Name = "toolStripStatusLabel_loginTime";
-            this.toolStripStatusLabel_loginTime.Size = new System.Drawing.Size(199, 28);
-            this.toolStripStatusLabel_loginTime.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel_loginTime.Size = new System.Drawing.Size(86, 28);
+            this.toolStripStatusLabel_loginTime.Text = "登录时间";
             // 
             // toolStripStatusLabel_curTime
             // 
             this.toolStripStatusLabel_curTime.Name = "toolStripStatusLabel_curTime";
-            this.toolStripStatusLabel_curTime.Size = new System.Drawing.Size(195, 28);
-            this.toolStripStatusLabel_curTime.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel_curTime.Size = new System.Drawing.Size(118, 28);
+            this.toolStripStatusLabel_curTime.Text = "系统当前时间";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.退出ToolStripMenuItem,
@@ -104,7 +105,7 @@
             this.退出ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出ToolStripMenuItem.Image")));
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
             this.退出ToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
-            this.退出ToolStripMenuItem.Text = "退出";
+            this.退出ToolStripMenuItem.Text = "注销";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
             // 锁定toolStripMenuItem
@@ -130,6 +131,8 @@
             // 
             // treeView1
             // 
+            this.treeView1.BackColor = System.Drawing.Color.White;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeView1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.treeView1.ImageIndex = 0;
@@ -157,6 +160,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1164, 857);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.statusStrip1);

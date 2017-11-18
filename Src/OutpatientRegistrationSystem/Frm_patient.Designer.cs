@@ -131,7 +131,7 @@
             this.btn_appointment.Location = new System.Drawing.Point(226, 75);
             this.btn_appointment.Margin = new System.Windows.Forms.Padding(4);
             this.btn_appointment.Name = "btn_appointment";
-            this.btn_appointment.Size = new System.Drawing.Size(112, 39);
+            this.btn_appointment.Size = new System.Drawing.Size(112, 40);
             this.btn_appointment.TabIndex = 2;
             this.btn_appointment.Text = "病人预约";
             this.btn_appointment.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             this.btn_modifypatient.Location = new System.Drawing.Point(63, 75);
             this.btn_modifypatient.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modifypatient.Name = "btn_modifypatient";
-            this.btn_modifypatient.Size = new System.Drawing.Size(106, 40);
+            this.btn_modifypatient.Size = new System.Drawing.Size(112, 40);
             this.btn_modifypatient.TabIndex = 1;
             this.btn_modifypatient.Text = "修改病人";
             this.btn_modifypatient.UseVisualStyleBackColor = true;
@@ -150,10 +150,10 @@
             // 
             // btn_addpatient
             // 
-            this.btn_addpatient.Location = new System.Drawing.Point(62, 27);
+            this.btn_addpatient.Location = new System.Drawing.Point(63, 27);
             this.btn_addpatient.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addpatient.Name = "btn_addpatient";
-            this.btn_addpatient.Size = new System.Drawing.Size(106, 40);
+            this.btn_addpatient.Size = new System.Drawing.Size(112, 40);
             this.btn_addpatient.TabIndex = 0;
             this.btn_addpatient.Text = "添加病人";
             this.btn_addpatient.UseVisualStyleBackColor = true;
@@ -671,7 +671,7 @@
             this.groupBox4.Size = new System.Drawing.Size(1018, 159);
             this.groupBox4.TabIndex = 105;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "搜索已有病人信息";
+            this.groupBox4.Text = "搜索已有患者信息";
             // 
             // btn_clear
             // 
@@ -679,7 +679,7 @@
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(113, 34);
             this.btn_clear.TabIndex = 106;
-            this.btn_clear.Text = "清空";
+            this.btn_clear.Text = "重置";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 

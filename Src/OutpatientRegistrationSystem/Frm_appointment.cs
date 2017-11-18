@@ -91,6 +91,7 @@ namespace OutpatientRegistrationSystem
             }
             this.cmb_regname.SelectedIndex = 0;
             this.cmb_regfee.SelectedIndex = 0;
+            this.cmb_regfee.Enabled = false;
 
             //添加卡类型
             cmb_cardtype.Items.Add("就诊卡");
@@ -182,16 +183,17 @@ namespace OutpatientRegistrationSystem
                 }
             }
         }
-        private void gridviewinit()//bug：预约时间显示
+        private void gridviewinit()
         {
-            DataSet view1ds = mysql.getds("SELECT r.NO 预约号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 预约科室,d2.NAME 预约医生, r.regDate 预约日期,r.regTime 预约时间 "
-                +"FROM dbo.tb_registration r JOIN dbo.tb_patient p ON r.patientNo = p.No,dbo.tb_dept d1 JOIN dbo.tb_doctor d2 ON d1.NO = d2.deptNo WHERE r.patientNo=p.No AND r.docNo=d2.No "
+            DataSet view1ds = mysql.getds("SELECT r.NO 预约号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 预约科室,d2.NAME 预约医生, r.regDate 预约日期,CONVERT(VARCHAR(5),r.regTime,114) 预约时间 "
+                +"FROM tb_registration r JOIN tb_patient p ON r.patientNo = p.No,tb_dept d1 JOIN tb_doctor d2 ON d1.NO = d2.deptNo WHERE r.patientNo=p.No AND r.docNo=d2.No "
                 +"AND r.done=0 ORDER BY r.NO,r.regDate,r.regTime;", "registration");
             this.dataGridView1.DataSource = view1ds.Tables[0];
         }
 
         private void cmb_docname_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmb_dept.Enabled = false;
             SqlConnection conn = mysql.getcon();
             SqlCommand comm = conn.CreateCommand();
             comm.CommandText = "SELECT d1.name FROM tb_dept d1,tb_doctor d2 WHERE d2.NAME='" + cmb_docname.SelectedItem.ToString() + "' AND d2.deptNo=d1.NO;";

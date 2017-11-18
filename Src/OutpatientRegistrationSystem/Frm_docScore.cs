@@ -14,7 +14,7 @@ namespace OutpatientRegistrationSystem
     {
         sqlHelper mysql = new sqlHelper();
         private string sqlstr = "SELECT d.id 编号,p.Name 病人姓名,d1.NAME 医生,d.comments 评价内容,d.score 等级,d.comDate 评价日期 "
-            + "FROM tb_docScore d JOIN dbo.tb_patient p ON p.No=d.patientNo JOIN dbo.tb_doctor d1 ON d.docNo=d1.No ORDER BY d.id;";
+            + "FROM tb_docScore d JOIN tb_patient p ON p.No=d.patientNo JOIN tb_doctor d1 ON d.docNo=d1.No ORDER BY d.id;";
         private string mytable = "docScore";
         BindingSource mybdsource = new BindingSource();
 
@@ -49,11 +49,11 @@ namespace OutpatientRegistrationSystem
             this.bindingNavigator1.BindingSource = mybdsource;
         }
 
-        private void Frm_docScore_Load(object sender, EventArgs e) //bug：事件未触发
+        private void Frm_docScore_Load(object sender, EventArgs e)
         {
             this.init();
 
-            tb_id.DataBindings.Add("value", mybdsource, "编号");
+            tb_id.DataBindings.Add("text", mybdsource, "编号");
             tb_comment.DataBindings.Add("text", mybdsource, "评价内容");
             tb_patient.DataBindings.Add("text", mybdsource, "病人姓名");
             cmb_score.DataBindings.Add("text", mybdsource, "等级");
@@ -73,14 +73,14 @@ namespace OutpatientRegistrationSystem
             this.setFalse();
         }
 
-        private void 删除ToolStripButton_Click(object sender, EventArgs e)
+        private void 删除ToolStripButton_Click(object sender, EventArgs e)//bug
         {
             int rowAffected = 0;
             if (tb_patient.Text != "")
             {
                 try
                 {
-                    rowAffected = mysql.getcom("DELETE tb_docScore WHERE id=" + Convert.ToInt32(tb_id.Text.Trim()) + ";");
+                    rowAffected = mysql.getcom("DELETE tb_docScore WHERE id='" + tb_id.Text.Trim() + "';");
                 }
                 catch (SqlException sqlEx)
                 {
@@ -106,9 +106,11 @@ namespace OutpatientRegistrationSystem
         private void 修改ToolStripButton_Click(object sender, EventArgs e)
         {
             this.setTrue();
+            tb_patient.Enabled = false;
+            cmb_doc.Enabled = false;
         }
 
-        private void 保存ToolStripButton_Click(object sender, EventArgs e)
+        private void 保存ToolStripButton_Click(object sender, EventArgs e)//bug
         {
             int rowAffected = 0;
             tb_patient.Enabled = false;
@@ -117,8 +119,8 @@ namespace OutpatientRegistrationSystem
             {
                 try
                 {
-                    rowAffected = mysql.getcom("UPDATE tb_docScore SET comments='"+tb_comment.Text.Trim()+"',score='"+cmb_score.SelectedItem.ToString()
-                        +"',comDate='"+dtp_date.Value.ToShortDateString()+"' WHERE id="+Convert.ToInt32(tb_id.Text.Trim())+";");
+                    rowAffected = mysql.getcom("UPDATE tb_docScore SET comments='" + tb_comment.Text.Trim() + "',score='" + cmb_score.SelectedItem.ToString()
+                        + "',comDate='" + dtp_date.Value.ToShortDateString() + "' WHERE id= '" + tb_id.Text.Trim() + "';");
                 }
                 catch (SqlException sqlEx)
                 {
