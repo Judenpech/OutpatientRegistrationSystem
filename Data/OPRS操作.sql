@@ -73,7 +73,7 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 					  '' , -- Name - varchar(25)
 					  0 , -- age - int
 					  NULL , -- sex - bit
-					  '2017-11-13 02:51:47' , -- birthday - date
+					  '2017-11-13' , -- birthday - date
 					  '' , -- nationality - varchar(25)
 					  '' , -- nation - varchar(15)
 					  '' , -- email - char(45)
@@ -85,7 +85,7 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 					  '' , -- firstManTel2 - char(15)
 					  '' , -- id - char(18)
 					  '' , -- visitNo - char(15)
-					  '2017-11-13 02:51:47' , -- regDate - date
+					  '2017-11-13' , -- regDate - date
 					  '' , -- allergyHistory - varchar(255)
 					  ''  -- operationHistory - varchar(255)
 					)
@@ -95,7 +95,7 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 				SET Name='123',
 					age=0,
 					sex=0,
-					birthday='2017-11-11 14:50:07',
+					birthday='2017-11-11',
 					nationality='',
 					nation='',
 					email='',
@@ -107,7 +107,7 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 					firstManTel2='',
 					id='',
 					visitNo='',
-					regDate='2017-11-11 14:50:07',
+					regDate='2017-11-11',
 					allergyHistory='',
 					operationHistory=''
 				WHERE No='20171112104748';
@@ -171,14 +171,14 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 						  regTime ,
 						  operater
 						)
-				SELECT '20171112102319',d2.NO,d1.No,'2017-11-12 02:23:19','2017-11-12 02:23:19','3150707012'
+				SELECT '20171112102319',d2.NO,d1.No,'2017-11-12','02:23:19','3150707012'
 				FROM 
 					dbo.tb_doctor d1 
 					JOIN dbo.tb_dept d2 ON d1.deptNo = d2.NO 
 				WHERE d1.NAME='邹良能' AND d2.NAME='内科';
 
 				--患者预约--显示预约;
-				SELECT r.NO 预约号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 预约科室,d2.NAME 预约医生, r.regDate 预约日期,r.regTime 预约时间
+				SELECT r.NO 预约号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 预约科室,d2.NAME 预约医生, r.regDate 预约日期,CONVERT(VARCHAR(5),r.regTime,114) 预约时间
 				FROM dbo.tb_registration r
 					 JOIN dbo.tb_patient p ON r.patientNo = p.No
 					 ,dbo.tb_dept d1 
@@ -275,5 +275,21 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			--评价管理--修改评价信息；
 			UPDATE dbo.tb_docScore
 			SET comments='修改评价',score='好',comDate='2017-11-16'
-			WHERE id=1;
+			WHERE id='1';
+			
+			
+			
+--医生查询；
+--医生查询--查询所有医生姓名；
+SELECT NAME
+FROM dbo.tb_doctor;
 
+--医生查询--查询所有科室名称；
+SELECT NAME
+FROM dbo.tb_dept;
+
+--医生查询--查询指定姓名的医生信息；
+SELECT d1.No no,d1.NAME name ,d1.title title,d2.NAME dept,d1.specialty specialty
+FROM dbo.tb_doctor d1 JOIN dbo.tb_dept d2 ON d1.deptNo=d2.NO
+WHERE d1.NAME='邹良能' AND d1.deptNo=d2.NO;
+ 

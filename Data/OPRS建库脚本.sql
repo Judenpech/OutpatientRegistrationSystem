@@ -120,7 +120,7 @@ VALUES  ( '20171112102319' , -- No - char(15)
 		  '张三' , -- Name - varchar(25)
 		  20 , -- age - int
 		  0 , -- sex - bit
-		  '1997-11-12 02:23:19' , -- birthday - date
+		  '1997-11-12' , -- birthday - date
 		  '中国' , -- nationality - varchar(25)
 		  '汉' , -- nation - varchar(15)
 		  'asd@f.com' , -- email - char(45)
@@ -132,14 +132,14 @@ VALUES  ( '20171112102319' , -- No - char(15)
 		  '18297346592' , -- firstManTel2 - char(15)
 		  '365745199711126376' , -- id - char(18)
 		  '20171112001' , -- visitId - char(15)
-		  '2017-11-12 02:23:19' , -- regDate - date
+		  '2017-11-12' , -- regDate - date
 		  '无' , -- allergyHistory - varchar(255)
 		  '无'),  -- operationHistory - varchar(255)
 		  ( '20171116104903' , -- No - char(15)
 		  '李四' , -- Name - varchar(25)
 		  21 , -- age - int
 		  1 , -- sex - bit
-		  '1996-11-12 02:23:19' , -- birthday - date
+		  '1996-11-12' , -- birthday - date
 		  '中国' , -- nationality - varchar(25)
 		  '汉' , -- nation - varchar(15)
 		  'qwe@r.com' , -- email - char(45)
@@ -151,7 +151,7 @@ VALUES  ( '20171112102319' , -- No - char(15)
 		  '18215234675' , -- firstManTel2 - char(15)
 		  '432312199611124323' , -- id - char(18)
 		  '20171116001' , -- visitId - char(15)
-		  '2017-11-16 02:23:19' , -- regDate - date
+		  '2017-11-16' , -- regDate - date
 		  '芒果过敏' , -- allergyHistory - varchar(255)
 		  '无')  -- operationHistory - varchar(255))
         
@@ -172,9 +172,9 @@ CREATE TABLE tb_visit
     ,coMoney
         money
     ,enTime
-        date
+        DATETIME
     ,coTime
-        date);
+        DATETIME);
         
 ----科室表；
 CREATE TABLE tb_dept
@@ -282,7 +282,7 @@ CREATE TABLE tb_registration
         date
         NOT NULL
     ,regTime
-        DATE
+        DATETIME
         NOT NULL
     ,done
         BIT
