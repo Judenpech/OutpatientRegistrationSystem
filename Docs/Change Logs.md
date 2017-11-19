@@ -1,5 +1,12 @@
 # Change Logs
 
+#### 2017/11/19
+
+- 实现Frm_docScore窗体"医生查询"功能；
+- 完善Frm_payment窗体“前台缴费”功能；
+- 新增窗体，分别为Frm_mediCardRecharge，Frm_balanceQuery，Frm_printReceipt；
+- 修改OPRS建库脚本，新增“费用记录表”；
+- 完善OPRS操作。
 
 #### 2017/11/18
 
