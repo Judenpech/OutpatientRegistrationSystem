@@ -171,7 +171,7 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 						  regTime ,
 						  operater
 						)
-				SELECT '20171112102319',d2.NO,d1.No,'2017-11-12','02:23:19','3150707012'
+				SELECT '20171112102319',d2.NO,d1.No,'2017-11-12','08:23:19','3150707012'
 				FROM 
 					dbo.tb_doctor d1 
 					JOIN dbo.tb_dept d2 ON d1.deptNo = d2.NO 
@@ -280,16 +280,58 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			
 			
 --医生查询；
---医生查询--查询所有医生姓名；
-SELECT NAME
-FROM dbo.tb_doctor;
+			--医生查询--查询所有医生姓名；
+			SELECT NAME
+			FROM dbo.tb_doctor;
 
---医生查询--查询所有科室名称；
-SELECT NAME
-FROM dbo.tb_dept;
+			--医生查询--查询所有科室名称；
+			SELECT NAME
+			FROM dbo.tb_dept;
 
---医生查询--查询指定姓名的医生信息；
-SELECT d1.No no,d1.NAME name ,d1.title title,d2.NAME dept,d1.specialty specialty
-FROM dbo.tb_doctor d1 JOIN dbo.tb_dept d2 ON d1.deptNo=d2.NO
-WHERE d1.NAME='邹良能' AND d1.deptNo=d2.NO;
+			--医生查询--查询指定姓名的医生信息；
+			SELECT d1.No no,d1.NAME name ,d1.title title,d2.NAME dept,d1.specialty specialty
+			FROM dbo.tb_doctor d1 JOIN dbo.tb_dept d2 ON d1.deptNo=d2.NO
+			WHERE d1.NAME='邹良能' AND d1.deptNo=d2.NO;
+
+			--医生查询--查询指定科室的所有医生信息；
+			SELECT d1.No 医生工号,d1.NAME 姓名 ,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长
+			FROM dbo.tb_doctor d1 JOIN dbo.tb_dept d2 ON d1.deptNo=d2.NO
+			WHERE d1.title='内科' AND d1.deptNo=d2.NO;
+
+			--医生查询--查询指定职称的所有医生信息；
+			SELECT d1.No 医生工号,d1.NAME 姓名 ,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长
+			FROM dbo.tb_doctor d1 JOIN dbo.tb_dept d2 ON d1.deptNo=d2.NO
+			WHERE d1.title='主任医师' AND d1.deptNo=d2.NO;
+
+			--医生查询--根据工号查询医生信息；
+			SELECT d1.No 医生工号,d1.NAME 姓名 ,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长
+			FROM dbo.tb_doctor d1 JOIN dbo.tb_dept d2 ON d1.deptNo=d2.NO
+			WHERE d1.No='0001' AND d1.deptNo=d2.NO;
+
+
+
+--前台缴费；
+--前台缴费--查询当日未交费病人；
+SELECT e.ticketNo 票号,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
+FROM dbo.tb_expensesRecord e 
+	JOIN dbo.tb_patient p ON e.patientNo=p.No
+	JOIN dbo.tb_doctor d ON e.docNo=d.No 
+	JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO
+	JOIN dbo.tb_registration r ON e.regNo=r.NO
+WHERE e.havePaid IS NULL AND r.regDate='2017-11-12';
+
+--前台缴费--查询所有未交费病人；
+SELECT e.ticketNo 票号,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
+FROM dbo.tb_expensesRecord e 
+	JOIN dbo.tb_patient p ON e.patientNo=p.No
+	JOIN dbo.tb_doctor d ON e.docNo=d.No 
+	JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO
+	JOIN dbo.tb_registration r ON e.regNo=r.NO
+WHERE e.havePaid IS NULL;
+
+--前台缴费--根据票号查询费用记录信息；
+SELECT e.medicineFee 药品费,e.examFee 检验费,e.checkFee 检查费,e.diagFee 诊疗费,e.regFee 挂号费
+FROM dbo.tb_expensesRecord e 
+WHERE e.ticketNo='020171119001';
+
  

@@ -150,32 +150,118 @@ VALUES  ( '20171112102319' , -- No - char(15)
 		  '李二' , -- firstMan2 - varchar(25)
 		  '18215234675' , -- firstManTel2 - char(15)
 		  '432312199611124323' , -- id - char(18)
-		  '20171116001' , -- visitId - char(15)
+		  NULL , -- visitId - char(15)
 		  '2017-11-16' , -- regDate - date
 		  '芒果过敏' , -- allergyHistory - varchar(255)
 		  '无')  -- operationHistory - varchar(255))
         
-----就诊表；
-CREATE TABLE tb_visit
+----就诊/医疗卡表；
+CREATE TABLE tb_card
     (patientNo
         CHAR(15)
         PRIMARY KEY
-        FOREIGN KEY REFERENCES tb_patient(No)
     ,cardType  -- 0(就诊卡)，1(社保卡)
         BIT
         NOT NULL
+    ,id
+		CHAR(18)
+	,visitNo
+		CHAR(15)
+    ,creditLimit
+		money
     ,balance
         money
-        DEFAULT '0.00'
-    ,enMoney
-        money
-    ,coMoney
-        money
-    ,enTime
-        DATETIME
-    ,coTime
-        DATETIME);
+        DEFAULT '0.00');
         
+----就诊/医疗卡表--插入就诊/医疗卡数据；
+INSERT dbo.tb_card
+        ( patientNo ,
+          cardType ,
+          id ,
+          visitNo ,
+          creditLimit ,
+          balance
+        )
+VALUES  ( '20171112102319' , -- patientNo - char(15)
+          0 , -- cardType - bit
+          NULL , -- id - char(18)
+          '20171112001' , -- visitNo - char(15)
+          100 , -- creditLimit - money
+          300  -- balance - money
+        ),
+        ( '20171116104903' , -- patientNo - char(15)
+          0 , -- cardType - bit
+          '432312199611124323' , -- id - char(18)
+          NULL , -- visitNo - char(15)
+          50 , -- creditLimit - money
+          200  -- balance - money
+        );    
+            
+----费用记录表；
+ CREATE TABLE tb_expensesRecord
+	(ticketNo
+		CHAR(15)
+		PRIMARY KEY
+	,mediRecordNo
+		CHAR(15)
+	,patientNo
+		CHAR(15)
+	,id
+		CHAR(18)
+	,visitNo
+		CHAR(15)
+	,regNo
+		int
+	,docNo
+		varchar(10)
+	,medicineFee
+		money
+	,examFee
+		money
+	,checkFee 
+		money
+	,diagFee
+		money
+	,regFee
+		money
+	,total
+		money
+	,havePaid
+		money
+	,payDate
+		datetime);     
+----费用记录表--插入费用记录数据；
+INSERT dbo.tb_expensesRecord
+        ( ticketNo ,
+          mediRecordNo ,
+          patientNo ,
+          id ,
+          visitNo ,
+          regNo ,
+          docNo ,
+          medicineFee ,
+          examFee ,
+          checkFee ,
+          diagFee ,
+          regFee ,
+          havePaid ,
+          payDate
+        )
+VALUES  ( '020171119001' , -- ticketNo - char(10)
+          '120171119001' , -- mediRecordNo - char(15)
+          '20171112102319' , -- patientNo - char(15)
+          NULL , -- id - char(18)
+          '20171112001' , -- visitNo - char(15)
+          1 , -- regNo - int
+          '0001' , -- docNo - varchar(10)
+          45.5 , -- medicineFee - money
+          140 , -- examFee - money
+          12 , -- checkFee - money
+          36 , -- diagFee - money
+          28 , -- regFee - money
+          NULL , -- havePaid - money
+          NULL  -- payDate - datetime
+        ) 
 ----科室表；
 CREATE TABLE tb_dept
     (NO
@@ -345,7 +431,7 @@ VALUES  ( '20171112102319' , -- patientNo - char(15)
           '好' , -- score - varchar(10)
           '无' , -- comments - varchar(455)
           '2017-11-16 06:40:12'  -- comDate - date
-        )               
+        );               
        
 ----发票表；
 CREATE TABLE tb_receipt
