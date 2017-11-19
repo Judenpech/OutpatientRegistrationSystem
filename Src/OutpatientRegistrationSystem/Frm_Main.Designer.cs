@@ -53,10 +53,10 @@
             this.toolStripStatusLabel_zhanwei,
             this.toolStripStatusLabel_loginTime,
             this.toolStripStatusLabel_curTime});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 824);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 545);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1164, 33);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(776, 26);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -64,26 +64,26 @@
             // 
             this.toolStripStatusLabel_operater.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.toolStripStatusLabel_operater.Name = "toolStripStatusLabel_operater";
-            this.toolStripStatusLabel_operater.Size = new System.Drawing.Size(68, 28);
+            this.toolStripStatusLabel_operater.Size = new System.Drawing.Size(48, 21);
             this.toolStripStatusLabel_operater.Text = "操作员";
             // 
             // toolStripStatusLabel_zhanwei
             // 
             this.toolStripStatusLabel_zhanwei.Name = "toolStripStatusLabel_zhanwei";
-            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(877, 28);
+            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(578, 21);
             this.toolStripStatusLabel_zhanwei.Spring = true;
             // 
             // toolStripStatusLabel_loginTime
             // 
             this.toolStripStatusLabel_loginTime.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.toolStripStatusLabel_loginTime.Name = "toolStripStatusLabel_loginTime";
-            this.toolStripStatusLabel_loginTime.Size = new System.Drawing.Size(86, 28);
+            this.toolStripStatusLabel_loginTime.Size = new System.Drawing.Size(60, 21);
             this.toolStripStatusLabel_loginTime.Text = "登录时间";
             // 
             // toolStripStatusLabel_curTime
             // 
             this.toolStripStatusLabel_curTime.Name = "toolStripStatusLabel_curTime";
-            this.toolStripStatusLabel_curTime.Size = new System.Drawing.Size(118, 28);
+            this.toolStripStatusLabel_curTime.Size = new System.Drawing.Size(80, 21);
             this.toolStripStatusLabel_curTime.Text = "系统当前时间";
             // 
             // menuStrip1
@@ -96,7 +96,8 @@
             this.关于我们toolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1164, 36);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(776, 26);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,7 +105,7 @@
             // 
             this.退出ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出ToolStripMenuItem.Image")));
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.退出ToolStripMenuItem.Text = "注销";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
@@ -112,7 +113,7 @@
             // 
             this.锁定toolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("锁定toolStripMenuItem.Image")));
             this.锁定toolStripMenuItem.Name = "锁定toolStripMenuItem";
-            this.锁定toolStripMenuItem.Size = new System.Drawing.Size(82, 32);
+            this.锁定toolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.锁定toolStripMenuItem.Text = "锁定";
             this.锁定toolStripMenuItem.Click += new System.EventHandler(this.锁定toolStripMenuItem_Click);
             // 
@@ -120,7 +121,7 @@
             // 
             this.关于我们toolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("关于我们toolStripMenuItem.Image")));
             this.关于我们toolStripMenuItem.Name = "关于我们toolStripMenuItem";
-            this.关于我们toolStripMenuItem.Size = new System.Drawing.Size(124, 32);
+            this.关于我们toolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.关于我们toolStripMenuItem.Text = "关于我们";
             this.关于我们toolStripMenuItem.Click += new System.EventHandler(this.关于我们toolStripMenuItem_Click);
             // 
@@ -138,11 +139,11 @@
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.ItemHeight = 30;
-            this.treeView1.Location = new System.Drawing.Point(0, 36);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.treeView1.Location = new System.Drawing.Point(0, 26);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(225, 788);
+            this.treeView1.Size = new System.Drawing.Size(151, 519);
             this.treeView1.TabIndex = 2;
             // 
             // imageList1
@@ -158,12 +159,12 @@
             // 
             // Frm_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1164, 857);
+            this.ClientSize = new System.Drawing.Size(776, 571);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -171,7 +172,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "门诊预约挂号系统 -【主页】";

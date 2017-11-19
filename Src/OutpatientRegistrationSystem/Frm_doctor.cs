@@ -77,7 +77,7 @@ namespace OutpatientRegistrationSystem
             {
                 try
                 {
-                    rowAffected = mysql.getcom("DELETE FROM tb_doctor WHERE No='"+tb_no.Text.Trim()+"';");
+                    rowAffected = mysql.getcom("DELETE FROM tb_doctor WHERE No='" + tb_no.Text.Trim() + "';");
                 }
                 catch (SqlException sqlEx)
                 {

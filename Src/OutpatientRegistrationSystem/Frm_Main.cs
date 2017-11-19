@@ -37,7 +37,8 @@ namespace OutpatientRegistrationSystem
 
             TreeNode tr1 = new TreeNode("查询服务", 0, 1);
             tr1.Nodes.Add("", "科室查询", 0, 1);
-            tr1.Nodes.Add("", "医生查询", 0, 1);   
+            tr1.Nodes.Add("", "医生查询", 0, 1);
+            tr1.Nodes.Add("", "余额查询", 0, 1);
 
             TreeNode tr2 = new TreeNode("门诊统计", 0, 1);
             tr2.Nodes.Add("", "科室统计", 0, 1);
@@ -59,18 +60,18 @@ namespace OutpatientRegistrationSystem
             treeView1.Nodes.Add(tr3);
             tr3.ExpandAll();
 
-            for (int i = 0,k=0; i < treeView1.Nodes.Count; i++)
+            for (int i = 0, k = 0; i < treeView1.Nodes.Count; i++)
             {
-                for (int j = 0; j < treeView1.Nodes[i].Nodes.Count; j++,k++)
+                for (int j = 0; j < treeView1.Nodes[i].Nodes.Count; j++, k++)
                 {
                     if (k == 5) break; //待修改删除
-                    treeView1.Nodes[i].Nodes[j].ImageIndex =k ;
+                    treeView1.Nodes[i].Nodes[j].ImageIndex = k;
                 }
             }
 
-            toolStripStatusLabel_operater.Text = "【操作员】" + userHelper.operatorNo+"（"+userHelper.operatorName+"）";
-            toolStripStatusLabel_loginTime.Text = "【登录时间】" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
-            toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("HH:mm");
+            toolStripStatusLabel_operater.Text = "【操作员】" + userHelper.operatorNo + "（" + userHelper.operatorName + "）";
+            toolStripStatusLabel_loginTime.Text = "【登录时间】" + System.DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
+            toolStripStatusLabel_curTime.Text = "【系统当前时间】" + System.DateTime.Now.ToString("HH:mm");
             this.timer1.Interval = 1000;
             this.timer1.Start();
         }
@@ -167,6 +168,15 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
+                case "余额查询":
+                    {
+                        if (this.checkchildfrm("Frm_balanceQuery") == true)
+                            return;
+                        Frm_balanceQuery frm = new Frm_balanceQuery();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
                 case "科室统计":
                     {
                         if (this.checkchildfrm("Frm_countdept") == true)
@@ -228,7 +238,7 @@ namespace OutpatientRegistrationSystem
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("HH:mm");
+            this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + System.DateTime.Now.ToString("HH:mm");
         }
 
         private void 锁定toolStripMenuItem_Click(object sender, EventArgs e)

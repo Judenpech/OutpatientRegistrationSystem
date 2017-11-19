@@ -39,23 +39,21 @@
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CRT_reg1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1370, 960);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(913, 624);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // Frm_printReg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 960);
+            this.ClientSize = new System.Drawing.Size(913, 624);
             this.Controls.Add(this.crystalReportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Frm_printReg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "挂号单打印";
+            this.Text = "打印挂号单";
             this.Load += new System.EventHandler(this.Frm_printReg_Load);
             this.ResumeLayout(false);
 

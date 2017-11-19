@@ -37,10 +37,6 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\JingLi\Desktop\CSkin 16.1.14.2\CSkin 2.0\CSkin.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -82,6 +78,12 @@
     </Compile>
     <Compile Include="Frm_appointment.Designer.cs">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_balanceQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_balanceQuery.Designer.cs">
+      <DependentUpon>Frm_balanceQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_countday.cs">
       <SubType>Form</SubType>
@@ -143,6 +145,12 @@
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_mediCardRecharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_mediCardRecharge.Designer.cs">
+      <DependentUpon>Frm_mediCardRecharge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_needpay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +180,12 @@
     </Compile>
     <Compile Include="Frm_printAppo.Designer.cs">
       <DependentUpon>Frm_printAppo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_printReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_printReceipt.Designer.cs">
+      <DependentUpon>Frm_printReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_printReg.cs">
       <SubType>Form</SubType>
@@ -204,6 +218,9 @@
     <EmbeddedResource Include="Frm_appointment.resx">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_balanceQuery.resx">
+      <DependentUpon>Frm_balanceQuery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_countday.resx">
       <DependentUpon>Frm_countday.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +251,9 @@
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_mediCardRecharge.resx">
+      <DependentUpon>Frm_mediCardRecharge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_needpay.resx">
       <DependentUpon>Frm_needpay.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_printAppo.resx">
       <DependentUpon>Frm_printAppo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_printReceipt.resx">
+      <DependentUpon>Frm_printReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_printReg.resx">
       <DependentUpon>Frm_printReg.cs</DependentUpon>

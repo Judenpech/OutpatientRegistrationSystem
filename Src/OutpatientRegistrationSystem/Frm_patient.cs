@@ -66,6 +66,7 @@ namespace OutpatientRegistrationSystem
             cmb_sex.Enabled = false;
             cmb_cardtype.Enabled = false;
             btn_patientNo.Enabled = false;
+            btn_recharge.Enabled = false;
         }
 
         private void setTrue()
@@ -91,6 +92,7 @@ namespace OutpatientRegistrationSystem
             cmb_sex.Enabled = true;
             cmb_cardtype.Enabled = true;
             btn_patientNo.Enabled = true;
+            btn_recharge.Enabled = true;
         }
         private void initAdd()
         {
@@ -446,6 +448,15 @@ namespace OutpatientRegistrationSystem
         {
             tb_searchId.Text = "";
             tb_searchPatienNo.Text = "";
+        }
+
+        private void btn_recharge_Click(object sender, EventArgs e)
+        {
+            if (this.checkchildfrm("Frm_mediCardRecharge") == true)
+                return;
+            Frm_mediCardRecharge frm = new Frm_mediCardRecharge();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

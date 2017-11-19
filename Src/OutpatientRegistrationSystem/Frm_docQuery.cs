@@ -12,6 +12,10 @@ namespace OutpatientRegistrationSystem
     public partial class Frm_docQuery : Form
     {
         sqlHelper mysql = new sqlHelper();
+        private string Mtable = "doctor";
+        BindingSource bdsource = new BindingSource();
+        private int flag = 1;
+
         public Frm_docQuery()
         {
             InitializeComponent();
@@ -69,9 +73,47 @@ namespace OutpatientRegistrationSystem
             frm.Show();
         }
 
+        private void init(string Mstr)
+        {
+            DataSet myds = mysql.getds(Mstr, Mtable);
+            bdsource.DataSource = myds.Tables[0];
+            this.dataGridView1.DataSource = bdsource;
+            if (flag == 1)
+            {
+                this.databing();
+                flag = 0;
+            }
+        }
+
+        private void databing()
+        {
+            tb_no.DataBindings.Add("text", bdsource, "医生工号");
+            tb_name.DataBindings.Add("text", bdsource, "姓名");
+            tb_title.DataBindings.Add("text", bdsource, "职称");
+            tb_dept.DataBindings.Add("text", bdsource, "所属科室");
+            rtb_spec.DataBindings.Add("text", bdsource, "擅长");
+        }
+
         private void btn_search_Click(object sender, EventArgs e)
         {
-
+            if (rdo_dept.Checked)
+            {
+                this.init("SELECT d1.No 医生工号,d1.NAME 姓名 ,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长 "
+                    + "FROM tb_doctor d1 JOIN tb_dept d2 ON d1.deptNo=d2.NO "
+                    + "WHERE d2.NAME='" + cmb_schDept.SelectedItem.ToString() + "' AND d1.deptNo=d2.NO;");
+            }
+            if (rdo_title.Checked)
+            {
+                this.init("SELECT d1.No 医生工号,d1.NAME 姓名 ,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长 "
+                    + "FROM tb_doctor d1 JOIN tb_dept d2 ON d1.deptNo=d2.NO "
+                    + "WHERE d1.title='" + cmb_schTitle.SelectedItem.ToString() + "' AND d1.deptNo=d2.NO;");
+            }
+            if (rdo_no.Checked)
+            {
+                this.init("SELECT d1.No 医生工号,d1.NAME 姓名 ,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长 "
+                    + "FROM tb_doctor d1 JOIN tb_dept d2 ON d1.deptNo=d2.NO "
+                    + "WHERE d1.No='" + tb_schNo.Text.Trim() + "' AND d1.deptNo=d2.NO;");
+            }
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
@@ -108,13 +150,15 @@ namespace OutpatientRegistrationSystem
             cmb_schTitle.Items.Add("副主任医师");
             cmb_schTitle.Items.Add("主任医师");
             cmb_schTitle.SelectedIndex = 0;
+
+            rdo_dept.Select();
         }
 
         private void cmb_searchName_SelectedIndexChanged(object sender, EventArgs e)
         {
             string tempstr = cmb_searchName.Text;
             DataSet chanagenameds = mysql.getds("SELECT d1.No no,d1.NAME name ,d1.title title,d2.NAME dept,d1.specialty specialty FROM tb_doctor d1 JOIN tb_dept d2 ON d1.deptNo=d2.NO "
-                +"WHERE d1.NAME='"+tempstr+"' AND d1.deptNo=d2.NO;", "doctor");
+                + "WHERE d1.NAME='" + tempstr + "' AND d1.deptNo=d2.NO;", "doctor");
             tb_no.Text = chanagenameds.Tables[0].Rows[0]["no"].ToString();
             tb_name.Text = chanagenameds.Tables[0].Rows[0]["name"].ToString();
             tb_title.Text = chanagenameds.Tables[0].Rows[0]["title"].ToString();
