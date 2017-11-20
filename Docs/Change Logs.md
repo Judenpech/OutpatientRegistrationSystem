@@ -1,5 +1,12 @@
 # Change Logs
 
+#### 2017/11/20
+
+- 实现Frm_payment窗体“前台缴费”功能；
+- 修复bugs；
+- 修改OPRS建库脚本；
+- 完善OPRS操作。
+
 #### 2017/11/19
 
 - 实现Frm_docScore窗体"医生查询"功能；
