@@ -311,27 +311,47 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 
 
 --前台缴费；
---前台缴费--查询当日未交费病人；
-SELECT e.ticketNo 票号,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
-FROM dbo.tb_expensesRecord e 
-	JOIN dbo.tb_patient p ON e.patientNo=p.No
-	JOIN dbo.tb_doctor d ON e.docNo=d.No 
-	JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO
-	JOIN dbo.tb_registration r ON e.regNo=r.NO
-WHERE e.havePaid IS NULL AND r.regDate='2017-11-12';
 
---前台缴费--查询所有未交费病人；
-SELECT e.ticketNo 票号,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
-FROM dbo.tb_expensesRecord e 
-	JOIN dbo.tb_patient p ON e.patientNo=p.No
-	JOIN dbo.tb_doctor d ON e.docNo=d.No 
-	JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO
-	JOIN dbo.tb_registration r ON e.regNo=r.NO
-WHERE e.havePaid IS NULL;
+			--前台缴费--查询费用记录信息；
+			SELECT *
+			FROM dbo.tb_expensesRecord;
 
---前台缴费--根据票号查询费用记录信息；
-SELECT e.medicineFee 药品费,e.examFee 检验费,e.checkFee 检查费,e.diagFee 诊疗费,e.regFee 挂号费
-FROM dbo.tb_expensesRecord e 
-WHERE e.ticketNo='020171119001';
+			--前台缴费--查询当日未交费病人；
+			SELECT e.ticketNo 票号,e.mediRecordNo 病历号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
+			FROM dbo.tb_expensesRecord e 
+				JOIN dbo.tb_patient p ON e.patientNo=p.No
+				JOIN dbo.tb_doctor d ON e.docNo=d.No 
+				JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO
+				JOIN dbo.tb_registration r ON e.regNo=r.NO
+			WHERE e.havePaid=0 AND r.regDate='2017-11-12';
+
+			--前台缴费--查询所有未交费病人；
+			SELECT e.ticketNo 票号,e.mediRecordNo 病历号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
+			FROM dbo.tb_expensesRecord e 
+				JOIN dbo.tb_patient p ON e.patientNo=p.No
+				JOIN dbo.tb_doctor d ON e.docNo=d.No 
+				JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO
+				JOIN dbo.tb_registration r ON e.regNo=r.NO
+			WHERE e.havePaid=0;
+
+			--前台缴费--根据票号查询费用记录信息；
+			SELECT e.medicineFee 药品费,e.examFee 检验费,e.checkFee 检查费,e.diagFee 诊疗费,e.regFee 挂号费
+			FROM dbo.tb_expensesRecord e 
+			WHERE e.ticketNo='020171119001';
+
+			--前台缴费--根据患者编号查询就诊/医疗卡信息；
+			SELECT cardType,id,visitNo,balance,creditLimit
+			FROM dbo.tb_card
+			WHERE patientNo='20171112102319';
+
+			--前台缴费--更新费用记录支付状态；
+			UPDATE dbo.tb_expensesRecord 
+			SET havePaid=1,payDate='2017-11-20'
+			WHERE ticketNo='020171119001';
+
+			--前台缴费--更新就诊/医疗卡余额；
+			UPDATE dbo.tb_card
+			SET balance=200
+			WHERE patientNo='20171112102319';
 
  

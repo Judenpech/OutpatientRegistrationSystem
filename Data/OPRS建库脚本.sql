@@ -224,10 +224,9 @@ VALUES  ( '20171112102319' , -- patientNo - char(15)
 		money
 	,regFee
 		money
-	,total
-		money
 	,havePaid
-		money
+		BIT
+		DEFAULT 0
 	,payDate
 		datetime);     
 ----费用记录表--插入费用记录数据；
@@ -244,7 +243,6 @@ INSERT dbo.tb_expensesRecord
           checkFee ,
           diagFee ,
           regFee ,
-          havePaid ,
           payDate
         )
 VALUES  ( '020171119001' , -- ticketNo - char(10)
@@ -259,9 +257,8 @@ VALUES  ( '020171119001' , -- ticketNo - char(10)
           12 , -- checkFee - money
           36 , -- diagFee - money
           28 , -- regFee - money
-          NULL , -- havePaid - money
           NULL  -- payDate - datetime
-        ) 
+        ); 
 ----科室表；
 CREATE TABLE tb_dept
     (NO
@@ -376,7 +373,21 @@ CREATE TABLE tb_registration
     ,operater
         CHAR(10)
         NOT NULL);
-        
+----预约挂号表--插入预约挂号数据;
+INSERT dbo.tb_registration
+		( patientNo ,
+		  deptNo ,
+		  docNo ,
+		  regDate ,
+		  regTime ,
+		  operater
+		)
+SELECT '20171112102319',d2.NO,d1.No,'2017-11-12','08:23:19','3150707012'
+FROM 
+	dbo.tb_doctor d1 
+	JOIN dbo.tb_dept d2 ON d1.deptNo = d2.NO 
+WHERE d1.NAME='邹良能' AND d2.NAME='内科';    
+    
 ----挂号类别表；
 CREATE TABLE tb_regType
     (id
