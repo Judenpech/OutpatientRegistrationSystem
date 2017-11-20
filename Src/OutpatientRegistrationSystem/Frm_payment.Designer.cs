@@ -33,6 +33,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmb_cardType = new System.Windows.Forms.ComboBox();
             this.tb_cardNo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tb_id = new System.Windows.Forms.TextBox();
@@ -57,17 +58,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_diagFee = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.nup_nowpay = new System.Windows.Forms.NumericUpDown();
             this.tb_regFee = new System.Windows.Forms.TextBox();
-            this.btn_payprint = new System.Windows.Forms.Button();
-            this.btn_pay = new System.Windows.Forms.Button();
             this.tb_total = new System.Windows.Forms.TextBox();
             this.tb_creditLimit = new System.Windows.Forms.TextBox();
             this.tb_checkFee = new System.Windows.Forms.TextBox();
             this.tb_examFee = new System.Windows.Forms.TextBox();
             this.tb_balance = new System.Windows.Forms.TextBox();
             this.tb_medicineFee = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,14 +72,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_payprint = new System.Windows.Forms.Button();
+            this.btn_pay = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_recharge = new System.Windows.Forms.Button();
-            this.cmb_cardType = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nup_nowpay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -92,7 +89,7 @@
             // 
             this.cmb_paymentallman.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_paymentallman.FormattingEnabled = true;
-            this.cmb_paymentallman.Location = new System.Drawing.Point(328, 9);
+            this.cmb_paymentallman.Location = new System.Drawing.Point(321, 9);
             this.cmb_paymentallman.Name = "cmb_paymentallman";
             this.cmb_paymentallman.Size = new System.Drawing.Size(121, 20);
             this.cmb_paymentallman.TabIndex = 16;
@@ -101,7 +98,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(221, 12);
+            this.label21.Location = new System.Drawing.Point(214, 12);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(101, 12);
             this.label21.TabIndex = 15;
@@ -110,7 +107,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(219, 273);
+            this.label20.Location = new System.Drawing.Point(212, 273);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(89, 12);
             this.label20.TabIndex = 14;
@@ -142,10 +139,19 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(4, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(209, 432);
+            this.groupBox2.Size = new System.Drawing.Size(204, 432);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "缴费信息";
+            // 
+            // cmb_cardType
+            // 
+            this.cmb_cardType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_cardType.FormattingEnabled = true;
+            this.cmb_cardType.Location = new System.Drawing.Point(74, 204);
+            this.cmb_cardType.Name = "cmb_cardType";
+            this.cmb_cardType.Size = new System.Drawing.Size(112, 20);
+            this.cmb_cardType.TabIndex = 98;
             // 
             // tb_cardNo
             // 
@@ -185,6 +191,7 @@
             this.tb_patientNo.Name = "tb_patientNo";
             this.tb_patientNo.Size = new System.Drawing.Size(112, 21);
             this.tb_patientNo.TabIndex = 23;
+            this.tb_patientNo.TextChanged += new System.EventHandler(this.tb_patientNo_TextChanged);
             // 
             // label16
             // 
@@ -323,7 +330,6 @@
             // 
             this.groupBox1.Controls.Add(this.tb_diagFee);
             this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.nup_nowpay);
             this.groupBox1.Controls.Add(this.tb_regFee);
             this.groupBox1.Controls.Add(this.tb_total);
             this.groupBox1.Controls.Add(this.tb_creditLimit);
@@ -331,7 +337,6 @@
             this.groupBox1.Controls.Add(this.tb_examFee);
             this.groupBox1.Controls.Add(this.tb_balance);
             this.groupBox1.Controls.Add(this.tb_medicineFee);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
@@ -348,7 +353,7 @@
             // 
             // tb_diagFee
             // 
-            this.tb_diagFee.Location = new System.Drawing.Point(526, 88);
+            this.tb_diagFee.Location = new System.Drawing.Point(86, 88);
             this.tb_diagFee.Name = "tb_diagFee";
             this.tb_diagFee.Size = new System.Drawing.Size(118, 21);
             this.tb_diagFee.TabIndex = 21;
@@ -356,61 +361,29 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(467, 90);
+            this.label22.Location = new System.Drawing.Point(27, 90);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(53, 12);
             this.label22.TabIndex = 20;
             this.label22.Text = "诊疗费：";
             // 
-            // nup_nowpay
-            // 
-            this.nup_nowpay.Location = new System.Drawing.Point(307, 86);
-            this.nup_nowpay.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.nup_nowpay.Name = "nup_nowpay";
-            this.nup_nowpay.Size = new System.Drawing.Size(118, 21);
-            this.nup_nowpay.TabIndex = 19;
-            // 
             // tb_regFee
             // 
-            this.tb_regFee.Location = new System.Drawing.Point(526, 52);
+            this.tb_regFee.Location = new System.Drawing.Point(86, 53);
             this.tb_regFee.Name = "tb_regFee";
             this.tb_regFee.Size = new System.Drawing.Size(118, 21);
             this.tb_regFee.TabIndex = 17;
             // 
-            // btn_payprint
-            // 
-            this.btn_payprint.Location = new System.Drawing.Point(120, 31);
-            this.btn_payprint.Name = "btn_payprint";
-            this.btn_payprint.Size = new System.Drawing.Size(75, 27);
-            this.btn_payprint.TabIndex = 16;
-            this.btn_payprint.Text = "打印付款单";
-            this.btn_payprint.UseVisualStyleBackColor = true;
-            this.btn_payprint.Click += new System.EventHandler(this.btn_payprint_Click);
-            // 
-            // btn_pay
-            // 
-            this.btn_pay.Location = new System.Drawing.Point(120, 73);
-            this.btn_pay.Name = "btn_pay";
-            this.btn_pay.Size = new System.Drawing.Size(75, 27);
-            this.btn_pay.TabIndex = 15;
-            this.btn_pay.Text = "付款";
-            this.btn_pay.UseVisualStyleBackColor = true;
-            this.btn_pay.Click += new System.EventHandler(this.btn_pay_Click);
-            // 
             // tb_total
             // 
-            this.tb_total.Location = new System.Drawing.Point(86, 86);
+            this.tb_total.Location = new System.Drawing.Point(526, 87);
             this.tb_total.Name = "tb_total";
             this.tb_total.Size = new System.Drawing.Size(118, 21);
             this.tb_total.TabIndex = 14;
             // 
             // tb_creditLimit
             // 
-            this.tb_creditLimit.Location = new System.Drawing.Point(307, 52);
+            this.tb_creditLimit.Location = new System.Drawing.Point(307, 54);
             this.tb_creditLimit.Name = "tb_creditLimit";
             this.tb_creditLimit.Size = new System.Drawing.Size(118, 21);
             this.tb_creditLimit.TabIndex = 13;
@@ -431,7 +404,7 @@
             // 
             // tb_balance
             // 
-            this.tb_balance.Location = new System.Drawing.Point(86, 52);
+            this.tb_balance.Location = new System.Drawing.Point(307, 87);
             this.tb_balance.Name = "tb_balance";
             this.tb_balance.Size = new System.Drawing.Size(118, 21);
             this.tb_balance.TabIndex = 10;
@@ -443,19 +416,10 @@
             this.tb_medicineFee.Size = new System.Drawing.Size(118, 21);
             this.tb_medicineFee.TabIndex = 9;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(236, 91);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 12);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "本次付款：";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(236, 56);
+            this.label7.Location = new System.Drawing.Point(236, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 6;
@@ -464,7 +428,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 89);
+            this.label6.Location = new System.Drawing.Point(479, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 5;
@@ -473,7 +437,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(467, 56);
+            this.label4.Location = new System.Drawing.Point(27, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 3;
@@ -500,7 +464,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 55);
+            this.label5.Location = new System.Drawing.Point(236, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 4;
@@ -515,16 +479,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "药品费：";
             // 
+            // btn_payprint
+            // 
+            this.btn_payprint.Location = new System.Drawing.Point(120, 31);
+            this.btn_payprint.Name = "btn_payprint";
+            this.btn_payprint.Size = new System.Drawing.Size(75, 27);
+            this.btn_payprint.TabIndex = 16;
+            this.btn_payprint.Text = "打印付款单";
+            this.btn_payprint.UseVisualStyleBackColor = true;
+            this.btn_payprint.Click += new System.EventHandler(this.btn_payprint_Click);
+            // 
+            // btn_pay
+            // 
+            this.btn_pay.Location = new System.Drawing.Point(120, 73);
+            this.btn_pay.Name = "btn_pay";
+            this.btn_pay.Size = new System.Drawing.Size(75, 27);
+            this.btn_pay.TabIndex = 15;
+            this.btn_pay.Text = "付款";
+            this.btn_pay.UseVisualStyleBackColor = true;
+            this.btn_pay.Click += new System.EventHandler(this.btn_pay_Click);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(220, 299);
+            this.dataGridView2.Location = new System.Drawing.Point(213, 299);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(684, 139);
+            this.dataGridView2.Size = new System.Drawing.Size(691, 139);
             this.dataGridView2.TabIndex = 10;
             // 
             // dataGridView1
@@ -532,11 +516,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(220, 38);
+            this.dataGridView1.Location = new System.Drawing.Point(213, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(684, 217);
+            this.dataGridView1.Size = new System.Drawing.Size(691, 217);
             this.dataGridView1.TabIndex = 9;
             // 
             // btn_recharge
@@ -548,15 +532,6 @@
             this.btn_recharge.Text = "就诊卡充值";
             this.btn_recharge.UseVisualStyleBackColor = true;
             this.btn_recharge.Click += new System.EventHandler(this.btn_recharge_Click);
-            // 
-            // cmb_cardType
-            // 
-            this.cmb_cardType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_cardType.FormattingEnabled = true;
-            this.cmb_cardType.Location = new System.Drawing.Point(74, 204);
-            this.cmb_cardType.Name = "cmb_cardType";
-            this.cmb_cardType.Size = new System.Drawing.Size(112, 20);
-            this.cmb_cardType.TabIndex = 98;
             // 
             // groupBox3
             // 
@@ -592,7 +567,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nup_nowpay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -625,7 +599,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tb_diagFee;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.NumericUpDown nup_nowpay;
         private System.Windows.Forms.TextBox tb_regFee;
         private System.Windows.Forms.Button btn_payprint;
         private System.Windows.Forms.Button btn_pay;
@@ -635,7 +608,6 @@
         private System.Windows.Forms.TextBox tb_examFee;
         private System.Windows.Forms.TextBox tb_balance;
         private System.Windows.Forms.TextBox tb_medicineFee;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;

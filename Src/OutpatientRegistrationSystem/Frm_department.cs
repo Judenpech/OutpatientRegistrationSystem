@@ -27,19 +27,13 @@ namespace OutpatientRegistrationSystem
         {
             DataSet myds = mysql.getds(sqlstr, mytable);
             mybdsource.DataSource = myds.Tables[0];
-
             this.dataGridView1.DataSource = mybdsource;
             this.bindingNavigator1.BindingSource = mybdsource;
         }
 
         private void Frm_department_Load(object sender, EventArgs e)
         {
-            DataSet myds = mysql.getds(sqlstr, mytable);
-            mybdsource.DataSource = myds.Tables[0];
-
-            this.dataGridView1.DataSource = mybdsource;
-            this.bindingNavigator1.BindingSource = mybdsource;
-
+            this.init();
             tb_id.DataBindings.Add("text", mybdsource, "科室编号");
             tb_name.DataBindings.Add("text", mybdsource, "科室名称");
             rtb_dscp.DataBindings.Add("text", mybdsource, "科室描述");
