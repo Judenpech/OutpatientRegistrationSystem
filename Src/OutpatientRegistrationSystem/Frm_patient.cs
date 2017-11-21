@@ -448,6 +448,7 @@ namespace OutpatientRegistrationSystem
         {
             tb_searchId.Text = "";
             tb_searchPatienNo.Text = "";
+            cmb_searchName.Text = "";
         }
 
         private void btn_recharge_Click(object sender, EventArgs e)

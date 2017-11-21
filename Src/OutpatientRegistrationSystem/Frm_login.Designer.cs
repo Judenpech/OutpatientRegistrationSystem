@@ -36,13 +36,14 @@
             this.lab_psw = new System.Windows.Forms.Label();
             this.lab_userName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // texbox_psw
             // 
             this.texbox_psw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.texbox_psw.Location = new System.Drawing.Point(228, 339);
+            this.texbox_psw.Location = new System.Drawing.Point(228, 359);
             this.texbox_psw.Name = "texbox_psw";
             this.texbox_psw.PasswordChar = '*';
             this.texbox_psw.Size = new System.Drawing.Size(143, 21);
@@ -51,7 +52,7 @@
             // texbox_userName
             // 
             this.texbox_userName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.texbox_userName.Location = new System.Drawing.Point(228, 293);
+            this.texbox_userName.Location = new System.Drawing.Point(228, 313);
             this.texbox_userName.Name = "texbox_userName";
             this.texbox_userName.Size = new System.Drawing.Size(143, 21);
             this.texbox_userName.TabIndex = 19;
@@ -59,7 +60,7 @@
             // btn_exit
             // 
             this.btn_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_exit.Location = new System.Drawing.Point(155, 386);
+            this.btn_exit.Location = new System.Drawing.Point(155, 406);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(87, 27);
             this.btn_exit.TabIndex = 18;
@@ -69,7 +70,7 @@
             // 
             // btn_logIn
             // 
-            this.btn_logIn.Location = new System.Drawing.Point(284, 386);
+            this.btn_logIn.Location = new System.Drawing.Point(284, 406);
             this.btn_logIn.Name = "btn_logIn";
             this.btn_logIn.Size = new System.Drawing.Size(87, 27);
             this.btn_logIn.TabIndex = 17;
@@ -80,7 +81,7 @@
             // lab_psw
             // 
             this.lab_psw.AutoSize = true;
-            this.lab_psw.Location = new System.Drawing.Point(153, 343);
+            this.lab_psw.Location = new System.Drawing.Point(153, 363);
             this.lab_psw.Name = "lab_psw";
             this.lab_psw.Size = new System.Drawing.Size(65, 12);
             this.lab_psw.TabIndex = 16;
@@ -89,7 +90,7 @@
             // lab_userName
             // 
             this.lab_userName.AutoSize = true;
-            this.lab_userName.Location = new System.Drawing.Point(153, 295);
+            this.lab_userName.Location = new System.Drawing.Point(153, 315);
             this.lab_userName.Name = "lab_userName";
             this.lab_userName.Size = new System.Drawing.Size(65, 12);
             this.lab_userName.TabIndex = 15;
@@ -101,18 +102,31 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(541, 265);
+            this.pictureBox1.Size = new System.Drawing.Size(571, 283);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(-2, 227);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(540, 56);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Outpatient Registration System";
             // 
             // Frm_login
             // 
             this.AcceptButton = this.btn_logIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btn_exit;
-            this.ClientSize = new System.Drawing.Size(539, 438);
+            this.ClientSize = new System.Drawing.Size(562, 457);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.texbox_psw);
             this.Controls.Add(this.texbox_userName);
             this.Controls.Add(this.btn_exit);
@@ -138,5 +152,6 @@
         private System.Windows.Forms.Label lab_psw;
         private System.Windows.Forms.Label lab_userName;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

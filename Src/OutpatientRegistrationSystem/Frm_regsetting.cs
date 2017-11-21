@@ -114,7 +114,7 @@ namespace OutpatientRegistrationSystem
             this.init();
         }
 
-        private void 新增ToolStripButton_Click(object sender, EventArgs e)//指针异常
+        private void 新增ToolStripButton_Click(object sender, EventArgs e)//bug：指针异常
         {
             tb_regname.Enabled = true;
             nup_price.Enabled = true;
