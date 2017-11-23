@@ -62,7 +62,7 @@
             // 
             // toolStripStatusLabel_operater
             // 
-            this.toolStripStatusLabel_operater.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.toolStripStatusLabel_operater.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.toolStripStatusLabel_operater.Name = "toolStripStatusLabel_operater";
             this.toolStripStatusLabel_operater.Size = new System.Drawing.Size(48, 21);
             this.toolStripStatusLabel_operater.Text = "操作员";
@@ -70,12 +70,12 @@
             // toolStripStatusLabel_zhanwei
             // 
             this.toolStripStatusLabel_zhanwei.Name = "toolStripStatusLabel_zhanwei";
-            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(578, 21);
+            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(547, 21);
             this.toolStripStatusLabel_zhanwei.Spring = true;
             // 
             // toolStripStatusLabel_loginTime
             // 
-            this.toolStripStatusLabel_loginTime.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabel_loginTime.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.toolStripStatusLabel_loginTime.Name = "toolStripStatusLabel_loginTime";
             this.toolStripStatusLabel_loginTime.Size = new System.Drawing.Size(60, 21);
             this.toolStripStatusLabel_loginTime.Text = "登录时间";

@@ -12,8 +12,8 @@ namespace OutpatientRegistrationSystem
         public SqlConnection getcon()
         {
             //string sqlstr = @"Server=(local); Database=OPRSBase; Integrated Security=sspi";
-            string sqlstr = @"server=192.168.11.128; Database=OPRSBase; UID=sa; Pwd=sa";
-
+            //string sqlstr = @"Server=192.168.11.128; Database=OPRSBase; UID=sa; Pwd=sa";
+            string sqlstr = @"Server=SERVER-1; Database=OPRSBase; UID=jsj; Pwd=2wsx@WSX";
             SqlConnection myconn = new SqlConnection(sqlstr);
             return myconn;
         }

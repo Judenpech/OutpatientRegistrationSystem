@@ -14,10 +14,10 @@ IF DB_ID('OPRSBase') IS NOT NULL
 CREATE DATABASE OPRSBase
 	ON
 		(NAME='OPRSDatafile'
-		,FILENAME='E:\OPRSDataFile.mdf')
+		,FILENAME='C:\OPRSDataFile.mdf')
 	LOG ON
 		(NAME='OPRSLogfile'
-		,FILENAME='E:\OPRSLogfile.ldf');
+		,FILENAME='C:\OPRSLogfile.ldf');
 GO
 USE OPRSBase;
 
@@ -268,36 +268,6 @@ CREATE TABLE tb_receipt
         NOT NULL
         DEFAULT '0.00');
 
-----≤°÷÷±Ì£ª
-CREATE TABLE tb_drgs
-    (NO
-        CHAR(10)
-        NOT NULL
-        PRIMARY KEY
-    ,NAME
-        varchar(25)
-        NOT NULL);
-----≈≈∞‡±Ì£ª
-CREATE TABLE tb_schedual
-    (weekday
-        CHAR(10)
-        NOT NULL
-        PRIMARY KEY
-    ,deptNo
-        INT
-        NOT NULL
-        FOREIGN KEY REFERENCES tb_dept(No)
-    ,docNo
-        VARCHAR(10)
-        NOT NULL
-        UNIQUE
-        FOREIGN KEY REFERENCES tb_doctor(No)
-    ,num
-        int
-        NOT NULL
-    ,numLeft
-        int
-        NOT NULL);
         
         
         

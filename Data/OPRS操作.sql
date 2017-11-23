@@ -353,5 +353,15 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			UPDATE dbo.tb_card
 			SET balance=200
 			WHERE patientNo='20171112102319';
+			
+			--前台缴费--重置费用记录支付状态；
+			UPDATE dbo.tb_expensesRecord 
+			SET havePaid=0
+			WHERE ticketNo='020171119001';
+
+			--前台缴费--重置就诊/医疗卡余额；
+			UPDATE dbo.tb_card
+			SET balance=200
+			WHERE patientNo='20171112102319';
 
  

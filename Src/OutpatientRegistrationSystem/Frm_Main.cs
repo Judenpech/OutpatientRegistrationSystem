@@ -60,7 +60,7 @@ namespace OutpatientRegistrationSystem
             treeView1.Nodes.Add(tr3);
             tr3.ExpandAll();
 
-            for (int i = 0, k = 0; i < treeView1.Nodes.Count; i++)
+            for (int i = 0, k = 0; i < treeView1.Nodes.Count; i++)//bug：treeview点击，image改变
             {
                 for (int j = 0; j < treeView1.Nodes[i].Nodes.Count; j++, k++)
                 {
@@ -236,7 +236,7 @@ namespace OutpatientRegistrationSystem
             }
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void timer1_Tick_1(object sender, EventArgs e) //bug：toolStripStatusLabel_curTime未显示
         {
             this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + System.DateTime.Now.ToString("HH:mm");
         }
