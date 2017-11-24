@@ -86,7 +86,7 @@ VALUES  ( '20171112102319' , -- patientNo - char(15)
           '432312199611124323' , -- id - char(18)
           NULL , -- visitNo - char(15)
           50 , -- creditLimit - money
-          200  -- balance - money
+          100  -- balance - money
         );    
         
         

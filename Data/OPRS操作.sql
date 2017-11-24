@@ -364,4 +364,19 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			SET balance=200
 			WHERE patientNo='20171112102319';
 
+
+--欠费催款；
+			--欠费催款--查询所有欠费人信息；
+			SELECT c.patientNo 患者编号,p.Name 病人姓名,CASE c.cardType WHEN 0 THEN '就诊卡' WHEN 1 THEN '社保卡' END 卡类型,c.id 身份证号码,c.visitNo 就诊卡号,c.balance 欠款总计
+			FROM dbo.tb_card c JOIN dbo.tb_patient p ON c.patientNo=p.No
+			WHERE c.patientNo=p.No AND c.balance<0;
+
+			SELECT tel,email
+			FROM dbo.tb_patient
+			WHERE No='20171116104903';
+
+			--欠费催款--更新欠费信息；
+			UPDATE dbo.tb_card
+			SET balance=-100
+			WHERE patientNo='20171116104903';
  

@@ -14,10 +14,10 @@ IF DB_ID('OPRSBase') IS NOT NULL
 CREATE DATABASE OPRSBase
 	ON
 		(NAME='OPRSDatafile'
-		,FILENAME='C:\OPRSDataFile.mdf')
+		,FILENAME='E:\OPRSDataFile.mdf')
 	LOG ON
 		(NAME='OPRSLogfile'
-		,FILENAME='C:\OPRSLogfile.ldf');
+		,FILENAME='E:\OPRSLogfile.ldf');
 GO
 USE OPRSBase;
 
@@ -43,10 +43,10 @@ INSERT tb_operator
 		('3150707012','李靖',HASHBYTES('SHA','7012'))
 		,('1','test',HASHBYTES('SHA','1'));
 		       
-----患者表；
+---患者表；
 CREATE TABLE tb_patient
     (No
-        CHAR(15)
+        varCHAR(15)
         NOT NULL
         PRIMARY KEY
     ,Name
@@ -66,9 +66,9 @@ CREATE TABLE tb_patient
     ,nation
         VARCHAR(15)
     ,email
-        CHAR(45)
+        varCHAR(45)
     ,tel
-        CHAR(15)
+        varCHAR(15)
         NOT NULL
     ,Address
         varchar(45)
@@ -81,10 +81,10 @@ CREATE TABLE tb_patient
     ,firstManTel2
         CHAR(15)
     ,id      --身份证号
-        CHAR(18)
+        varCHAR(18)
         UNIQUE
     ,visitNo --就诊卡号
-        CHAR(15)
+        varCHAR(15)
         UNIQUE
     ,regDate
         DATE
@@ -95,25 +95,25 @@ CREATE TABLE tb_patient
         VARCHAR(255));
         
         
-----就诊/医疗卡表；
+---就诊/医疗卡表；
 CREATE TABLE tb_card
     (patientNo
-        CHAR(15)
+        varCHAR(15)
         PRIMARY KEY
     ,cardType  -- 0(就诊卡)，1(社保卡)
         BIT
         NOT NULL
     ,id
-		CHAR(18)
+		varCHAR(18)
 	,visitNo
-		CHAR(15)
+		varCHAR(15)
     ,creditLimit
 		money
     ,balance
         money
         DEFAULT '0.00');
             
-----费用记录表；
+---费用记录表；
  CREATE TABLE tb_expensesRecord
 	(ticketNo
 		CHAR(15)
@@ -121,11 +121,11 @@ CREATE TABLE tb_card
 	,mediRecordNo
 		CHAR(15)
 	,patientNo
-		CHAR(15)
+		varCHAR(15)
 	,id
-		CHAR(18)
+		varCHAR(18)
 	,visitNo
-		CHAR(15)
+		varCHAR(15)
 	,regNo
 		int
 	,docNo
@@ -146,7 +146,7 @@ CREATE TABLE tb_card
 	,payDate
 		datetime);     
 
-----科室表；
+---科室表；
 CREATE TABLE tb_dept
     (NO
         INT
@@ -159,7 +159,7 @@ CREATE TABLE tb_dept
     ,DSCP
         VARCHAR(455));
         
-----医生表；
+---医生表；
 CREATE TABLE tb_doctor
     (No
         VARCHAR(10)
@@ -178,7 +178,7 @@ CREATE TABLE tb_doctor
         
 
         
-----预约挂号表；
+---预约挂号表；
 CREATE TABLE tb_registration
     (NO
         INT
@@ -186,7 +186,7 @@ CREATE TABLE tb_registration
         NOT NULL
         PRIMARY KEY
     ,patientNo
-        CHAR(15)
+        varCHAR(15)
         NOT NULL
     ,deptNo
         INT
@@ -206,7 +206,7 @@ CREATE TABLE tb_registration
         NOT NULL);
 
     
-----挂号类别表；
+---挂号类别表；
 CREATE TABLE tb_regType
     (id
         INT
@@ -220,7 +220,7 @@ CREATE TABLE tb_regType
         NOT NULL);
         
        
-----医生评价表；
+---医生评价表；
 CREATE TABLE tb_docScore
     (id
         INT
@@ -228,7 +228,7 @@ CREATE TABLE tb_docScore
         IDENTITY(1,1)
         PRIMARY KEY
     ,patientNo
-        CHAR(15)
+        varCHAR(15)
         NOT NULL
     ,docNo
         VARCHAR(10)
@@ -246,7 +246,7 @@ CREATE TABLE tb_docScore
         
                       
        
-----发票表；
+---发票表；
 CREATE TABLE tb_receipt
     (NO
         CHAR(10)
@@ -257,7 +257,7 @@ CREATE TABLE tb_receipt
         NOT NULL
         FOREIGN KEY REFERENCES tb_registration(No)
     ,patientNo
-        CHAR(15)
+        VARCHAR(15)
         NOT NULL
         FOREIGN KEY REFERENCES tb_patient(No)
     ,recDate
