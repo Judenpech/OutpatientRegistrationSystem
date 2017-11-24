@@ -70,8 +70,8 @@ namespace OutpatientRegistrationSystem
             }
 
             toolStripStatusLabel_operater.Text = "【操作员】" + userHelper.operatorNo + "（" + userHelper.operatorName + "）";
-            toolStripStatusLabel_loginTime.Text = "【登录时间】" + System.DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
-            toolStripStatusLabel_curTime.Text = "【系统当前时间】" + System.DateTime.Now.ToString("HH:mm");
+            toolStripStatusLabel_loginTime.Text = "【登录时间】" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
+            toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("HH:mm");
             this.timer1.Interval = 1000;
             this.timer1.Start();
         }
@@ -238,7 +238,7 @@ namespace OutpatientRegistrationSystem
 
         private void timer1_Tick_1(object sender, EventArgs e) //bug：toolStripStatusLabel_curTime未显示
         {
-            this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + System.DateTime.Now.ToString("HH:mm");
+            this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("HH:mm");
         }
 
         private void 锁定toolStripMenuItem_Click(object sender, EventArgs e)

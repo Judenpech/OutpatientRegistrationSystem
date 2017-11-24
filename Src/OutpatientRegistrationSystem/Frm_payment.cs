@@ -227,5 +227,14 @@ namespace OutpatientRegistrationSystem
             dr.Close();
             conn.Close();
         }
+
+        private void btn_needpay_Click(object sender, EventArgs e)
+        {
+            if (this.checkchildfrm("Frm_needpay") == true)
+                return;
+            Frm_needpay frm = new Frm_needpay();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

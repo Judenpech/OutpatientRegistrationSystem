@@ -78,6 +78,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_recharge = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_needpay = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -535,6 +536,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btn_needpay);
             this.groupBox3.Controls.Add(this.btn_recharge);
             this.groupBox3.Controls.Add(this.btn_pay);
             this.groupBox3.Controls.Add(this.btn_payprint);
@@ -544,6 +546,16 @@
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "操作类型";
+            // 
+            // btn_needpay
+            // 
+            this.btn_needpay.Location = new System.Drawing.Point(18, 31);
+            this.btn_needpay.Name = "btn_needpay";
+            this.btn_needpay.Size = new System.Drawing.Size(75, 27);
+            this.btn_needpay.TabIndex = 23;
+            this.btn_needpay.Text = "欠费催款";
+            this.btn_needpay.UseVisualStyleBackColor = true;
+            this.btn_needpay.Click += new System.EventHandler(this.btn_needpay_Click);
             // 
             // Frm_payment
             // 
@@ -626,5 +638,6 @@
         private System.Windows.Forms.Button btn_recharge;
         private System.Windows.Forms.ComboBox cmb_cardType;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btn_needpay;
     }
 }

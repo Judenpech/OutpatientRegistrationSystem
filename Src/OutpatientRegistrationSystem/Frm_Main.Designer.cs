@@ -50,8 +50,8 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_operater,
-            this.toolStripStatusLabel_zhanwei,
             this.toolStripStatusLabel_loginTime,
+            this.toolStripStatusLabel_zhanwei,
             this.toolStripStatusLabel_curTime});
             this.statusStrip1.Location = new System.Drawing.Point(0, 545);
             this.statusStrip1.Name = "statusStrip1";
@@ -75,7 +75,7 @@
             // 
             // toolStripStatusLabel_loginTime
             // 
-            this.toolStripStatusLabel_loginTime.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.toolStripStatusLabel_loginTime.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.toolStripStatusLabel_loginTime.Name = "toolStripStatusLabel_loginTime";
             this.toolStripStatusLabel_loginTime.Size = new System.Drawing.Size(60, 21);
             this.toolStripStatusLabel_loginTime.Text = "登录时间";
