@@ -379,4 +379,30 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			UPDATE dbo.tb_card
 			SET balance=-100
 			WHERE patientNo='20171116104903';
- 
+			
+			
+--就诊卡充值；
+			--就诊卡充值--查询所有就诊卡病人；
+			SELECT Name
+			FROM dbo.tb_patient
+			WHERE visitNo IS NOT NULL;
+
+			--就诊卡充值--根据就诊卡号查询病人就诊卡信息；
+			SELECT p.No 患者编号,p.Name 患者姓名,p.visitNo 就诊卡号,c.balance 余额
+			FROM dbo.tb_patient p JOIN dbo.tb_card c ON p.No=c.patientNo
+			WHERE p.visitNo='20171112001';
+
+			--就诊卡充值--根据患者编号查询病人就诊卡信息；
+			SELECT p.No 患者编号,p.Name 患者姓名,p.visitNo 就诊卡号,c.balance 余额
+			FROM dbo.tb_patient p JOIN dbo.tb_card c ON p.No=c.patientNo
+			WHERE p.No='20171112102319' AND p.visitNo IS NOT NULL;
+
+			--就诊卡充值--根据患者姓名查询病人就诊卡信息；
+			SELECT p.No 患者编号,p.Name 患者姓名,p.visitNo 就诊卡号,c.balance 余额
+			FROM dbo.tb_patient p JOIN dbo.tb_card c ON p.No=c.patientNo
+			WHERE p.Name='张三' AND p.visitNo IS NOT NULL;
+
+			--就诊卡充值--更新余额；
+			UPDATE dbo.tb_card
+			SET balance=100
+			WHERE patientNo='20171112102319';
