@@ -42,20 +42,18 @@
             // tb_psw
             // 
             this.tb_psw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_psw.Location = new System.Drawing.Point(152, 220);
-            this.tb_psw.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_psw.Location = new System.Drawing.Point(101, 147);
             this.tb_psw.Name = "tb_psw";
             this.tb_psw.PasswordChar = '*';
-            this.tb_psw.Size = new System.Drawing.Size(156, 28);
+            this.tb_psw.Size = new System.Drawing.Size(105, 21);
             this.tb_psw.TabIndex = 1;
             // 
             // btn_unlock
             // 
             this.btn_unlock.BackColor = System.Drawing.Color.Transparent;
-            this.btn_unlock.Location = new System.Drawing.Point(202, 276);
-            this.btn_unlock.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_unlock.Location = new System.Drawing.Point(135, 184);
             this.btn_unlock.Name = "btn_unlock";
-            this.btn_unlock.Size = new System.Drawing.Size(106, 40);
+            this.btn_unlock.Size = new System.Drawing.Size(71, 27);
             this.btn_unlock.TabIndex = 3;
             this.btn_unlock.Text = "解锁";
             this.btn_unlock.UseVisualStyleBackColor = false;
@@ -65,28 +63,25 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(123, 25);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(82, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 117);
+            this.pictureBox1.Size = new System.Drawing.Size(76, 78);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // texbox_userName
             // 
             this.texbox_userName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.texbox_userName.Location = new System.Drawing.Point(152, 168);
-            this.texbox_userName.Margin = new System.Windows.Forms.Padding(4);
+            this.texbox_userName.Location = new System.Drawing.Point(101, 112);
             this.texbox_userName.Name = "texbox_userName";
-            this.texbox_userName.Size = new System.Drawing.Size(156, 28);
+            this.texbox_userName.Size = new System.Drawing.Size(105, 21);
             this.texbox_userName.TabIndex = 25;
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(46, 276);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_exit.Location = new System.Drawing.Point(31, 184);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(106, 40);
+            this.btn_exit.Size = new System.Drawing.Size(71, 27);
             this.btn_exit.TabIndex = 24;
             this.btn_exit.Text = "退出";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -95,31 +90,29 @@
             // lab_psw
             // 
             this.lab_psw.AutoSize = true;
-            this.lab_psw.Location = new System.Drawing.Point(44, 224);
-            this.lab_psw.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_psw.Location = new System.Drawing.Point(29, 149);
             this.lab_psw.Name = "lab_psw";
-            this.lab_psw.Size = new System.Drawing.Size(98, 18);
+            this.lab_psw.Size = new System.Drawing.Size(65, 12);
             this.lab_psw.TabIndex = 22;
             this.lab_psw.Text = "用户密码：";
             // 
             // lab_userName
             // 
             this.lab_userName.AutoSize = true;
-            this.lab_userName.Location = new System.Drawing.Point(43, 171);
-            this.lab_userName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lab_userName.Location = new System.Drawing.Point(29, 114);
             this.lab_userName.Name = "lab_userName";
-            this.lab_userName.Size = new System.Drawing.Size(98, 18);
+            this.lab_userName.Size = new System.Drawing.Size(65, 12);
             this.lab_userName.TabIndex = 21;
             this.lab_userName.Text = "用户工号：";
             // 
             // Frm_lock
             // 
             this.AcceptButton = this.btn_unlock;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(361, 336);
+            this.ClientSize = new System.Drawing.Size(241, 224);
             this.Controls.Add(this.texbox_userName);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.lab_psw);
@@ -130,7 +123,6 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_lock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "系统锁定";

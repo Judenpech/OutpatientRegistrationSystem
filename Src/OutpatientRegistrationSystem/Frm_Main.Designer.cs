@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_operater = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel_zhanwei = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_loginTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_curTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -42,12 +41,14 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.toolStripStatusLabel_zhanwei = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_operater,
             this.toolStripStatusLabel_loginTime,
@@ -66,12 +67,6 @@
             this.toolStripStatusLabel_operater.Name = "toolStripStatusLabel_operater";
             this.toolStripStatusLabel_operater.Size = new System.Drawing.Size(48, 21);
             this.toolStripStatusLabel_operater.Text = "操作员";
-            // 
-            // toolStripStatusLabel_zhanwei
-            // 
-            this.toolStripStatusLabel_zhanwei.Name = "toolStripStatusLabel_zhanwei";
-            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(547, 21);
-            this.toolStripStatusLabel_zhanwei.Spring = true;
             // 
             // toolStripStatusLabel_loginTime
             // 
@@ -127,6 +122,7 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
@@ -156,6 +152,12 @@
             this.imageList1.Images.SetKeyName(3, "前台缴费.png");
             this.imageList1.Images.SetKeyName(4, "欠费催款.png");
             this.imageList1.Images.SetKeyName(5, "评价管理.png");
+            // 
+            // toolStripStatusLabel_zhanwei
+            // 
+            this.toolStripStatusLabel_zhanwei.Name = "toolStripStatusLabel_zhanwei";
+            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(547, 21);
+            this.toolStripStatusLabel_zhanwei.Spring = true;
             // 
             // Frm_Main
             // 
@@ -196,11 +198,11 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_loginTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_curTime;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_zhanwei;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolStripMenuItem 锁定toolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于我们toolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_zhanwei;
         
     }
 }

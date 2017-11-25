@@ -69,6 +69,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_recharge = new System.Windows.Forms.Button();
             this.btn_patientNo = new System.Windows.Forms.Button();
             this.tb_patientNo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -86,7 +87,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btn_clear = new System.Windows.Forms.Button();
             this.cmb_searchName = new System.Windows.Forms.ComboBox();
-            this.btn_recharge = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -481,6 +481,16 @@
             this.groupBox3.TabIndex = 93;
             this.groupBox3.TabStop = false;
             // 
+            // btn_recharge
+            // 
+            this.btn_recharge.Location = new System.Drawing.Point(286, 122);
+            this.btn_recharge.Name = "btn_recharge";
+            this.btn_recharge.Size = new System.Drawing.Size(87, 27);
+            this.btn_recharge.TabIndex = 97;
+            this.btn_recharge.Text = "就诊卡充值";
+            this.btn_recharge.UseVisualStyleBackColor = true;
+            this.btn_recharge.Click += new System.EventHandler(this.btn_recharge_Click);
+            // 
             // btn_patientNo
             // 
             this.btn_patientNo.Location = new System.Drawing.Point(286, 88);
@@ -594,7 +604,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(369, 37);
+            this.label25.Location = new System.Drawing.Point(368, 32);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(113, 12);
             this.label25.TabIndex = 104;
@@ -619,7 +629,7 @@
             // btn_clear
             // 
             this.btn_clear.Location = new System.Drawing.Point(589, 65);
-            this.btn_clear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(2);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(75, 23);
             this.btn_clear.TabIndex = 106;
@@ -630,21 +640,11 @@
             // cmb_searchName
             // 
             this.cmb_searchName.FormattingEnabled = true;
-            this.cmb_searchName.Location = new System.Drawing.Point(488, 34);
+            this.cmb_searchName.Location = new System.Drawing.Point(487, 29);
             this.cmb_searchName.Name = "cmb_searchName";
             this.cmb_searchName.Size = new System.Drawing.Size(177, 20);
             this.cmb_searchName.TabIndex = 105;
             this.cmb_searchName.SelectedIndexChanged += new System.EventHandler(this.cmb_searchName_SelectedIndexChanged);
-            // 
-            // btn_recharge
-            // 
-            this.btn_recharge.Location = new System.Drawing.Point(286, 122);
-            this.btn_recharge.Name = "btn_recharge";
-            this.btn_recharge.Size = new System.Drawing.Size(87, 27);
-            this.btn_recharge.TabIndex = 97;
-            this.btn_recharge.Text = "就诊卡充值";
-            this.btn_recharge.UseVisualStyleBackColor = true;
-            this.btn_recharge.Click += new System.EventHandler(this.btn_recharge_Click);
             // 
             // Frm_patient
             // 

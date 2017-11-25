@@ -34,6 +34,7 @@ namespace OutpatientRegistrationSystem
             tr.Nodes.Add("", "患者预约", 0, 1);
             tr.Nodes.Add("", "前台缴费", 0, 1);
             tr.Nodes.Add("", "欠费催款", 0, 1);
+            tr.Nodes.Add("", "就诊卡充值", 0, 1);
 
             TreeNode tr1 = new TreeNode("查询服务", 0, 1);
             tr1.Nodes.Add("", "科室查询", 0, 1);
@@ -137,6 +138,15 @@ namespace OutpatientRegistrationSystem
                         if (this.checkchildfrm("Frm_needpay") == true)
                             return;
                         Frm_needpay frm = new Frm_needpay();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
+                case "就诊卡充值":
+                    {
+                        if (this.checkchildfrm("Frm_mediCardRecharge") == true)
+                            return;
+                        Frm_mediCardRecharge frm = new Frm_mediCardRecharge();
                         frm.MdiParent = this;
                         frm.Show();
                         break;

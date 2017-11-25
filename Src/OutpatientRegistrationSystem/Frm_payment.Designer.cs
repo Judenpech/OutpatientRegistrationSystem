@@ -338,10 +338,10 @@
             this.groupBox1.Controls.Add(this.tb_examFee);
             this.groupBox1.Controls.Add(this.tb_balance);
             this.groupBox1.Controls.Add(this.tb_medicineFee);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
@@ -384,14 +384,14 @@
             // 
             // tb_creditLimit
             // 
-            this.tb_creditLimit.Location = new System.Drawing.Point(307, 54);
+            this.tb_creditLimit.Location = new System.Drawing.Point(527, 18);
             this.tb_creditLimit.Name = "tb_creditLimit";
             this.tb_creditLimit.Size = new System.Drawing.Size(118, 21);
             this.tb_creditLimit.TabIndex = 13;
             // 
             // tb_checkFee
             // 
-            this.tb_checkFee.Location = new System.Drawing.Point(526, 18);
+            this.tb_checkFee.Location = new System.Drawing.Point(307, 54);
             this.tb_checkFee.Name = "tb_checkFee";
             this.tb_checkFee.Size = new System.Drawing.Size(118, 21);
             this.tb_checkFee.TabIndex = 12;
@@ -405,7 +405,7 @@
             // 
             // tb_balance
             // 
-            this.tb_balance.Location = new System.Drawing.Point(307, 87);
+            this.tb_balance.Location = new System.Drawing.Point(527, 51);
             this.tb_balance.Name = "tb_balance";
             this.tb_balance.Size = new System.Drawing.Size(118, 21);
             this.tb_balance.TabIndex = 10;
@@ -420,7 +420,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(236, 58);
+            this.label7.Location = new System.Drawing.Point(456, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 6;
@@ -447,7 +447,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(467, 21);
+            this.label3.Location = new System.Drawing.Point(248, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 2;
@@ -465,7 +465,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(236, 90);
+            this.label5.Location = new System.Drawing.Point(456, 54);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 4;
@@ -562,7 +562,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(909, 562);
+            this.ClientSize = new System.Drawing.Size(909, 561);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cmb_paymentallman);
             this.Controls.Add(this.label21);
