@@ -1,5 +1,11 @@
 # Change Logs
 
+#### 2017/11/25
+
+- 完善Frm_mediCardRecharge窗体“就诊卡充值”功能；
+- 修改icon；
+- 完善OPRS操作。
+
 #### 2017/11/24
 
 - 实现Frm_needpay窗体“欠费催款”功能；
