@@ -110,7 +110,7 @@ namespace OutpatientRegistrationSystem
             {
                 try
                 {
-                    rowAffected = mysql.getcom("UPDATE tb_card SET balance=" + Convert.ToSingle(nud_money.Value) + " WHERE patientNo='" + tb_patientno.Text.Trim() + "';");
+                    rowAffected = mysql.getcom("UPDATE tb_card SET balance=" + (Convert.ToSingle(nud_money.Value)+Convert.ToSingle(tb_balance.Text.Trim())) + " WHERE patientNo='" + tb_patientno.Text.Trim() + "';");
                 }
                 catch (SqlException sqlEx)
                 {
@@ -120,6 +120,7 @@ namespace OutpatientRegistrationSystem
                 {
                     MessageBox.Show("充值成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
                     nud_money.Value = 0;
+                    //刷新页面？
                 }
                 else
                 {
@@ -142,7 +143,7 @@ namespace OutpatientRegistrationSystem
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_balanceQuery_Click(object sender, EventArgs e)
         {
             if (this.checkchildfrm("Frm_balanceQuery") == true)
                 return;

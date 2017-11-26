@@ -17,15 +17,6 @@ namespace OutpatientRegistrationSystem
             treeView1.NodeMouseClick += treeView1_NodeMouseClick;
         }
 
-        private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("您确定要注销登录吗?", "退出确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dr == DialogResult.OK)
-            {
-                Application.Restart();
-            }
-        }
-
         private void Frm_Main_Load(object sender, EventArgs e)
         {
             TreeNode tr = new TreeNode("导医服务", 0, 1);
@@ -43,10 +34,10 @@ namespace OutpatientRegistrationSystem
 
             TreeNode tr2 = new TreeNode("门诊统计", 0, 1);
             tr2.Nodes.Add("", "科室统计", 0, 1);
-            tr2.Nodes.Add("", "每日统计", 0, 1);
+            tr2.Nodes.Add("", "每日汇总", 0, 1);
 
-            TreeNode tr3 = new TreeNode("基本设置", 0, 1);
-            tr3.Nodes.Add("", "挂号设置", 0, 1);
+            TreeNode tr3 = new TreeNode("设置维护", 0, 1);
+            tr3.Nodes.Add("", "挂号费设置", 0, 1);
             tr3.Nodes.Add("", "科室管理", 0, 1);
             tr3.Nodes.Add("", "医生管理", 0, 1);
             tr3.Nodes.Add("", "评价管理", 0, 1);
@@ -70,9 +61,10 @@ namespace OutpatientRegistrationSystem
                 }
             }
 
-            toolStripStatusLabel_operater.Text = "【操作员】" + userHelper.operatorNo + "（" + userHelper.operatorName + "）";
-            toolStripStatusLabel_loginTime.Text = "【登录时间】" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
-            toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("HH:mm");
+            toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operatorNo + "（" + userHelper.operatorName + "）";
+            toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
+            toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("HH:mm");
+            toolStripStatusLabel_prompt.Text = "温馨提示：欢迎使用门诊预约挂号系统！工作中，累了请休息一下，多喝杯水！";
             this.timer1.Interval = 1000;
             this.timer1.Start();
         }
@@ -196,7 +188,7 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                case "每日统计":
+                case "每日汇总":
                     {
                         if (this.checkchildfrm("Frm_countday") == true)
                             return;
@@ -205,7 +197,7 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                case "挂号设置":
+                case "挂号费设置":
                     {
                         if (this.checkchildfrm("Frm_regsetting") == true)
                             return;
@@ -248,7 +240,7 @@ namespace OutpatientRegistrationSystem
 
         private void timer1_Tick_1(object sender, EventArgs e) //bug：toolStripStatusLabel_curTime未显示
         {
-            this.toolStripStatusLabel_curTime.Text = "【系统当前时间】" + DateTime.Now.ToString("HH:mm");
+            this.toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("HH:mm");
         }
 
         private void 锁定toolStripMenuItem_Click(object sender, EventArgs e)
@@ -268,6 +260,24 @@ namespace OutpatientRegistrationSystem
         private void 关于我们toolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", "https://github.com/jl223vy");
+        }
+
+        private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("您确定要退出系统吗?", "退出确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void 注销ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("您确定要注销登录吗?", "注销确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                Application.Restart();
+            }
         }
     }
 }

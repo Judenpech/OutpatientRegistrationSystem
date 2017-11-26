@@ -13,6 +13,8 @@ namespace OutpatientRegistrationSystem
     public partial class Frm_appointment : Form
     {
         sqlHelper mysql = new sqlHelper();
+        BindingSource mybds = new BindingSource();
+
         public Frm_appointment()
         {
             InitializeComponent();
@@ -99,6 +101,7 @@ namespace OutpatientRegistrationSystem
             cmb_cardtype.SelectedIndex = 0;
 
             this.gridviewinit();
+            tb_regid.DataBindings.Add("text", mybds, "预约号");
         }
 
         private void getname()
@@ -163,7 +166,7 @@ namespace OutpatientRegistrationSystem
                         try
                         {
                             rowAffected = mysql.getcom("INSERT tb_registration ( patientNo , deptNo , docNo , regDate ,regTime ,operater ) SELECT '" + tb_patientNo.Text.Trim()
-                                + "',d2.NO,d1.No,'" + dtp_regDate.Value.ToShortDateString() + "','" + dtp_regTime.Value.ToShortTimeString()+ "','" + userHelper.operatorNo
+                                + "',d2.NO,d1.No,'" + dtp_regDate.Value.ToShortDateString() + "','" + dtp_regTime.Value.ToShortTimeString() + "','" + userHelper.operatorNo
                                 + "' FROM tb_doctor d1 JOIN tb_dept d2 ON d1.deptNo = d2.NO WHERE d1.NAME='" + cmb_docname.SelectedItem.ToString() + "' AND d2.NAME='" + cmb_dept.SelectedItem.ToString() + "';");
                         }
                         catch (SqlException sqlEx)
@@ -186,9 +189,10 @@ namespace OutpatientRegistrationSystem
         private void gridviewinit()
         {
             DataSet view1ds = mysql.getds("SELECT r.NO 预约号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 预约科室,d2.NAME 预约医生, r.regDate 预约日期,CONVERT(VARCHAR(5),r.regTime,114) 预约时间 "
-                +"FROM tb_registration r JOIN tb_patient p ON r.patientNo = p.No,tb_dept d1 JOIN tb_doctor d2 ON d1.NO = d2.deptNo WHERE r.patientNo=p.No AND r.docNo=d2.No "
-                +"AND r.done=0 ORDER BY r.NO,r.regDate,r.regTime;", "registration");
-            this.dataGridView1.DataSource = view1ds.Tables[0];
+                + "FROM tb_registration r JOIN tb_patient p ON r.patientNo = p.No,tb_dept d1 JOIN tb_doctor d2 ON d1.NO = d2.deptNo WHERE r.patientNo=p.No AND r.docNo=d2.No "
+                + "AND r.done=0 ORDER BY r.NO,r.regDate,r.regTime;", "registration");
+            mybds.DataSource = view1ds.Tables[0];
+            this.dataGridView1.DataSource = mybds;
         }
 
         private void cmb_docname_SelectedIndexChanged(object sender, EventArgs e)
@@ -203,6 +207,28 @@ namespace OutpatientRegistrationSystem
             cmb_dept.SelectedItem = dr["Name"].ToString();
             dr.Close();
             conn.Close();
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            int rowAffected = 0;
+            try
+            {
+                rowAffected = mysql.getcom("DELETE FROM tb_registration WHERE NO= " + tb_regid.Text.Trim() + ";");
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("数据库异常：" + sqlEx.Message, "数据库异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (rowAffected == 1)
+            {
+                MessageBox.Show("预约作废成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.gridviewinit();
+            }
+            else
+            {
+                MessageBox.Show("预约作废失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel_curTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_operater = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_loginTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel_curTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel_prompt = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.锁定toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +42,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.toolStripStatusLabel_zhanwei = new System.Windows.Forms.ToolStripStatusLabel();
+            this.注销ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -50,10 +51,10 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel_curTime,
             this.toolStripStatusLabel_operater,
             this.toolStripStatusLabel_loginTime,
-            this.toolStripStatusLabel_zhanwei,
-            this.toolStripStatusLabel_curTime});
+            this.toolStripStatusLabel_prompt});
             this.statusStrip1.Location = new System.Drawing.Point(0, 545);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
@@ -61,33 +62,46 @@
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel_curTime
+            // 
+            this.toolStripStatusLabel_curTime.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabel_curTime.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel_curTime.Image")));
+            this.toolStripStatusLabel_curTime.Name = "toolStripStatusLabel_curTime";
+            this.toolStripStatusLabel_curTime.Size = new System.Drawing.Size(76, 21);
+            this.toolStripStatusLabel_curTime.Text = "当前时间";
+            // 
             // toolStripStatusLabel_operater
             // 
             this.toolStripStatusLabel_operater.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabel_operater.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel_operater.Image")));
             this.toolStripStatusLabel_operater.Name = "toolStripStatusLabel_operater";
-            this.toolStripStatusLabel_operater.Size = new System.Drawing.Size(48, 21);
+            this.toolStripStatusLabel_operater.Size = new System.Drawing.Size(64, 21);
             this.toolStripStatusLabel_operater.Text = "操作员";
             // 
             // toolStripStatusLabel_loginTime
             // 
             this.toolStripStatusLabel_loginTime.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabel_loginTime.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel_loginTime.Image")));
             this.toolStripStatusLabel_loginTime.Name = "toolStripStatusLabel_loginTime";
-            this.toolStripStatusLabel_loginTime.Size = new System.Drawing.Size(60, 21);
+            this.toolStripStatusLabel_loginTime.Size = new System.Drawing.Size(76, 21);
             this.toolStripStatusLabel_loginTime.Text = "登录时间";
             // 
-            // toolStripStatusLabel_curTime
+            // toolStripStatusLabel_prompt
             // 
-            this.toolStripStatusLabel_curTime.Name = "toolStripStatusLabel_curTime";
-            this.toolStripStatusLabel_curTime.Size = new System.Drawing.Size(80, 21);
-            this.toolStripStatusLabel_curTime.Text = "系统当前时间";
+            this.toolStripStatusLabel_prompt.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel_prompt.Image")));
+            this.toolStripStatusLabel_prompt.Name = "toolStripStatusLabel_prompt";
+            this.toolStripStatusLabel_prompt.Size = new System.Drawing.Size(72, 21);
+            this.toolStripStatusLabel_prompt.Text = "温馨提示";
+            this.toolStripStatusLabel_prompt.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.退出ToolStripMenuItem,
             this.锁定toolStripMenuItem,
+            this.注销ToolStripMenuItem,
+            this.退出ToolStripMenuItem,
             this.关于我们toolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -100,16 +114,16 @@
             // 
             this.退出ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("退出ToolStripMenuItem.Image")));
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.退出ToolStripMenuItem.Text = "注销";
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.退出ToolStripMenuItem.Text = "退出系统";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出系统ToolStripMenuItem_Click);
             // 
             // 锁定toolStripMenuItem
             // 
             this.锁定toolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("锁定toolStripMenuItem.Image")));
             this.锁定toolStripMenuItem.Name = "锁定toolStripMenuItem";
-            this.锁定toolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.锁定toolStripMenuItem.Text = "锁定";
+            this.锁定toolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.锁定toolStripMenuItem.Text = "系统锁定";
             this.锁定toolStripMenuItem.Click += new System.EventHandler(this.锁定toolStripMenuItem_Click);
             // 
             // 关于我们toolStripMenuItem
@@ -153,11 +167,13 @@
             this.imageList1.Images.SetKeyName(4, "欠费催款.png");
             this.imageList1.Images.SetKeyName(5, "评价管理.png");
             // 
-            // toolStripStatusLabel_zhanwei
+            // 注销ToolStripMenuItem
             // 
-            this.toolStripStatusLabel_zhanwei.Name = "toolStripStatusLabel_zhanwei";
-            this.toolStripStatusLabel_zhanwei.Size = new System.Drawing.Size(547, 21);
-            this.toolStripStatusLabel_zhanwei.Spring = true;
+            this.注销ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("注销ToolStripMenuItem.Image")));
+            this.注销ToolStripMenuItem.Name = "注销ToolStripMenuItem";
+            this.注销ToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.注销ToolStripMenuItem.Text = "注销登录";
+            this.注销ToolStripMenuItem.Click += new System.EventHandler(this.注销ToolStripMenuItem_Click);
             // 
             // Frm_Main
             // 
@@ -202,7 +218,8 @@
         private System.Windows.Forms.ToolStripMenuItem 锁定toolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于我们toolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_zhanwei;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_prompt;
+        private System.Windows.Forms.ToolStripMenuItem 注销ToolStripMenuItem;
         
     }
 }

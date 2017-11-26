@@ -9,12 +9,11 @@ namespace OutpatientRegistrationSystem
 {
     class sqlHelper
     {
+        public static string sqlconstr;
+
         public SqlConnection getcon()
         {
-            //string sqlstr = @"Server=(local); Database=OPRSBase; Integrated Security=sspi";
-            string sqlstr = @"Server=192.168.11.128; Database=OPRSBase; UID=sa; Pwd=sa";
-            //string sqlstr = @"Server=SERVER-1; Database=OPRSBase; UID=jsj; Pwd=2wsx@WSX";
-            SqlConnection myconn = new SqlConnection(sqlstr);
+            SqlConnection myconn = new SqlConnection(sqlconstr);
             return myconn;
         }
         public int getcom(string tempstr)

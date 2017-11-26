@@ -13,6 +13,7 @@ namespace OutpatientRegistrationSystem
     public partial class Frm_login : Form
     {
         sqlHelper mysql = new sqlHelper();
+
         public Frm_login()
         {
             InitializeComponent();
@@ -22,6 +23,18 @@ namespace OutpatientRegistrationSystem
 
         private void btn_logIn_Click(object sender, EventArgs e)
         {
+            if (rdo_remote.Checked)
+            {
+                sqlHelper.sqlconstr = @"Server=192.168.11.128; Database=OPRSBase; UID=sa; Pwd=sa";
+            }
+            if (rdo_backup.Checked)
+            {
+                sqlHelper.sqlconstr = @"Server=SERVER-1; Database=OPRSBase; UID=jsj; Pwd=2wsx@WSX";
+            }
+            if (rdo_local.Checked)
+            {
+                sqlHelper.sqlconstr = @"Server=(local); Database=OPRSBase; Integrated Security=sspi";
+            }
             SqlConnection conn = mysql.getcon();
             SqlCommand comm = conn.CreateCommand();
             comm.CommandText = "SELECT * FROM tb_operator WHERE No=@No AND Password=HASHBYTES('SHA',@Password);";
@@ -31,7 +44,7 @@ namespace OutpatientRegistrationSystem
             comm.Parameters["@Password"].SqlDbType = SqlDbType.VarChar;
             conn.Open();
             SqlDataReader dr = comm.ExecuteReader();
-            if(dr.Read())
+            if (dr.Read())
             {
                 this.DialogResult = DialogResult.OK;
                 userHelper.operatorNo = this.texbox_userName.Text.Trim();
@@ -61,6 +74,11 @@ namespace OutpatientRegistrationSystem
         private void Frm_login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Frm_login_Load(object sender, EventArgs e)
+        {
+            rdo_remote.Select();
         }
     }
 }
