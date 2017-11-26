@@ -185,6 +185,10 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 					 JOIN dbo.tb_doctor d2 ON d1.NO = d2.deptNo
 				WHERE r.patientNo=p.No AND r.docNo=d2.No AND r.done=0
 				ORDER BY r.NO,r.regDate,r.regTime;
+				
+				--»¼ÕßÔ¤Ô¼--É¾³ýÔ¤Ô¼;
+				DELETE FROM dbo.tb_registration
+				WHERE NO=1;
 
 
 
