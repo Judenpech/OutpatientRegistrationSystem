@@ -1,5 +1,15 @@
 # Change Logs
 
+#### 2017/11/26
+
+- 完善Frm_appointment窗体“患者预约”功能；
+- 完善Frm_registration窗体“患者挂号”功能；
+- 完善Frm_login窗体“登录”功能；
+- 完善Frm_main窗体功能；
+- 修复Frm_mediCardRecharge窗体bug；
+- 修改sqlHelper.cs；
+- 完善OPRS操作。
+
 #### 2017/11/25
 
 - 完善Frm_mediCardRecharge窗体“就诊卡充值”功能；
@@ -107,7 +117,7 @@
 #### 2017/10/20
 
 - 完成门诊挂号系统建库，插入操作员数据，上传OPRS建库脚本；
-- 实现操作员登录功能；
+- 实现Frm_login窗体操作员登录功能；
 - 完成UML用例图；
 - 整理完善开发文档；
 - 规范化上传文件，整理至Data，Src，Doc三个文件夹。
