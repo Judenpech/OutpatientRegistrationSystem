@@ -1,5 +1,9 @@
 # Change Logs
 
+#### 2017/11/29
+
+- 修复bugs。
+
 #### 2017/11/26
 
 - 完善Frm_appointment窗体“患者预约”功能；
