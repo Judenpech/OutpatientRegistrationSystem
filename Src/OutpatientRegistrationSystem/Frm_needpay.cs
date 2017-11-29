@@ -85,39 +85,46 @@ namespace OutpatientRegistrationSystem
 
         private void btn_mail_Click(object sender, EventArgs e)
         {
-            MailMessage msg = new MailMessage();
-            msg.To.Add(tb_email.Text.Trim());
-            msg.From = new MailAddress("test@abc.com", userHelper.operatorName, Encoding.UTF8);
-            msg.Subject = "XX医院催款通知";
-            msg.SubjectEncoding = Encoding.UTF8;
-            String mailstr = "尊敬的患者 " + tb_name.Text.Trim() + "：\n"
-                + "\n您至今已拖欠本院医疗费用 " + Math.Abs(Convert.ToSingle(tb_balance.Text.Trim())) + " 元。\n"
-                + "1、请您在收到本通知10日内到我院住院部交费处补交金额 " + Math.Abs(Convert.ToSingle(tb_balance.Text.Trim())) + " 元；\n"
-                + "2、在您刚入院时，您签署了住院须知，您已承诺遵守医院管理规定，按时足额缴纳医药费用，请您履行您的承诺； \n"
-                + "3、如您在接到本通知后，既不缴费又不与我院相关部门联系，我们在10日后将视作您放弃治疗，医院将给您采取维持生命的一般治疗。"
-                + "此措施将有可能产生下列后果： \n"
-                + "(1) 您治疗的时间将延长； \n(2) 您原有疾病可能加重或复发； \n(3) 您以后的治疗可能会增加困难； "
-                + "\n(4)您治疗的中断，使原已花费的医疗费用可能重复或增加； \n(5) 其他。"
-                + "\n4、如果您既不缴费又不与我院相关部门联系协商解决，我们将依据相关规定寻求法律途径解决，由此产生的后果将由您自行承担。 \n"
-                + "\nXX医院\n" + System.DateTime.Now.ToString("yyyy年MM月dd日");
-            msg.Body = mailstr;
-            msg.BodyEncoding = Encoding.UTF8;
-            msg.IsBodyHtml = false;
-            msg.Priority = MailPriority.High;
-            SmtpClient client = new SmtpClient();
-            client.Host = "localhost";
-            object userState = msg;
-            DialogResult dr = MessageBox.Show(mailstr, "确认邮件内容", MessageBoxButtons.OKCancel);
-            if (dr == DialogResult.OK)
+            if (tb_patientno.Text == "")
             {
-                try
+                MessageBox.Show("请选择催款人！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MailMessage msg = new MailMessage();
+                msg.To.Add(tb_email.Text.Trim());
+                msg.From = new MailAddress("test@abc.com", userHelper.operatorName, Encoding.UTF8);
+                msg.Subject = "XX医院催款通知";
+                msg.SubjectEncoding = Encoding.UTF8;
+                String mailstr = "尊敬的患者 " + tb_name.Text.Trim() + "：\n"
+                    + "\n您至今已拖欠本院医疗费用 " + Math.Abs(Convert.ToSingle(tb_balance.Text.Trim())) + " 元。\n"
+                    + "1、请您在收到本通知10日内到我院住院部交费处补交金额 " + Math.Abs(Convert.ToSingle(tb_balance.Text.Trim())) + " 元；\n"
+                    + "2、在您刚入院时，您签署了住院须知，您已承诺遵守医院管理规定，按时足额缴纳医药费用，请您履行您的承诺； \n"
+                    + "3、如您在接到本通知后，既不缴费又不与我院相关部门联系，我们在10日后将视作您放弃治疗，医院将给您采取维持生命的一般治疗。"
+                    + "此措施将有可能产生下列后果： \n"
+                    + "(1) 您治疗的时间将延长； \n(2) 您原有疾病可能加重或复发； \n(3) 您以后的治疗可能会增加困难； "
+                    + "\n(4)您治疗的中断，使原已花费的医疗费用可能重复或增加； \n(5) 其他。"
+                    + "\n4、如果您既不缴费又不与我院相关部门联系协商解决，我们将依据相关规定寻求法律途径解决，由此产生的后果将由您自行承担。 \n"
+                    + "\nXX医院\n" + System.DateTime.Now.ToString("yyyy年MM月dd日");
+                msg.Body = mailstr;
+                msg.BodyEncoding = Encoding.UTF8;
+                msg.IsBodyHtml = false;
+                msg.Priority = MailPriority.High;
+                SmtpClient client = new SmtpClient();
+                client.Host = "localhost";
+                object userState = msg;
+                DialogResult dr = MessageBox.Show(mailstr, "确认邮件内容", MessageBoxButtons.OKCancel);
+                if (dr == DialogResult.OK)
                 {
-                    client.SendAsync(msg, userState);
-                    MessageBox.Show("邮件发送成功！");
-                }
-                catch (SmtpException ex)
-                {
-                    MessageBox.Show("邮件发送出错："+ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    try
+                    {
+                        client.SendAsync(msg, userState);
+                        MessageBox.Show("邮件发送成功！");
+                    }
+                    catch (SmtpException ex)
+                    {
+                        MessageBox.Show("邮件发送出错：" + ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }

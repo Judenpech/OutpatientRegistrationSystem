@@ -52,12 +52,13 @@ namespace OutpatientRegistrationSystem
             treeView1.Nodes.Add(tr3);
             tr3.ExpandAll();
 
-            for (int i = 0, k = 0; i < treeView1.Nodes.Count; i++)//bug：treeview点击，image改变
+            for (int i = 0, k = 0; i < treeView1.Nodes.Count; i++)
             {
                 for (int j = 0; j < treeView1.Nodes[i].Nodes.Count; j++, k++)
                 {
                     if (k == 5) break; //待修改删除
                     treeView1.Nodes[i].Nodes[j].ImageIndex = k;
+                    treeView1.Nodes[i].Nodes[j].SelectedImageIndex = k;
                 }
             }
 

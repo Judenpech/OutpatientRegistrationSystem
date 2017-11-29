@@ -71,9 +71,10 @@ namespace OutpatientRegistrationSystem
                 this.cmb_doc.Items.Add(docds.Tables[0].Rows[i][0]);
             }
             this.setFalse();
+            tb_id.Enabled = false;
         }
 
-        private void 删除ToolStripButton_Click(object sender, EventArgs e)//bug
+        private void 删除ToolStripButton_Click(object sender, EventArgs e)
         {
             int rowAffected = 0;
             if (tb_patient.Text != "")
@@ -110,7 +111,7 @@ namespace OutpatientRegistrationSystem
             cmb_doc.Enabled = false;
         }
 
-        private void 保存ToolStripButton_Click(object sender, EventArgs e)//bug
+        private void 保存ToolStripButton_Click(object sender, EventArgs e)
         {
             int rowAffected = 0;
             tb_patient.Enabled = false;

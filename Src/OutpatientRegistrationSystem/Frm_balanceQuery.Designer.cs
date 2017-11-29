@@ -39,6 +39,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_balanceQuery";
             this.Text = "余额查询";
+            this.Load += new System.EventHandler(this.Frm_balanceQuery_Load);
             this.ResumeLayout(false);
 
         }

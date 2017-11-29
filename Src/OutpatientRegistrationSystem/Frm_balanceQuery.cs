@@ -15,5 +15,10 @@ namespace OutpatientRegistrationSystem
         {
             InitializeComponent();
         }
+
+        private void Frm_balanceQuery_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
