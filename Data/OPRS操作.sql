@@ -410,3 +410,19 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			UPDATE dbo.tb_card
 			SET balance=100
 			WHERE patientNo='20171112102319';
+			
+			
+--科室查询；
+			--科室查询--查询所有科室名称；
+			SELECT NAME
+			FROM dbo.tb_dept;
+
+			--科室查询--根据科室名称查询科室信息；
+			SELECT NO,NAME,DSCP
+			FROM dbo.tb_dept
+			WHERE NAME='内科';
+
+			--科室查询--根据科室编号查询科室信息；
+			SELECT NO,NAME,DSCP
+			FROM dbo.tb_dept
+			WHERE NO=1;
