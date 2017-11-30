@@ -51,7 +51,7 @@
             // texbox_psw
             // 
             this.texbox_psw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.texbox_psw.Location = new System.Drawing.Point(95, 76);
+            this.texbox_psw.Location = new System.Drawing.Point(63, 76);
             this.texbox_psw.Name = "texbox_psw";
             this.texbox_psw.PasswordChar = '*';
             this.texbox_psw.Size = new System.Drawing.Size(122, 21);
@@ -60,7 +60,7 @@
             // texbox_userName
             // 
             this.texbox_userName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.texbox_userName.Location = new System.Drawing.Point(95, 38);
+            this.texbox_userName.Location = new System.Drawing.Point(63, 38);
             this.texbox_userName.Name = "texbox_userName";
             this.texbox_userName.Size = new System.Drawing.Size(122, 21);
             this.texbox_userName.TabIndex = 19;
@@ -68,7 +68,7 @@
             // btn_exit
             // 
             this.btn_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_exit.Location = new System.Drawing.Point(459, 379);
+            this.btn_exit.Location = new System.Drawing.Point(438, 379);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(87, 27);
             this.btn_exit.TabIndex = 18;
@@ -78,7 +78,7 @@
             // 
             // btn_logIn
             // 
-            this.btn_logIn.Location = new System.Drawing.Point(459, 333);
+            this.btn_logIn.Location = new System.Drawing.Point(438, 333);
             this.btn_logIn.Name = "btn_logIn";
             this.btn_logIn.Size = new System.Drawing.Size(87, 27);
             this.btn_logIn.TabIndex = 17;
@@ -91,18 +91,18 @@
             this.lab_psw.AutoSize = true;
             this.lab_psw.Location = new System.Drawing.Point(20, 80);
             this.lab_psw.Name = "lab_psw";
-            this.lab_psw.Size = new System.Drawing.Size(65, 12);
+            this.lab_psw.Size = new System.Drawing.Size(41, 12);
             this.lab_psw.TabIndex = 16;
-            this.lab_psw.Text = "用户密码：";
+            this.lab_psw.Text = "密码：";
             // 
             // lab_userName
             // 
             this.lab_userName.AutoSize = true;
             this.lab_userName.Location = new System.Drawing.Point(20, 42);
             this.lab_userName.Name = "lab_userName";
-            this.lab_userName.Size = new System.Drawing.Size(65, 12);
+            this.lab_userName.Size = new System.Drawing.Size(41, 12);
             this.lab_userName.TabIndex = 15;
-            this.lab_userName.Text = "用户工号：";
+            this.lab_userName.Text = "用户：";
             // 
             // pictureBox1
             // 
@@ -191,7 +191,7 @@
             this.groupBox2.Controls.Add(this.texbox_psw);
             this.groupBox2.Location = new System.Drawing.Point(197, 299);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(241, 125);
+            this.groupBox2.Size = new System.Drawing.Size(210, 125);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             // 

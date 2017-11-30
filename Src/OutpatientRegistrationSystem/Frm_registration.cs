@@ -101,7 +101,7 @@ namespace OutpatientRegistrationSystem
             cmb_cardtype.SelectedIndex = 0;
 
             this.gridviewinit();
-            tb_regid.DataBindings.Add("text", mybds, "排队号");
+            tb_regid.DataBindings.Add("text", mybds, "候诊号");
         }
 
         private void getname()
@@ -189,7 +189,7 @@ namespace OutpatientRegistrationSystem
 
         private void gridviewinit()
         {
-            DataSet view1ds = mysql.getds("SELECT r.NO 排队号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 挂号科室,d2.NAME 挂号医生, r.regDate 挂号日期,CONVERT(VARCHAR(5),r.regTime,114) 挂号时间 "
+            DataSet view1ds = mysql.getds("SELECT r.NO 候诊号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 挂号科室,d2.NAME 挂号医生, r.regDate 挂号日期,CONVERT(VARCHAR(5),r.regTime,114) 挂号时间 "
                 + "FROM tb_registration r JOIN tb_patient p ON r.patientNo = p.No,tb_dept d1 JOIN tb_doctor d2 ON d1.NO = d2.deptNo WHERE r.patientNo=p.No AND r.docNo=d2.No "
                 + "AND r.done=0 ORDER BY r.NO,r.regDate,r.regTime;", "registration");
             mybds.DataSource = view1ds.Tables[0];
