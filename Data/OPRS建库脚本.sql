@@ -36,7 +36,7 @@ CREATE TABLE tb_operator
         VARBINARY(160)
         NOT NULL);
         
-----操作员表--插入操作员数据；
+---操作员表--插入操作员数据；
 INSERT tb_operator
 	(No,Name,Password)
 	VALUES

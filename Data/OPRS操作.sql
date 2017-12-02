@@ -426,3 +426,25 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			SELECT NO,NAME,DSCP
 			FROM dbo.tb_dept
 			WHERE NO=1;
+			
+			
+--就诊卡余额查询；
+			--就诊卡余额查询--查询所有就诊卡病人；
+			SELECT p.No 患者编号,p.Name 患者姓名,c.visitNo 就诊卡号,c.balance 余额
+			FROM dbo.tb_patient p JOIN dbo.tb_card c ON p.No=c.patientNo AND p.visitNo=c.visitNo
+			WHERE c.cardType=0;
+
+			--就诊卡余额查询--根据就诊卡号查询病人就诊卡信息；
+			SELECT COUNT(1)
+			FROM dbo.tb_card c
+			WHERE c.visitNo='20171112001';
+
+			--就诊卡余额查询--根据患者编号查询病人就诊卡信息；
+			SELECT COUNT(1)
+			FROM dbo.tb_card c 
+			WHERE c.patientNo='20171112102319' AND c.cardType=0;
+
+			--就诊卡余额查询--根据患者姓名查询病人就诊卡信息；
+			SELECT COUNT(1)
+			FROM dbo.tb_card c JOIN dbo.tb_patient p ON p.No=c.patientNo AND p.visitNo=c.visitNo
+			WHERE p.Name='张三';
