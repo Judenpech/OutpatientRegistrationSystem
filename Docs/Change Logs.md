@@ -1,5 +1,10 @@
 # Change Logs
 
+#### 2017/12/02
+
+- 实现Frm_balanceQuery窗体“余额查询”功能；
+- 完善OPRS操作。
+
 #### 2017/11/30
 
 - 实现Frm_deptQuery窗体“科室查询”功能；
