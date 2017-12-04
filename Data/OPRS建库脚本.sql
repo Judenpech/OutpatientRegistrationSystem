@@ -33,20 +33,20 @@ CREATE TABLE tb_operator
         VARCHAR(25)
         NOT NULL
     ,password
-        VARBINARY(160)
-        NOT NULL);
+        VARBINARY(160));
         
 ---操作员表--插入操作员数据；
 INSERT tb_operator
 	(No,Name,Password)
 	VALUES
 		('3150707012','李靖',HASHBYTES('SHA','7012'))
-		,('1','test',HASHBYTES('SHA','1'));
+		,('1','test',HASHBYTES('SHA','1'))
+		,('2','test1',NULL);
 		       
 ---患者表；
 CREATE TABLE tb_patient
     (No
-        varCHAR(15)
+        VARCHAR(15)
         NOT NULL
         PRIMARY KEY
     ,Name
@@ -118,8 +118,6 @@ CREATE TABLE tb_card
 	(ticketNo
 		CHAR(15)
 		PRIMARY KEY
-	,mediRecordNo
-		CHAR(15)
 	,patientNo
 		varCHAR(15)
 	,id
@@ -149,13 +147,14 @@ CREATE TABLE tb_card
 ---科室表；
 CREATE TABLE tb_dept
     (NO
-        INT
-        IDENTITY(1,1)
+        VARCHAR(18)
         NOT NULL
         PRIMARY KEY
     ,NAME
         varchar(25)
         NOT NULL
+    ,pinyin
+		VARCHAR(18)
     ,DSCP
         VARCHAR(455));
         

@@ -4,10 +4,16 @@
 USE OPRSBase;
 
 
---登录；
-SELECT *
-FROM dbo.tb_operator
-WHERE No='1' AND password=HASHBYTES('SHA','1');
+--系统登录；
+			--系统登录--查询用户是否存在；
+			SELECT COUNT(1)
+			FROM dbo.tb_operator
+			WHERE No='2' AND password IS NULL;
+
+			--系统登录--核对用户名和密码；
+			SELECT *
+			FROM dbo.tb_operator
+			WHERE No='1' AND password=HASHBYTES('SHA','1');
 
 
 
@@ -194,20 +200,31 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 
 
 --科室管理；
-			--科室管理--删除科室; 
-			DELETE FROM dbo.tb_dept
-			WHERE NAME='肿瘤科';
+--科室管理--查询所有科室;
+SELECT NO 科室编号,NAME 科室名称,pinyin 拼音码,DSCP 科室描述 
+FROM tb_dept; 
 
-			--科室管理--新增科室；
-			INSERT dbo.tb_dept
-					( NAME,DSCP )
-			VALUES  ( '新增科室','描述' );
+--科室管理--删除科室; 
+DELETE FROM dbo.tb_dept
+WHERE NO='1';
 
-			--科室管理--修改科室；
-			UPDATE dbo.tb_dept 
-			SET NAME='更新科室',dscp='更新科室描述'
-			WHERE NO=16;
+--科室管理--新增科室；
+INSERT dbo.tb_dept
+		( NO,NAME,pinyin,DSCP )
+VALUES  ( '16','新增科室','','描述' );
 
+--科室管理--修改科室；
+UPDATE dbo.tb_dept 
+SET NO='17',NAME='更新科室',pinyin='',dscp='更新科室描述'
+WHERE NO='16';
+
+--科室管理--导出科室Excel数据；
+SELECT NO 科室编号,NAME 科室名称,pinyin 拼音码,DSCP 科室描述 
+FROM tb_dept
+
+--科室管理--查询所有科室数量;
+SELECT COUNT(no) 合计
+FROM dbo.tb_dept;
 
 
 --挂号设置；
@@ -321,7 +338,7 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			FROM dbo.tb_expensesRecord;
 
 			--前台缴费--查询当日未交费病人；
-			SELECT e.ticketNo 票号,e.mediRecordNo 病历号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
+			SELECT e.ticketNo 票号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
 			FROM dbo.tb_expensesRecord e 
 				JOIN dbo.tb_patient p ON e.patientNo=p.No
 				JOIN dbo.tb_doctor d ON e.docNo=d.No 
@@ -330,7 +347,7 @@ WHERE No='1' AND password=HASHBYTES('SHA','1');
 			WHERE e.havePaid=0 AND r.regDate='2017-11-12';
 
 			--前台缴费--查询所有未交费病人；
-			SELECT e.ticketNo 票号,e.mediRecordNo 病历号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
+			SELECT e.ticketNo 票号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期
 			FROM dbo.tb_expensesRecord e 
 				JOIN dbo.tb_patient p ON e.patientNo=p.No
 				JOIN dbo.tb_doctor d ON e.docNo=d.No 
