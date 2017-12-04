@@ -1,5 +1,16 @@
 # Change Logs
 
+#### 2017/12/04
+
+- 新增窗体，分别为Frm_exit、Frm_systemRebuild；
+- 实现Frm_exit窗体“退出系统”功能；
+- 完善Frm_systemRebuild窗体“系统重建”功能；
+- 完善Frm_department窗体“科室管理”功能；
+- 完善Frm_login窗体“登录”功能；
+- 完善细节；
+- 删除Frm_countday窗体；
+- 修改建库脚本、OPRS操作、数据插入。
+
 #### 2017/12/02
 
 - 实现Frm_balanceQuery窗体“余额查询”功能；
