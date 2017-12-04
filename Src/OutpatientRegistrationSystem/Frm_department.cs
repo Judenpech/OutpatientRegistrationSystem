@@ -13,7 +13,7 @@ namespace OutpatientRegistrationSystem
     public partial class Frm_department : Form
     {
         sqlHelper mysql = new sqlHelper();
-        private string sqlstr = "SELECT NO 科室编号,NAME 科室名称,DSCP 科室描述 FROM tb_dept;";
+        private string sqlstr = "SELECT NO 科室编号,NAME 科室名称,pinyin 拼音码,DSCP 科室描述 FROM tb_dept; ";
         private string mytable = "department";
         BindingSource mybdsource = new BindingSource();
         private int savevalue;
@@ -31,34 +31,47 @@ namespace OutpatientRegistrationSystem
             this.bindingNavigator1.BindingSource = mybdsource;
         }
 
+        private void setFalse()
+        {
+            tb_id.Enabled = false;
+            tb_name.Enabled = false;
+            tb_pinyin.Enabled = false;
+            rtb_dscp.Enabled = false;
+        }
+
+        private void setTrue()
+        {
+            tb_id.Enabled = true;
+            tb_name.Enabled = true;
+            tb_pinyin.Enabled = true;
+            rtb_dscp.Enabled = true;
+        }
+
         private void Frm_department_Load(object sender, EventArgs e)
         {
             this.init();
+            tb_pinyin.DataBindings.Add("text", mybdsource, "拼音码");
             tb_id.DataBindings.Add("text", mybdsource, "科室编号");
             tb_name.DataBindings.Add("text", mybdsource, "科室名称");
             rtb_dscp.DataBindings.Add("text", mybdsource, "科室描述");
-
-            tb_id.Enabled = false;
-            tb_name.Enabled = false;
-            rtb_dscp.Enabled = false;
+            this.setFalse();
         }
 
         private void 新增ToolStripButton_Click(object sender, EventArgs e)
         {
-            tb_name.Enabled = true;
-            rtb_dscp.Enabled = true;
-            tb_name.Focus();
+            this.setTrue();
+            tb_id.Focus();
             savevalue = 1;
         }
 
         private void 删除ToolStripButton_Click(object sender, EventArgs e)
         {
             int rowAffected = 0;
-            if (tb_name.Text != "")
+            if (tb_id.Text != "" && tb_name.Text != "")
             {
                 try
                 {
-                    rowAffected = mysql.getcom("DELETE FROM tb_dept WHERE NAME='" + tb_name.Text.Trim() + "';");
+                    rowAffected = mysql.getcom("DELETE FROM tb_dept WHERE NO='" + tb_id.Text.Trim() + "';");
                 }
                 catch (SqlException sqlEx)
                 {
@@ -77,15 +90,13 @@ namespace OutpatientRegistrationSystem
             {
                 MessageBox.Show("请选择要删除的科室！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            tb_name.Enabled = false;
-            rtb_dscp.Enabled = false;
+            this.setFalse();
             this.init();
         }
 
         private void 修改ToolStripButton_Click(object sender, EventArgs e)
         {
-            tb_name.Enabled = true;
-            rtb_dscp.Enabled = true;
+            this.setTrue();
             savevalue = 2;
         }
 
@@ -94,11 +105,12 @@ namespace OutpatientRegistrationSystem
             int rowAffected = 0;
             if (savevalue == 1)
             {
-                if (tb_name.Text != "")
+                if (tb_id.Text != "" && tb_name.Text != "")
                 {
                     try
                     {
-                        rowAffected = mysql.getcom("INSERT tb_dept ( NAME,DSCP ) VALUES  ( '" + tb_name.Text.Trim() + "','" + rtb_dscp.Text.Trim() + "' );");
+                        rowAffected = mysql.getcom("INSERT dbo.tb_dept ( NO,NAME,pinyin,DSCP ) "
+                            + "VALUES  ( '" + tb_id.Text.Trim() + "','" + tb_name.Text.Trim() + "','" + tb_pinyin.Text.Trim() + "','" + rtb_dscp.Text.Trim() + "' );");
                     }
                     catch (SqlException sqlEx)
                     {
@@ -106,28 +118,28 @@ namespace OutpatientRegistrationSystem
                     }
                     if (rowAffected == 1)
                     {
-                        tb_name.Enabled = false;
-                        rtb_dscp.Enabled = false;
+                        this.setFalse();
                         savevalue = 0;
                         MessageBox.Show("添加科室成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("科室名称不能为空，添加失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    tb_name.Enabled = false;
-                    rtb_dscp.Enabled = false;
+                    MessageBox.Show("科室编号和名称不能为空，添加失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.setFalse();
                 }
             }
             else
             {
                 if (savevalue == 2)
                 {
-                    if (tb_name.Text != "")
+                    if (tb_id.Text != "" && tb_name.Text != "")
                     {
                         try
                         {
-                            rowAffected = mysql.getcom("UPDATE tb_dept SET NAME='" + tb_name.Text.Trim() + "',dscp='" + rtb_dscp.Text.Trim() + "' WHERE NO=" + Convert.ToInt32(tb_id.Text.Trim()) + ";");
+                            rowAffected = mysql.getcom("UPDATE tb_dept "
+                                + "SET NO='" + tb_id.Text.Trim() + "',NAME='" + tb_name.Text.Trim() + "',pinyin='" + tb_pinyin.Text.Trim() + "',dscp='" + rtb_dscp.Text.Trim()
+                                + "' WHERE NO='" + tb_id.Text.Trim() + "';");
                         }
                         catch (SqlException sqlEx)
                         {
@@ -135,21 +147,25 @@ namespace OutpatientRegistrationSystem
                         }
                         if (rowAffected == 1)
                         {
-                            tb_name.Enabled = false;
-                            rtb_dscp.Enabled = false;
+                            this.setFalse();
                             savevalue = 0;
                             MessageBox.Show("修改科室成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("科室名称不能为空！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("科室编号和名称不能为空！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         tb_name.Focus();
                         tb_name.SelectAll();
                     }
                 }
             }
             this.init();
+        }
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

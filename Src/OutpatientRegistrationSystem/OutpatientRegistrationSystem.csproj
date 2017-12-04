@@ -86,12 +86,6 @@
     <Compile Include="Frm_balanceQuery.Designer.cs">
       <DependentUpon>Frm_balanceQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_countday.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_countday.Designer.cs">
-      <DependentUpon>Frm_countday.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_countdept.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +121,18 @@
     </Compile>
     <Compile Include="Frm_doctor.Designer.cs">
       <DependentUpon>Frm_doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_exit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_exit.Designer.cs">
+      <DependentUpon>Frm_exit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_firstTimeLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_firstTimeLogin.Designer.cs">
+      <DependentUpon>Frm_firstTimeLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_lock.cs">
       <SubType>Form</SubType>
@@ -206,6 +212,12 @@
     <Compile Include="Frm_regsetting.Designer.cs">
       <DependentUpon>Frm_regsetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_systemRebuild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_systemRebuild.Designer.cs">
+      <DependentUpon>Frm_systemRebuild.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CRT_appo.rpt">
@@ -221,9 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_balanceQuery.resx">
       <DependentUpon>Frm_balanceQuery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_countday.resx">
-      <DependentUpon>Frm_countday.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_countdept.resx">
       <DependentUpon>Frm_countdept.cs</DependentUpon>
@@ -242,6 +251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_doctor.resx">
       <DependentUpon>Frm_doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_exit.resx">
+      <DependentUpon>Frm_exit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_firstTimeLogin.resx">
+      <DependentUpon>Frm_firstTimeLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_lock.resx">
       <DependentUpon>Frm_lock.cs</DependentUpon>
@@ -281,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_regsetting.resx">
       <DependentUpon>Frm_regsetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_systemRebuild.resx">
+      <DependentUpon>Frm_systemRebuild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -170,7 +170,7 @@
             this.新增ToolStripButton.Name = "新增ToolStripButton";
             this.新增ToolStripButton.RightToLeftAutoMirrorImage = true;
             this.新增ToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.新增ToolStripButton.Text = "新添";
+            this.新增ToolStripButton.Text = "新增";
             this.新增ToolStripButton.ToolTipText = "新增";
             this.新增ToolStripButton.Click += new System.EventHandler(this.新增ToolStripButton_Click);
             // 

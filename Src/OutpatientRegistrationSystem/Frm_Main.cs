@@ -33,8 +33,6 @@ namespace OutpatientRegistrationSystem
             tr1.Nodes.Add("", "余额查询", 0, 1);
 
             TreeNode tr2 = new TreeNode("门诊统计", 0, 1);
-            tr2.Nodes.Add("", "科室统计", 0, 1);
-            tr2.Nodes.Add("", "每日汇总", 0, 1);
 
             TreeNode tr3 = new TreeNode("设置维护", 0, 1);
             tr3.Nodes.Add("", "挂号费设置", 0, 1);
@@ -43,14 +41,16 @@ namespace OutpatientRegistrationSystem
             tr3.Nodes.Add("", "评价管理", 0, 1);
             tr3.Nodes.Add("", "操作员设置", 0, 1);
 
+            TreeNode tr4 = new TreeNode("系统重建", 0, 1);
+
             treeView1.Nodes.Add(tr);
             tr.ExpandAll();
             treeView1.Nodes.Add(tr1);
             tr1.ExpandAll();
             treeView1.Nodes.Add(tr2);
-            tr2.ExpandAll();
             treeView1.Nodes.Add(tr3);
             tr3.ExpandAll();
+            treeView1.Nodes.Add(tr4);
 
             for (int i = 0, k = 0; i < treeView1.Nodes.Count; i++)
             {
@@ -64,7 +64,7 @@ namespace OutpatientRegistrationSystem
 
             toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operatorNo + "（" + userHelper.operatorName + "）";
             toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
-            toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("HH:mm");
+            toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("yyyy/MM/dd   HH:mm");
             toolStripStatusLabel_prompt.Text = "温馨提示：欢迎使用门诊预约挂号系统！工作中，累了请休息一下，多喝杯水！";
             this.timer1.Interval = 1000;
             this.timer1.Start();
@@ -180,24 +180,6 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                case "科室统计":
-                    {
-                        if (this.checkchildfrm("Frm_countdept") == true)
-                            return;
-                        Frm_countdept frm = new Frm_countdept();
-                        frm.MdiParent = this;
-                        frm.Show();
-                        break;
-                    }
-                case "每日汇总":
-                    {
-                        if (this.checkchildfrm("Frm_countday") == true)
-                            return;
-                        Frm_countday frm = new Frm_countday();
-                        frm.MdiParent = this;
-                        frm.Show();
-                        break;
-                    }
                 case "挂号费设置":
                     {
                         if (this.checkchildfrm("Frm_regsetting") == true)
@@ -234,14 +216,23 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
+                case "系统重建":
+                    {
+                        if (this.checkchildfrm("Frm_systemRebuild") == true)
+                            return;
+                        Frm_systemRebuild frm = new Frm_systemRebuild();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
                 default:
                     return;
             }
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e) //bug：toolStripStatusLabel_curTime未显示
+        private void timer1_Tick_1(object sender, EventArgs e) 
         {
-            this.toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("HH:mm");
+            this.toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("yyyy/MM/dd  HH:mm");
         }
 
         private void 锁定toolStripMenuItem_Click(object sender, EventArgs e)
@@ -265,11 +256,8 @@ namespace OutpatientRegistrationSystem
 
         private void 退出系统ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("您确定要退出系统吗?", "退出确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dr == DialogResult.OK)
-            {
-                Application.Exit();
-            }
+            Frm_exit frm = new Frm_exit();
+            frm.Show();
         }
 
         private void 注销ToolStripMenuItem_Click(object sender, EventArgs e)

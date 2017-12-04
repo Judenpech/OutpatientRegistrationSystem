@@ -13,7 +13,7 @@ namespace OutpatientRegistrationSystem
     public partial class Frm_payment : Form
     {
         sqlHelper mysql = new sqlHelper();
-        private string sqlstr = "SELECT e.ticketNo 票号,e.mediRecordNo 病历号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期 "
+        private string sqlstr = "SELECT e.ticketNo 票号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期 "
             + "FROM dbo.tb_expensesRecord e JOIN dbo.tb_patient p ON e.patientNo=p.No	JOIN dbo.tb_doctor d ON e.docNo=d.No 	JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO JOIN dbo.tb_registration r ON e.regNo=r.NO "
             + "WHERE e.havePaid=0 AND r.regDate='" + System.DateTime.Now.ToShortDateString() + "';";
         private string mytable = "expensesRecord";
@@ -43,7 +43,6 @@ namespace OutpatientRegistrationSystem
             //绑定数据  
             this.init();
             tb_ticketNo.DataBindings.Add("text", mybdsource, "票号");
-            tb_mediRecordNo.DataBindings.Add("text", mybdsource, "病历号");
             tb_regNo.DataBindings.Add("text", mybdsource, "挂号号码");
             tb_patientNo.DataBindings.Add("text", mybdsource, "患者编号");
             tb_patientname.DataBindings.Add("text", mybdsource, "患者姓名");
@@ -52,7 +51,6 @@ namespace OutpatientRegistrationSystem
 
             //只可查看
             tb_ticketNo.Enabled = false;
-            tb_mediRecordNo.Enabled = false;
             tb_patientNo.Enabled = false;
             tb_patientname.Enabled = false;
             tb_regNo.Enabled = false;
@@ -106,14 +104,14 @@ namespace OutpatientRegistrationSystem
         {
             if (cmb_paymentallman.SelectedItem.ToString() == "今日未缴费")
             {
-                sqlstr = "SELECT e.ticketNo 票号,e.mediRecordNo 病历号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期 "
+                sqlstr = "SELECT e.ticketNo 票号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期 "
             + "FROM dbo.tb_expensesRecord e JOIN dbo.tb_patient p ON e.patientNo=p.No	JOIN dbo.tb_doctor d ON e.docNo=d.No 	JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO JOIN dbo.tb_registration r ON e.regNo=r.NO "
             + "WHERE e.havePaid=0 AND r.regDate='" + System.DateTime.Now.ToShortDateString() + "';";
                 this.init();
             }
             if (cmb_paymentallman.SelectedItem.ToString() == "所有未缴费")
             {
-                sqlstr = "SELECT e.ticketNo 票号,e.mediRecordNo 病历号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期 "
+                sqlstr = "SELECT e.ticketNo 票号,e.regNo 挂号号码,e.patientNo 患者编号,p.Name 患者姓名,d1.NAME 就诊科室,d.NAME 就诊医生,r.regDate 就诊日期 "
             + "FROM dbo.tb_expensesRecord e JOIN dbo.tb_patient p ON e.patientNo=p.No	JOIN dbo.tb_doctor d ON e.docNo=d.No 	JOIN dbo.tb_dept d1 ON d.deptNo=d1.NO JOIN dbo.tb_registration r ON e.regNo=r.NO "
             + "WHERE e.havePaid=0;";
                 this.init();

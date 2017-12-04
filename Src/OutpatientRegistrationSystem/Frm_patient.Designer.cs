@@ -399,7 +399,7 @@
             this.groupBox2.Controls.Add(this.tb_firstphone1);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(9, 121);
+            this.groupBox2.Location = new System.Drawing.Point(9, 124);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(679, 387);
             this.groupBox2.TabIndex = 97;
@@ -619,7 +619,7 @@
             this.groupBox4.Controls.Add(this.btn_searchPatientNo);
             this.groupBox4.Controls.Add(this.btn_searchId);
             this.groupBox4.Controls.Add(this.tb_searchPatienNo);
-            this.groupBox4.Location = new System.Drawing.Point(9, 9);
+            this.groupBox4.Location = new System.Drawing.Point(9, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(679, 106);
             this.groupBox4.TabIndex = 105;
@@ -652,7 +652,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(695, 511);
+            this.ClientSize = new System.Drawing.Size(695, 518);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -35,31 +35,56 @@ namespace OutpatientRegistrationSystem
             {
                 sqlHelper.sqlconstr = @"Server=(local); Database=OPRSBase; Integrated Security=sspi";
             }
-            SqlConnection conn = mysql.getcon();
-            SqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "SELECT * FROM tb_operator WHERE No=@No AND Password=HASHBYTES('SHA',@Password);";
-            comm.Parameters.AddWithValue("@No", this.texbox_userName.Text.Trim());
-            comm.Parameters["@No"].SqlDbType = SqlDbType.VarChar;
-            comm.Parameters.AddWithValue("@Password", this.texbox_psw.Text.Trim());
-            comm.Parameters["@Password"].SqlDbType = SqlDbType.VarChar;
-            conn.Open();
-            SqlDataReader dr = comm.ExecuteReader();
-            if (dr.Read())
+            if (texbox_psw.Text == "")
             {
-                this.DialogResult = DialogResult.OK;
-                userHelper.operatorNo = this.texbox_userName.Text.Trim();
-                userHelper.operatorName = dr["Name"].ToString();
-                userHelper.operatorPsw = this.texbox_psw.Text.Trim();
-                this.Close();
+                userHelper.operatorNo = texbox_userName.Text.Trim();
+                SqlConnection conn = mysql.getcon();
+                SqlCommand comm = conn.CreateCommand();
+                comm.CommandText = "SELECT COUNT(1) FROM tb_operator WHERE No='" + userHelper.operatorNo + "' AND password IS NULL;";
+                conn.Open();
+                int rowCount = (int)comm.ExecuteScalar();
+                conn.Close();
+                if (rowCount == 1)
+                {
+                    this.Enabled = false;
+                    Frm_firstTimeLogin frm = new Frm_firstTimeLogin();
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("用户名或密码错误，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    texbox_userName.Focus();
+                    texbox_userName.SelectAll();
+                }
             }
             else
             {
-                MessageBox.Show("用户名或密码错误，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.texbox_psw.Focus();
-                this.texbox_psw.SelectAll();
+                SqlConnection conn = mysql.getcon();
+                SqlCommand comm = conn.CreateCommand();
+                comm.CommandText = "SELECT * FROM tb_operator WHERE No=@No AND Password=HASHBYTES('SHA',@Password);";
+                comm.Parameters.AddWithValue("@No", this.texbox_userName.Text.Trim());
+                comm.Parameters["@No"].SqlDbType = SqlDbType.VarChar;
+                comm.Parameters.AddWithValue("@Password", this.texbox_psw.Text.Trim());
+                comm.Parameters["@Password"].SqlDbType = SqlDbType.VarChar;
+                conn.Open();
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    this.DialogResult = DialogResult.OK;
+                    userHelper.operatorNo = this.texbox_userName.Text.Trim();
+                    userHelper.operatorName = dr["Name"].ToString();
+                    userHelper.operatorPsw = this.texbox_psw.Text.Trim();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("用户名或密码错误，请重新输入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.texbox_psw.Focus();
+                    this.texbox_psw.SelectAll();
+                }
+                dr.Close();
+                conn.Close();
             }
-            dr.Close();
-            conn.Close();
         }
 
         private void btn_exit_Click(object sender, EventArgs e)

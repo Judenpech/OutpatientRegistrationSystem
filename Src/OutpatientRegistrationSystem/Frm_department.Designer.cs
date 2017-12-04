@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_department));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_export = new System.Windows.Forms.Button();
+            this.tb_pinyin = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.rtb_dscp = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_id = new System.Windows.Forms.TextBox();
@@ -52,6 +55,7 @@
             this.删除ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.修改ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.保存ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -60,32 +64,61 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_export);
+            this.groupBox1.Controls.Add(this.tb_pinyin);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.rtb_dscp);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tb_id);
             this.groupBox1.Controls.Add(this.tb_name);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(5, 31);
+            this.groupBox1.Location = new System.Drawing.Point(446, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(482, 160);
+            this.groupBox1.Size = new System.Drawing.Size(243, 477);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "科室信息";
             // 
+            // btn_export
+            // 
+            this.btn_export.Location = new System.Drawing.Point(152, 441);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(75, 28);
+            this.btn_export.TabIndex = 8;
+            this.btn_export.Text = "导出Excel";
+            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
+            // tb_pinyin
+            // 
+            this.tb_pinyin.Location = new System.Drawing.Point(88, 100);
+            this.tb_pinyin.Name = "tb_pinyin";
+            this.tb_pinyin.Size = new System.Drawing.Size(139, 21);
+            this.tb_pinyin.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "拼音码：";
+            // 
             // rtb_dscp
             // 
             this.rtb_dscp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtb_dscp.Location = new System.Drawing.Point(80, 53);
+            this.rtb_dscp.Location = new System.Drawing.Point(19, 173);
             this.rtb_dscp.Name = "rtb_dscp";
-            this.rtb_dscp.Size = new System.Drawing.Size(374, 96);
+            this.rtb_dscp.Size = new System.Drawing.Size(208, 177);
             this.rtb_dscp.TabIndex = 5;
             this.rtb_dscp.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 59);
+            this.label3.Location = new System.Drawing.Point(17, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 4;
@@ -93,14 +126,14 @@
             // 
             // tb_id
             // 
-            this.tb_id.Location = new System.Drawing.Point(80, 22);
+            this.tb_id.Location = new System.Drawing.Point(88, 22);
             this.tb_id.Name = "tb_id";
-            this.tb_id.Size = new System.Drawing.Size(100, 21);
+            this.tb_id.Size = new System.Drawing.Size(139, 21);
             this.tb_id.TabIndex = 3;
             // 
             // tb_name
             // 
-            this.tb_name.Location = new System.Drawing.Point(315, 22);
+            this.tb_name.Location = new System.Drawing.Point(88, 61);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(139, 21);
             this.tb_name.TabIndex = 2;
@@ -108,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 27);
+            this.label2.Location = new System.Drawing.Point(17, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 1;
@@ -117,7 +150,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(244, 27);
+            this.label1.Location = new System.Drawing.Point(17, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
@@ -128,11 +161,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 196);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(483, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(435, 477);
             this.dataGridView1.TabIndex = 4;
             // 
             // bindingNavigator1
@@ -154,6 +187,7 @@
             this.删除ToolStripButton,
             this.修改ToolStripButton,
             this.保存ToolStripButton});
+            this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -161,7 +195,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(490, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(695, 23);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -171,7 +205,7 @@
             this.新增ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("新增ToolStripButton.Image")));
             this.新增ToolStripButton.Name = "新增ToolStripButton";
             this.新增ToolStripButton.RightToLeftAutoMirrorImage = true;
-            this.新增ToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.新增ToolStripButton.Size = new System.Drawing.Size(23, 20);
             this.新增ToolStripButton.Text = "新添";
             this.新增ToolStripButton.ToolTipText = "新增";
             this.新增ToolStripButton.Click += new System.EventHandler(this.新增ToolStripButton_Click);
@@ -179,7 +213,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(32, 17);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "总项数";
             // 
@@ -189,7 +223,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMoveFirstItem.Text = "移到第一条记录";
             // 
             // bindingNavigatorMovePreviousItem
@@ -198,13 +232,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMovePreviousItem.Text = "移到上一条记录";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 23);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -218,7 +252,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -226,7 +260,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMoveNextItem.Text = "移到下一条记录";
             // 
             // bindingNavigatorMoveLastItem
@@ -235,13 +269,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorMoveLastItem.Text = "移到最后一条记录";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 23);
             // 
             // 删除ToolStripButton
             // 
@@ -249,7 +283,7 @@
             this.删除ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("删除ToolStripButton.Image")));
             this.删除ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.删除ToolStripButton.Name = "删除ToolStripButton";
-            this.删除ToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.删除ToolStripButton.Size = new System.Drawing.Size(23, 20);
             this.删除ToolStripButton.Text = "删除";
             this.删除ToolStripButton.Click += new System.EventHandler(this.删除ToolStripButton_Click);
             // 
@@ -259,7 +293,7 @@
             this.修改ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("修改ToolStripButton.Image")));
             this.修改ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.修改ToolStripButton.Name = "修改ToolStripButton";
-            this.修改ToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.修改ToolStripButton.Size = new System.Drawing.Size(23, 20);
             this.修改ToolStripButton.Text = "修改";
             this.修改ToolStripButton.Click += new System.EventHandler(this.修改ToolStripButton_Click);
             // 
@@ -269,17 +303,27 @@
             this.保存ToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("保存ToolStripButton.Image")));
             this.保存ToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.保存ToolStripButton.Name = "保存ToolStripButton";
-            this.保存ToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.保存ToolStripButton.Size = new System.Drawing.Size(23, 20);
             this.保存ToolStripButton.Text = "保存";
             this.保存ToolStripButton.ToolTipText = "保存";
             this.保存ToolStripButton.Click += new System.EventHandler(this.保存ToolStripButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "科室列表：";
             // 
             // Frm_department
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(490, 533);
+            this.ClientSize = new System.Drawing.Size(695, 533);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bindingNavigator1);
@@ -322,5 +366,9 @@
         private System.Windows.Forms.ToolStripButton 保存ToolStripButton;
         private System.Windows.Forms.RichTextBox rtb_dscp;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tb_pinyin;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_export;
     }
 }

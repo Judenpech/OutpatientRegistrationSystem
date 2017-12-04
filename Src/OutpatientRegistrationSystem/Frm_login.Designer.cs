@@ -43,6 +43,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdo_local = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -185,6 +186,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.texbox_userName);
             this.groupBox2.Controls.Add(this.lab_userName);
             this.groupBox2.Controls.Add(this.lab_psw);
@@ -194,6 +196,16 @@
             this.groupBox2.Size = new System.Drawing.Size(210, 125);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label1.Location = new System.Drawing.Point(48, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 12);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "首次登录的初始密码为空";
             // 
             // Frm_login
             // 
@@ -240,5 +252,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdo_local;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
