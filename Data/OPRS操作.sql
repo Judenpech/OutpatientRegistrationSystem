@@ -199,32 +199,32 @@ USE OPRSBase;
 
 
 
---科室管理；
---科室管理--查询所有科室;
-SELECT NO 科室编号,NAME 科室名称,pinyin 拼音码,DSCP 科室描述 
-FROM tb_dept; 
+--科室设置；
+			--科室管理--查询所有科室;
+			SELECT NO 科室编号,NAME 科室名称,pinyin 拼音码,DSCP 科室描述 
+			FROM tb_dept; 
 
---科室管理--删除科室; 
-DELETE FROM dbo.tb_dept
-WHERE NO='1';
+			--科室管理--删除科室; 
+			DELETE FROM dbo.tb_dept
+			WHERE NO='1';
 
---科室管理--新增科室；
-INSERT dbo.tb_dept
-		( NO,NAME,pinyin,DSCP )
-VALUES  ( '16','新增科室','','描述' );
+			--科室管理--新增科室；
+			INSERT dbo.tb_dept
+					( NO,NAME,pinyin,DSCP )
+			VALUES  ( '16','新增科室','','描述' );
 
---科室管理--修改科室；
-UPDATE dbo.tb_dept 
-SET NO='17',NAME='更新科室',pinyin='',dscp='更新科室描述'
-WHERE NO='16';
+			--科室管理--修改科室；
+			UPDATE dbo.tb_dept 
+			SET NO='17',NAME='更新科室',pinyin='',dscp='更新科室描述'
+			WHERE NO='16';
 
---科室管理--导出科室Excel数据；
-SELECT NO 科室编号,NAME 科室名称,pinyin 拼音码,DSCP 科室描述 
-FROM tb_dept
+			--科室管理--导出科室Excel数据；
+			SELECT NO 科室编号,NAME 科室名称,pinyin 拼音码,DSCP 科室描述 
+			FROM tb_dept
 
---科室管理--查询所有科室数量;
-SELECT COUNT(no) 合计
-FROM dbo.tb_dept;
+			--科室管理--查询所有科室数量;
+			SELECT COUNT(no) 合计
+			FROM dbo.tb_dept;
 
 
 --挂号设置；
@@ -250,25 +250,25 @@ FROM dbo.tb_dept;
 
 
 
---医生管理；
+--医生设置；
 			--医生管理--查询所有医生信息；
-			SELECT d1.No 工号,d1.NAME 姓名,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长
+			SELECT d1.No 工号,d1.NAME 姓名,d1.pinyin 拼音码,d1.title 职称,d2.NAME 所属科室,d1.specialty 擅长
 			FROM dbo.tb_doctor d1,dbo.tb_dept d2
-			WHERE d1.deptNo=d2.NO;
+			WHERE d1.deptNo=d2.NO AND d2.Name='内科';
 
 			--医生管理--新增医生；
 			INSERT dbo.tb_doctor
-					( No, NAME, title, deptNo, specialty )
-			SELECT '0031','新增医生','实习生',d.NO,'擅长'
+					( No, NAME, pinyin, title, deptNo, specialty )
+			SELECT '0031','新增医生','pym','实习生',d.NO,'擅长'
 			FROM dbo.tb_dept d
-			WHERE d.NAME='中医科';
+			WHERE d.NAME='内科';
 
 			--医生管理--修改医生；
 			UPDATE dbo.tb_doctor
-			SET No='0032',NAME='修改医生',title='实习生',specialty='修改擅长',deptNo=
-			    (SELECT deptNo 
-			    FROM dbo.tb_dept 
-			    WHERE NAME='中医科')
+			SET No='0032',NAME='修改医生',pinyin='pym',title='实习生',specialty='修改擅长',deptNo=
+				(SELECT deptNo 
+				FROM dbo.tb_dept 
+				WHERE NAME='中医科')
 			WHERE No='0031';
 
 			--医生管理--删除医生；

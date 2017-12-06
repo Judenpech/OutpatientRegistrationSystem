@@ -164,6 +164,8 @@ CREATE TABLE tb_doctor
         VARCHAR(10)
         NOT NULL
         PRIMARY KEY
+    ,pinyin
+		VARCHAR(18)
     ,NAME
         VARCHAR(10)
         NOT NULL
@@ -173,7 +175,9 @@ CREATE TABLE tb_doctor
     ,deptNo
         INT
     ,specialty
-        VARCHAR(455));
+        VARCHAR(455)
+    ,isValid
+		bit);
         
 
         
