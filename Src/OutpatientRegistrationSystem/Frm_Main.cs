@@ -35,13 +35,13 @@ namespace OutpatientRegistrationSystem
             TreeNode tr2 = new TreeNode("门诊统计", 0, 1);
 
             TreeNode tr3 = new TreeNode("设置维护", 0, 1);
-            tr3.Nodes.Add("", "挂号费设置", 0, 1);
-            tr3.Nodes.Add("", "科室管理", 0, 1);
-            tr3.Nodes.Add("", "医生管理", 0, 1);
+            tr3.Nodes.Add("", "挂号收费设置", 0, 1);
+            tr3.Nodes.Add("", "科室设置", 0, 1);
+            tr3.Nodes.Add("", "医生设置", 0, 1);
             tr3.Nodes.Add("", "评价管理", 0, 1);
             tr3.Nodes.Add("", "操作员设置", 0, 1);
 
-            TreeNode tr4 = new TreeNode("系统重建", 0, 1);
+            TreeNode tr4 = new TreeNode("系统初始化", 0, 1);
 
             treeView1.Nodes.Add(tr);
             tr.ExpandAll();
@@ -65,7 +65,7 @@ namespace OutpatientRegistrationSystem
             toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operatorNo + "（" + userHelper.operatorName + "）";
             toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
             toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("yyyy/MM/dd   HH:mm");
-            toolStripStatusLabel_prompt.Text = "温馨提示：欢迎使用门诊预约挂号系统！工作中，累了请休息一下，多喝杯水！";
+            toolStripStatusLabel_prompt.Text = "欢迎使用门诊管理系统！温馨提示：工作中，累了请休息一下，多喝杯水！";
             this.timer1.Interval = 1000;
             this.timer1.Start();
         }
@@ -180,7 +180,7 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                case "挂号费设置":
+                case "挂号收费设置":
                     {
                         if (this.checkchildfrm("Frm_regsetting") == true)
                             return;
@@ -189,7 +189,7 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                case "科室管理":
+                case "科室设置":
                     {
                         if (this.checkchildfrm("Frm_department") == true)
                             return;
@@ -198,7 +198,7 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                case "医生管理":
+                case "医生设置":
                     {
                         if (this.checkchildfrm("Frm_doctor") == true)
                             return;
@@ -216,11 +216,11 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
-                case "系统重建":
+                case "系统初始化":
                     {
-                        if (this.checkchildfrm("Frm_systemRebuild") == true)
+                        if (this.checkchildfrm("Frm_initialize") == true)
                             return;
-                        Frm_systemRebuild frm = new Frm_systemRebuild();
+                        Frm_initialize frm = new Frm_initialize();
                         frm.MdiParent = this;
                         frm.Show();
                         break;

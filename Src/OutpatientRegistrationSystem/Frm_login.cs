@@ -103,6 +103,7 @@ namespace OutpatientRegistrationSystem
 
         private void Frm_login_Load(object sender, EventArgs e)
         {
+            this.Text += userHelper.hospitalName;
             rdo_remote.Select();
         }
     }

@@ -134,6 +134,12 @@
     <Compile Include="Frm_firstTimeLogin.Designer.cs">
       <DependentUpon>Frm_firstTimeLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_initialize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_initialize.Designer.cs">
+      <DependentUpon>Frm_initialize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_lock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,12 +218,6 @@
     <Compile Include="Frm_regsetting.Designer.cs">
       <DependentUpon>Frm_regsetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_systemRebuild.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_systemRebuild.Designer.cs">
-      <DependentUpon>Frm_systemRebuild.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CRT_appo.rpt">
@@ -258,6 +258,9 @@
     <EmbeddedResource Include="Frm_firstTimeLogin.resx">
       <DependentUpon>Frm_firstTimeLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_initialize.resx">
+      <DependentUpon>Frm_initialize.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_lock.resx">
       <DependentUpon>Frm_lock.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,9 +300,6 @@
     <EmbeddedResource Include="Frm_regsetting.resx">
       <DependentUpon>Frm_regsetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_systemRebuild.resx">
-      <DependentUpon>Frm_systemRebuild.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -327,6 +327,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hospital_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

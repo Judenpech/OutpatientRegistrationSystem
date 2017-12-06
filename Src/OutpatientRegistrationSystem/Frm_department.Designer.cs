@@ -329,7 +329,7 @@
             this.Controls.Add(this.bindingNavigator1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_department";
-            this.Text = "科室管理";
+            this.Text = "科室设置";
             this.Load += new System.EventHandler(this.Frm_department_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
