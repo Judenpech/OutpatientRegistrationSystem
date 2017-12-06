@@ -1,5 +1,14 @@
 # Change Logs
 
+#### 2017/12/06
+- 完善Frm_department窗体“科室设置”功能；
+- 完善Frm_doctor窗体“医生设置”功能；
+- 完善Frm_regsetting窗体“挂号设置”功能；
+- 删除Frm_systemRebuild窗体；
+- 新增Frm_initialize窗体；
+- 修改建库脚本、OPRS操作。
+
+
 #### 2017/12/04
 
 - 新增窗体，分别为Frm_exit、Frm_systemRebuild；
