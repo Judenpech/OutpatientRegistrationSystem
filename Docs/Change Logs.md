@@ -1,5 +1,10 @@
 # Change Logs
 
+#### 2017/12/07
+- 完善Frm_initialize窗体“系统初始化”功能；
+- 完善打印功能；
+- 删除窗体，分别为Frm_printAppo,Frm_printReg,Frm_printReceipt。
+
 #### 2017/12/06
 - 完善Frm_department窗体“科室设置”功能；
 - 完善Frm_doctor窗体“医生设置”功能；
@@ -7,7 +12,6 @@
 - 删除Frm_systemRebuild窗体；
 - 新增Frm_initialize窗体；
 - 修改建库脚本、OPRS操作。
-
 
 #### 2017/12/04
 
