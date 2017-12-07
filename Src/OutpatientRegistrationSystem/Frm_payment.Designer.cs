@@ -77,6 +77,8 @@
             this.btn_recharge = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_needpay = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -108,9 +110,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(212, 273);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 12);
+            this.label20.Size = new System.Drawing.Size(65, 12);
             this.label20.TabIndex = 14;
-            this.label20.Text = "详细费用查看：";
+            this.label20.Text = "详细费用：";
             // 
             // groupBox2
             // 
@@ -357,6 +359,7 @@
             // 
             // tb_total
             // 
+            this.tb_total.ForeColor = System.Drawing.Color.Black;
             this.tb_total.Location = new System.Drawing.Point(526, 93);
             this.tb_total.Name = "tb_total";
             this.tb_total.Size = new System.Drawing.Size(118, 21);
@@ -537,6 +540,20 @@
             this.btn_needpay.UseVisualStyleBackColor = true;
             this.btn_needpay.Click += new System.EventHandler(this.btn_needpay_Click);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // Frm_payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -617,5 +634,7 @@
         private System.Windows.Forms.ComboBox cmb_cardType;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_needpay;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

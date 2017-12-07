@@ -50,6 +50,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.cmb_name = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_regid = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,8 +64,8 @@
             this.btn_printAppo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_operater = new System.Windows.Forms.Label();
-            this.tb_regid = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -275,6 +277,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "预约信息";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(620, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "预约号：";
+            // 
+            // tb_regid
+            // 
+            this.tb_regid.Enabled = false;
+            this.tb_regid.Location = new System.Drawing.Point(679, 19);
+            this.tb_regid.Name = "tb_regid";
+            this.tb_regid.Size = new System.Drawing.Size(48, 21);
+            this.tb_regid.TabIndex = 37;
+            // 
             // btn_cancel
             // 
             this.btn_cancel.Location = new System.Drawing.Point(748, 18);
@@ -397,22 +416,19 @@
             this.lb_operater.Size = new System.Drawing.Size(0, 12);
             this.lb_operater.TabIndex = 26;
             // 
-            // tb_regid
+            // printDocument1
             // 
-            this.tb_regid.Enabled = false;
-            this.tb_regid.Location = new System.Drawing.Point(679, 19);
-            this.tb_regid.Name = "tb_regid";
-            this.tb_regid.Size = new System.Drawing.Size(48, 21);
-            this.tb_regid.TabIndex = 37;
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // label2
+            // printPreviewDialog1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(620, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "预约号：";
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Frm_appointment
             // 
@@ -477,6 +493,8 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.TextBox tb_regid;
         private System.Windows.Forms.Label label2;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
 
     }
 }

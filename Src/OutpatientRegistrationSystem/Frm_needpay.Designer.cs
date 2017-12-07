@@ -239,6 +239,7 @@
             // 
             // tb_balance
             // 
+            this.tb_balance.ForeColor = System.Drawing.Color.Black;
             this.tb_balance.Location = new System.Drawing.Point(86, 29);
             this.tb_balance.Name = "tb_balance";
             this.tb_balance.Size = new System.Drawing.Size(125, 21);

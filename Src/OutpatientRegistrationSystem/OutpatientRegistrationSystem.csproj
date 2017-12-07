@@ -62,18 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CRT_appo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRT_appo.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CRT_reg.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRT_reg.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Frm_appointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,24 +176,6 @@
     <Compile Include="Frm_payment.Designer.cs">
       <DependentUpon>Frm_payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_printAppo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_printAppo.Designer.cs">
-      <DependentUpon>Frm_printAppo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_printReceipt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_printReceipt.Designer.cs">
-      <DependentUpon>Frm_printReceipt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_printReg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_printReg.Designer.cs">
-      <DependentUpon>Frm_printReg.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,14 +190,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CRT_appo.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CRT_appo.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CRT_reg.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CRT_reg.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_appointment.resx">
       <DependentUpon>Frm_appointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,15 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_payment.resx">
       <DependentUpon>Frm_payment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_printAppo.resx">
-      <DependentUpon>Frm_printAppo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_printReceipt.resx">
-      <DependentUpon>Frm_printReceipt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_printReg.resx">
-      <DependentUpon>Frm_printReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_registration.resx">
       <DependentUpon>Frm_registration.cs</DependentUpon>

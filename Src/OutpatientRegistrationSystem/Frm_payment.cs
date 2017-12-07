@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Printing;
 
 namespace OutpatientRegistrationSystem
 {
@@ -71,8 +72,34 @@ namespace OutpatientRegistrationSystem
 
         private void btn_payprint_Click(object sender, EventArgs e)
         {
-            Frm_printReceipt frm = new Frm_printReceipt();
-            frm.Show();
+            //打印预览           
+            PrintPreviewDialog ppd = new PrintPreviewDialog();
+            PrintDocument printDocument1 = new PrintDocument();
+
+            //设置边距
+            Margins margin = new Margins(20, 20, 20, 20);
+            printDocument1.DefaultPageSettings.Margins = margin;
+
+            //纸张设置默认
+            PaperSize pageSize = new PaperSize("Custum", 230, 300);
+            printDocument1.DefaultPageSettings.PaperSize = pageSize;
+
+            //打印事件设置           
+            printDocument1.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
+            ppd.Document = printDocument1;
+            DialogResult result = ppd.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    printDocument1.Print();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "打印出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    printDocument1.PrintController.OnEndPrint(printDocument1, new PrintEventArgs());
+                }
+            }
         }
 
         //查询子窗体是否存在
@@ -233,6 +260,41 @@ namespace OutpatientRegistrationSystem
             Frm_needpay frm = new Frm_needpay();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            string name = "XX医院";//userHelper.hospitalName;
+            string title = "门 诊 预 约 凭 证";
+            string address = userHelper.hospitalAddress;
+            //string cardno;
+            //if (tb_cardno.Text == "")
+            //{
+            //    cardno = tb_id.Text.Trim();
+            //}
+            //else
+            //{
+            //    cardno = tb_cardno.Text.Trim();
+            //}
+            e.Graphics.Clear(Color.White);
+            e.Graphics.DrawString(name, new Font(new FontFamily("宋体"), 10, FontStyle.Bold), System.Drawing.Brushes.Black, 90, 20);
+            e.Graphics.DrawString(title, new Font(new FontFamily("宋体"), 10, FontStyle.Bold), System.Drawing.Brushes.Black, 50, 35);
+
+
+            //sb.Append("卡号: " + cardno + "/n");
+            //sb.Append("姓名: " + cmb_name.SelectedItem.ToString() + "/n");
+            //sb.Append("科别: " + cmb_dept.SelectedItem.ToString() + "/n");
+            //sb.Append("号别: " + cmb_regname.SelectedItem.ToString() + "/n");
+            //sb.Append("金额: " + cmb_regfee.SelectedItem.ToString() + "/n");
+            //sb.Append("-----------------------------------------------------------------/n");
+            //sb.Append("预约号: 第 " + tb_regid.Text.Trim() + " 号/n");
+            //sb.Append("预约时间: " + tb_regid.Text.Trim() + "/n/n");
+            //sb.Append("操作员: " + userHelper.operatorName + "/n");
+            //sb.Append("-----------------------------------------------------------------/n");
+            //sb.Append("预约时间: " + System.DateTime.Now.ToString("yyyy-MM-dd   HH:mm:ss") + "/n");
+            //sb.Append("地址：" + address + "/n");
+            //sb.Append("请在预约时间前往指定诊区就诊/n");
+            //sb.Append("                —凭此券就诊  当日有效—                   "); 
         }
     }
 }

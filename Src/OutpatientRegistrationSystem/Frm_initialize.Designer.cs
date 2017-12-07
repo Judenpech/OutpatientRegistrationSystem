@@ -31,6 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_initialize));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ckb_closeconfirm = new System.Windows.Forms.CheckBox();
+            this.tb_code = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ckb_voice = new System.Windows.Forms.CheckBox();
+            this.ckb_clientmoni = new System.Windows.Forms.CheckBox();
+            this.tb_signup = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_address = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_hospitalName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -43,28 +55,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_hospitalName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tb_address = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tb_signup = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.tb_code = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btn_run = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btn_runclear = new System.Windows.Forms.Button();
+            this.btn_backup = new System.Windows.Forms.Button();
+            this.btn_optimize = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtp_Date = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -74,11 +93,11 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.checkBox3);
+            this.tabPage1.Controls.Add(this.ckb_closeconfirm);
             this.tabPage1.Controls.Add(this.tb_code);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.checkBox2);
+            this.tabPage1.Controls.Add(this.ckb_voice);
+            this.tabPage1.Controls.Add(this.ckb_clientmoni);
             this.tabPage1.Controls.Add(this.tb_signup);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.tb_address);
@@ -94,6 +113,110 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "医院注册";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(7, 248);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 12);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "重启系统后生效";
+            // 
+            // ckb_closeconfirm
+            // 
+            this.ckb_closeconfirm.AutoSize = true;
+            this.ckb_closeconfirm.Location = new System.Drawing.Point(104, 186);
+            this.ckb_closeconfirm.Name = "ckb_closeconfirm";
+            this.ckb_closeconfirm.Size = new System.Drawing.Size(120, 16);
+            this.ckb_closeconfirm.TabIndex = 14;
+            this.ckb_closeconfirm.Text = "关闭系统需要确认";
+            this.ckb_closeconfirm.UseVisualStyleBackColor = true;
+            // 
+            // tb_code
+            // 
+            this.tb_code.Location = new System.Drawing.Point(134, 117);
+            this.tb_code.Name = "tb_code";
+            this.tb_code.Size = new System.Drawing.Size(204, 21);
+            this.tb_code.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(63, 122);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 12);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "编码规则：";
+            // 
+            // ckb_voice
+            // 
+            this.ckb_voice.AutoSize = true;
+            this.ckb_voice.Location = new System.Drawing.Point(251, 186);
+            this.ckb_voice.Name = "ckb_voice";
+            this.ckb_voice.Size = new System.Drawing.Size(108, 16);
+            this.ckb_voice.TabIndex = 11;
+            this.ckb_voice.Text = "启用语音报价器";
+            this.ckb_voice.UseVisualStyleBackColor = true;
+            // 
+            // ckb_clientmoni
+            // 
+            this.ckb_clientmoni.AutoSize = true;
+            this.ckb_clientmoni.Location = new System.Drawing.Point(251, 154);
+            this.ckb_clientmoni.Name = "ckb_clientmoni";
+            this.ckb_clientmoni.Size = new System.Drawing.Size(108, 16);
+            this.ckb_clientmoni.TabIndex = 10;
+            this.ckb_clientmoni.Text = "启用客户屏显示";
+            this.ckb_clientmoni.UseVisualStyleBackColor = true;
+            // 
+            // tb_signup
+            // 
+            this.tb_signup.Location = new System.Drawing.Point(134, 63);
+            this.tb_signup.Name = "tb_signup";
+            this.tb_signup.Size = new System.Drawing.Size(204, 21);
+            this.tb_signup.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(63, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "注册码：";
+            // 
+            // tb_address
+            // 
+            this.tb_address.Location = new System.Drawing.Point(134, 90);
+            this.tb_address.Name = "tb_address";
+            this.tb_address.Size = new System.Drawing.Size(204, 21);
+            this.tb_address.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(63, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "医院地址：";
+            // 
+            // tb_hospitalName
+            // 
+            this.tb_hospitalName.Location = new System.Drawing.Point(134, 36);
+            this.tb_hospitalName.Name = "tb_hospitalName";
+            this.tb_hospitalName.Size = new System.Drawing.Size(204, 21);
+            this.tb_hospitalName.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(63, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "医院名称：";
             // 
             // btn_cancel
             // 
@@ -129,9 +252,9 @@
             // 
             // btn_rebuild
             // 
-            this.btn_rebuild.Location = new System.Drawing.Point(320, 228);
+            this.btn_rebuild.Location = new System.Drawing.Point(303, 228);
             this.btn_rebuild.Name = "btn_rebuild";
-            this.btn_rebuild.Size = new System.Drawing.Size(75, 21);
+            this.btn_rebuild.Size = new System.Drawing.Size(75, 25);
             this.btn_rebuild.TabIndex = 8;
             this.btn_rebuild.Text = "重建";
             this.btn_rebuild.UseVisualStyleBackColor = true;
@@ -156,6 +279,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.ckb_clearBasic);
             this.groupBox1.Controls.Add(this.ckb_clearBusiness);
             this.groupBox1.Controls.Add(this.label3);
@@ -216,115 +340,160 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "警告：";
             // 
-            // tb_hospitalName
+            // label10
             // 
-            this.tb_hospitalName.Location = new System.Drawing.Point(104, 27);
-            this.tb_hospitalName.Name = "tb_hospitalName";
-            this.tb_hospitalName.Size = new System.Drawing.Size(204, 21);
-            this.tb_hospitalName.TabIndex = 5;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(58, 79);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 12);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "label10";
             // 
-            // label5
+            // tabPage3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "医院名称：";
+            this.tabPage3.Controls.Add(this.btn_run);
+            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.richTextBox1);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(404, 267);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "高级";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tb_address
+            // label11
             // 
-            this.tb_address.Location = new System.Drawing.Point(104, 81);
-            this.tb_address.Name = "tb_address";
-            this.tb_address.Size = new System.Drawing.Size(204, 21);
-            this.tb_address.TabIndex = 7;
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(29, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 12);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "label11";
             // 
-            // label6
+            // label12
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 86);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "医院地址：";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(29, 71);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 12);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "执行SQL语句：";
             // 
-            // tb_signup
+            // richTextBox1
             // 
-            this.tb_signup.Location = new System.Drawing.Point(104, 54);
-            this.tb_signup.Name = "tb_signup";
-            this.tb_signup.Size = new System.Drawing.Size(204, 21);
-            this.tb_signup.TabIndex = 9;
+            this.richTextBox1.Location = new System.Drawing.Point(31, 96);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(336, 96);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
             // 
-            // label7
+            // textBox1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "注册码：";
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Location = new System.Drawing.Point(86, 228);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 9;
             // 
-            // checkBox1
+            // label13
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(251, 178);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(108, 16);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "启用语音报价器";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(15, 231);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 12);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "特殊密码：";
             // 
-            // checkBox2
+            // btn_run
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(251, 146);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(108, 16);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.Text = "启用客户屏显示";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.btn_run.Location = new System.Drawing.Point(306, 222);
+            this.btn_run.Name = "btn_run";
+            this.btn_run.Size = new System.Drawing.Size(75, 27);
+            this.btn_run.TabIndex = 10;
+            this.btn_run.Text = "执行";
+            this.btn_run.UseVisualStyleBackColor = true;
             // 
-            // tb_code
+            // tabPage4
             // 
-            this.tb_code.Location = new System.Drawing.Point(104, 108);
-            this.tb_code.Name = "tb_code";
-            this.tb_code.Size = new System.Drawing.Size(204, 21);
-            this.tb_code.TabIndex = 13;
+            this.tabPage4.Controls.Add(this.dtp_Date);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.btn_optimize);
+            this.tabPage4.Controls.Add(this.btn_backup);
+            this.tabPage4.Controls.Add(this.btn_runclear);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(404, 267);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "数据清理";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // label14
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 113);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 12);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "编码规则：";
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(19, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 12);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "label14";
             // 
-            // checkBox3
+            // btn_runclear
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(104, 178);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(120, 16);
-            this.checkBox3.TabIndex = 14;
-            this.checkBox3.Text = "关闭系统需要确认";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.btn_runclear.Location = new System.Drawing.Point(52, 163);
+            this.btn_runclear.Name = "btn_runclear";
+            this.btn_runclear.Size = new System.Drawing.Size(179, 27);
+            this.btn_runclear.TabIndex = 11;
+            this.btn_runclear.Text = "第三步：执行清理";
+            this.btn_runclear.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // btn_backup
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(7, 248);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 12);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "重启本系统后生效";
+            this.btn_backup.Location = new System.Drawing.Point(52, 72);
+            this.btn_backup.Name = "btn_backup";
+            this.btn_backup.Size = new System.Drawing.Size(179, 27);
+            this.btn_backup.TabIndex = 12;
+            this.btn_backup.Text = "第一步：数据备份";
+            this.btn_backup.UseVisualStyleBackColor = true;
+            // 
+            // btn_optimize
+            // 
+            this.btn_optimize.Location = new System.Drawing.Point(52, 196);
+            this.btn_optimize.Name = "btn_optimize";
+            this.btn_optimize.Size = new System.Drawing.Size(179, 27);
+            this.btn_optimize.TabIndex = 13;
+            this.btn_optimize.Text = "第四步：数据优化";
+            this.btn_optimize.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(50, 130);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 12);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "label15";
+            // 
+            // dtp_Date
+            // 
+            this.dtp_Date.CustomFormat = "yyyy-MM-dd";
+            this.dtp_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Date.Location = new System.Drawing.Point(275, 124);
+            this.dtp_Date.Name = "dtp_Date";
+            this.dtp_Date.Size = new System.Drawing.Size(104, 21);
+            this.dtp_Date.TabIndex = 15;
             // 
             // Frm_initialize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 294);
+            this.ClientSize = new System.Drawing.Size(412, 294);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_initialize";
@@ -338,6 +507,10 @@
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -366,9 +539,24 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_code;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox ckb_voice;
+        private System.Windows.Forms.CheckBox ckb_clientmoni;
+        private System.Windows.Forms.CheckBox ckb_closeconfirm;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btn_run;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btn_optimize;
+        private System.Windows.Forms.Button btn_backup;
+        private System.Windows.Forms.Button btn_runclear;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dtp_Date;
     }
 }
