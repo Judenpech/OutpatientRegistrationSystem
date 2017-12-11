@@ -1,5 +1,11 @@
 # Change Logs
 
+#### 2017/12/11
+- 修复Frm_regsettings窗体bug；
+- 新增窗体Frm_outpatientStatistics；
+- 删除窗体Frm_countDept；
+- 完善Frm_lock窗体“系统锁定”功能。
+
 #### 2017/12/07
 - 完善Frm_initialize窗体“系统初始化”功能；
 - 完善打印功能；
@@ -8,7 +14,7 @@
 #### 2017/12/06
 - 完善Frm_department窗体“科室设置”功能；
 - 完善Frm_doctor窗体“医生设置”功能；
-- 完善Frm_regsetting窗体“挂号设置”功能；
+- 完善Frm_regsettings窗体“挂号设置”功能；
 - 删除Frm_systemRebuild窗体；
 - 新增Frm_initialize窗体；
 - 修改建库脚本、OPRS操作。
@@ -108,7 +114,7 @@
 
 #### 2017/11/14
 
-- 新增窗体，分别为Frm_department，Frm_doctor，Frm_operator，Frm_regsetting；
+- 新增窗体，分别为Frm_department，Frm_doctor，Frm_operator，Frm_regsettings；
 - 实现Frm_regsetting窗体“挂号设置”功能，存在bug；
 - 实现Frm_department窗体“科室设置”功能，存在bug；
 - 完善Frm_registration窗体功能，存在bug；
