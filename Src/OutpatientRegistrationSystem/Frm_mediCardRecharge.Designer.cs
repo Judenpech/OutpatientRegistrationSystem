@@ -72,7 +72,7 @@
             this.groupBox1.Controls.Add(this.rdo_alipay);
             this.groupBox1.Controls.Add(this.rdo_creditCard);
             this.groupBox1.Controls.Add(this.rdo_cash);
-            this.groupBox1.Location = new System.Drawing.Point(228, 167);
+            this.groupBox1.Location = new System.Drawing.Point(224, 167);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(310, 182);
             this.groupBox1.TabIndex = 0;
@@ -171,7 +171,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.tb_cardno);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 167);
+            this.groupBox2.Location = new System.Drawing.Point(8, 167);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(210, 182);
             this.groupBox2.TabIndex = 1;
@@ -252,7 +252,7 @@
             this.groupBox4.Controls.Add(this.tb_searchvn);
             this.groupBox4.Controls.Add(this.btn_search);
             this.groupBox4.Controls.Add(this.tb_searchPatienNo);
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Location = new System.Drawing.Point(7, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(526, 149);
             this.groupBox4.TabIndex = 106;
@@ -340,7 +340,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 356);
+            this.ClientSize = new System.Drawing.Size(540, 356);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

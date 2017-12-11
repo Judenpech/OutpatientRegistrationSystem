@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace OutpatientRegistrationSystem
 {
-    public partial class Frm_countdept : Form
+    public partial class Frm_outpatientStatistics : Form
     {
-        public Frm_countdept()
+        public Frm_outpatientStatistics()
         {
             InitializeComponent();
         }

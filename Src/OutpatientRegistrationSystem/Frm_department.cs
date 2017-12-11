@@ -169,6 +169,11 @@ namespace OutpatientRegistrationSystem
 
         }
 
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         //public static bool OutToExcelFromDataGridView(string title, DataGridView dgv, bool isShowExcel)
         //{
         //    int titleColumnSpan = 4;//标题的跨列数

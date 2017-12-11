@@ -74,12 +74,6 @@
     <Compile Include="Frm_balanceQuery.Designer.cs">
       <DependentUpon>Frm_balanceQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_countdept.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_countdept.Designer.cs">
-      <DependentUpon>Frm_countdept.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_department.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +158,12 @@
     <Compile Include="Frm_operator.Designer.cs">
       <DependentUpon>Frm_operator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_outpatientStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_outpatientStatistics.Designer.cs">
+      <DependentUpon>Frm_outpatientStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_patient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,11 +182,11 @@
     <Compile Include="Frm_registration.Designer.cs">
       <DependentUpon>Frm_registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_regsetting.cs">
+    <Compile Include="Frm_regsettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_regsetting.Designer.cs">
-      <DependentUpon>Frm_regsetting.cs</DependentUpon>
+    <Compile Include="Frm_regsettings.Designer.cs">
+      <DependentUpon>Frm_regsettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_balanceQuery.resx">
       <DependentUpon>Frm_balanceQuery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_countdept.resx">
-      <DependentUpon>Frm_countdept.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_department.resx">
       <DependentUpon>Frm_department.cs</DependentUpon>
@@ -241,6 +238,9 @@
     <EmbeddedResource Include="Frm_operator.resx">
       <DependentUpon>Frm_operator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_outpatientStatistics.resx">
+      <DependentUpon>Frm_outpatientStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_patient.resx">
       <DependentUpon>Frm_patient.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,8 +250,8 @@
     <EmbeddedResource Include="Frm_registration.resx">
       <DependentUpon>Frm_registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_regsetting.resx">
-      <DependentUpon>Frm_regsetting.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_regsettings.resx">
+      <DependentUpon>Frm_regsettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

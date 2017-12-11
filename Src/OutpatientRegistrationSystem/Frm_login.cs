@@ -25,7 +25,7 @@ namespace OutpatientRegistrationSystem
         {
             if (rdo_remote.Checked)
             {
-                sqlHelper.sqlconstr = @"Server=192.168.11.128; Database=OPRSBase; UID=sa; Pwd=sa";
+                sqlHelper.sqlconstr = @"Server=192.168.189.128; Database=OPRSBase; UID=sa; Pwd=sa";
             }
             if (rdo_backup.Checked)
             {

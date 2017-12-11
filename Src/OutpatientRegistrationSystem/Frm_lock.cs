@@ -36,6 +36,7 @@ namespace OutpatientRegistrationSystem
         {
             texbox_userName.Text = userHelper.operatorNo;
             texbox_userName.Enabled = false;
+            label1.Text = "本系统正在使用中，且已被锁定。\n请输入当前用户密码解除锁定。";
         }
 
         private void btn_exit_Click(object sender, EventArgs e)

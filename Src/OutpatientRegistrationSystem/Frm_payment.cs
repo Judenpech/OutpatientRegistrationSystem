@@ -202,6 +202,7 @@ namespace OutpatientRegistrationSystem
             }
             this.init();
         }
+
         private void clear()
         {
             tb_medicineFee.Text = "";

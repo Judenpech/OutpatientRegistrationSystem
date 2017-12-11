@@ -207,5 +207,10 @@ namespace OutpatientRegistrationSystem
                 + "WHERE d1.deptNo=d2.NO AND d2.Name='" + tb_curDept.Text.Trim() + "';";
             this.init();
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -66,6 +66,7 @@
             this.ckb_activate = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tb_curDept = new System.Windows.Forms.TextBox();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -436,12 +437,23 @@
             this.tb_curDept.TabIndex = 14;
             this.tb_curDept.TextChanged += new System.EventHandler(this.tb_curDept_TextChanged);
             // 
+            // btn_exit
+            // 
+            this.btn_exit.Location = new System.Drawing.Point(558, 511);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(75, 30);
+            this.btn_exit.TabIndex = 15;
+            this.btn_exit.Text = "退出";
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
             // Frm_doctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(745, 553);
+            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.tb_curDept);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ckb_activate);
@@ -507,5 +519,6 @@
         private System.Windows.Forms.TextBox tb_pinyin;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tb_curDept;
+        private System.Windows.Forms.Button btn_exit;
     }
 }

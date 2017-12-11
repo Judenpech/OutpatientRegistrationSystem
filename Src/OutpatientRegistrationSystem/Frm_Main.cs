@@ -180,11 +180,20 @@ namespace OutpatientRegistrationSystem
                         frm.Show();
                         break;
                     }
+                case "门诊统计":
+                    {
+                        if (this.checkchildfrm("Frm_outpatientStatistics") == true)
+                            return;
+                        Frm_outpatientStatistics frm = new Frm_outpatientStatistics();
+                        frm.MdiParent = this;
+                        frm.Show();
+                        break;
+                    }
                 case "挂号收费设置":
                     {
-                        if (this.checkchildfrm("Frm_regsetting") == true)
+                        if (this.checkchildfrm("Frm_regsettings") == true)
                             return;
-                        Frm_regsetting frm = new Frm_regsetting();
+                        Frm_regsettings frm = new Frm_regsettings();
                         frm.MdiParent = this;
                         frm.Show();
                         break;

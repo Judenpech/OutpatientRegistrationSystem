@@ -292,5 +292,10 @@ namespace OutpatientRegistrationSystem
             //sb.Append("请在预约时间前往指定诊区就诊/n");
             //sb.Append("                —凭此券就诊  当日有效—                   "); 
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -160,5 +160,10 @@ namespace OutpatientRegistrationSystem
             }
             this.init();
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

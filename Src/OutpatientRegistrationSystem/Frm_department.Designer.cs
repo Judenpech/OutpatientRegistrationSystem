@@ -56,6 +56,7 @@
             this.修改ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.保存ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -64,6 +65,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_exit);
             this.groupBox1.Controls.Add(this.btn_export);
             this.groupBox1.Controls.Add(this.tb_pinyin);
             this.groupBox1.Controls.Add(this.label5);
@@ -317,6 +319,16 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "科室列表：";
             // 
+            // btn_exit
+            // 
+            this.btn_exit.Location = new System.Drawing.Point(56, 441);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(75, 28);
+            this.btn_exit.TabIndex = 9;
+            this.btn_exit.Text = "退出";
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
             // Frm_department
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -370,5 +382,6 @@
         private System.Windows.Forms.TextBox tb_pinyin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_export;
+        private System.Windows.Forms.Button btn_exit;
     }
 }

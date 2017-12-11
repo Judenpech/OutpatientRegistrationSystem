@@ -291,5 +291,10 @@ namespace OutpatientRegistrationSystem
                 MessageBox.Show("预约作废失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
