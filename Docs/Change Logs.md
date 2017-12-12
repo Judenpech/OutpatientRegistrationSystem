@@ -1,5 +1,10 @@
 # Change Logs
 
+#### 2017/12/12
+- 实现Frm_initialize窗体“系统重建”功能；
+- 实现Frm_initialize窗体“高级”功能；
+- 完善OPRS操作。
+
 #### 2017/12/11
 - 修复Frm_regsettings窗体bug；
 - 新增窗体Frm_outpatientStatistics；
