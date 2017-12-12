@@ -258,11 +258,9 @@ CREATE TABLE tb_receipt
     ,regNo
         INT
         NOT NULL
-        FOREIGN KEY REFERENCES tb_registration(No)
     ,patientNo
         VARCHAR(15)
         NOT NULL
-        FOREIGN KEY REFERENCES tb_patient(No)
     ,recDate
         date
         NOT NULL

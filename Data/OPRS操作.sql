@@ -465,3 +465,21 @@ USE OPRSBase;
 			SELECT COUNT(1)
 			FROM dbo.tb_card c JOIN dbo.tb_patient p ON p.No=c.patientNo AND p.visitNo=c.visitNo
 			WHERE p.Name='张三';
+			
+			
+			
+--系统重建--系统初始化；
+			--系统重建--系统初始化--清空业务数据；
+			DELETE FROM dbo.tb_expensesRecord;
+			DELETE FROM dbo.tb_registration;
+			DELETE FROM dbo.tb_docScore;
+			DELETE FROM dbo.tb_receipt;
+
+
+			--系统重建--系统初始化--清空基础资料；
+			DELETE FROM dbo.tb_patient;
+			DELETE FROM dbo.tb_card;
+			DELETE FROM dbo.tb_dept;
+			DELETE FROM dbo.tb_doctor;
+			DELETE FROM dbo.tb_regType;
+
