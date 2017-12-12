@@ -50,26 +50,26 @@
             this.tb_password = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.ckb_clearBasic = new System.Windows.Forms.CheckBox();
             this.ckb_clearBusiness = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.btn_run = new System.Windows.Forms.Button();
+            this.tb_specPsw = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.rtb_sql = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btn_runclear = new System.Windows.Forms.Button();
-            this.btn_backup = new System.Windows.Forms.Button();
-            this.btn_optimize = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             this.dtp_Date = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btn_optimize = new System.Windows.Forms.Button();
+            this.btn_backup = new System.Windows.Forms.Button();
+            this.btn_runclear = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -265,6 +265,7 @@
             this.tb_password.BackColor = System.Drawing.SystemColors.Info;
             this.tb_password.Location = new System.Drawing.Point(79, 228);
             this.tb_password.Name = "tb_password";
+            this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(100, 21);
             this.tb_password.TabIndex = 7;
             // 
@@ -290,6 +291,15 @@
             this.groupBox1.Size = new System.Drawing.Size(387, 200);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(58, 79);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 12);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "label10";
             // 
             // ckb_clearBasic
             // 
@@ -340,21 +350,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "警告：";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(58, 79);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 12);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "label10";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btn_run);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.tb_specPsw);
             this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.richTextBox1);
+            this.tabPage3.Controls.Add(this.rtb_sql);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -365,40 +366,24 @@
             this.tabPage3.Text = "高级";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // btn_run
             // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(29, 23);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 12);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "label11";
+            this.btn_run.Location = new System.Drawing.Point(306, 222);
+            this.btn_run.Name = "btn_run";
+            this.btn_run.Size = new System.Drawing.Size(75, 27);
+            this.btn_run.TabIndex = 10;
+            this.btn_run.Text = "执行";
+            this.btn_run.UseVisualStyleBackColor = true;
+            this.btn_run.Click += new System.EventHandler(this.btn_run_Click);
             // 
-            // label12
+            // tb_specPsw
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(29, 71);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(83, 12);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "执行SQL语句：";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(31, 96);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(336, 96);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(86, 228);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 9;
+            this.tb_specPsw.BackColor = System.Drawing.Color.Snow;
+            this.tb_specPsw.Location = new System.Drawing.Point(86, 228);
+            this.tb_specPsw.Name = "tb_specPsw";
+            this.tb_specPsw.PasswordChar = '*';
+            this.tb_specPsw.Size = new System.Drawing.Size(100, 21);
+            this.tb_specPsw.TabIndex = 9;
             // 
             // label13
             // 
@@ -409,14 +394,32 @@
             this.label13.TabIndex = 8;
             this.label13.Text = "特殊密码：";
             // 
-            // btn_run
+            // rtb_sql
             // 
-            this.btn_run.Location = new System.Drawing.Point(306, 222);
-            this.btn_run.Name = "btn_run";
-            this.btn_run.Size = new System.Drawing.Size(75, 27);
-            this.btn_run.TabIndex = 10;
-            this.btn_run.Text = "执行";
-            this.btn_run.UseVisualStyleBackColor = true;
+            this.rtb_sql.Location = new System.Drawing.Point(31, 96);
+            this.rtb_sql.Name = "rtb_sql";
+            this.rtb_sql.Size = new System.Drawing.Size(336, 96);
+            this.rtb_sql.TabIndex = 3;
+            this.rtb_sql.Text = "";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(29, 71);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 12);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "执行SQL语句：";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(29, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 12);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "label11";
             // 
             // tabPage4
             // 
@@ -434,42 +437,14 @@
             this.tabPage4.Text = "数据清理";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // dtp_Date
             // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(19, 19);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 12);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "label14";
-            // 
-            // btn_runclear
-            // 
-            this.btn_runclear.Location = new System.Drawing.Point(52, 163);
-            this.btn_runclear.Name = "btn_runclear";
-            this.btn_runclear.Size = new System.Drawing.Size(179, 27);
-            this.btn_runclear.TabIndex = 11;
-            this.btn_runclear.Text = "第三步：执行清理";
-            this.btn_runclear.UseVisualStyleBackColor = true;
-            // 
-            // btn_backup
-            // 
-            this.btn_backup.Location = new System.Drawing.Point(52, 72);
-            this.btn_backup.Name = "btn_backup";
-            this.btn_backup.Size = new System.Drawing.Size(179, 27);
-            this.btn_backup.TabIndex = 12;
-            this.btn_backup.Text = "第一步：数据备份";
-            this.btn_backup.UseVisualStyleBackColor = true;
-            // 
-            // btn_optimize
-            // 
-            this.btn_optimize.Location = new System.Drawing.Point(52, 196);
-            this.btn_optimize.Name = "btn_optimize";
-            this.btn_optimize.Size = new System.Drawing.Size(179, 27);
-            this.btn_optimize.TabIndex = 13;
-            this.btn_optimize.Text = "第四步：数据优化";
-            this.btn_optimize.UseVisualStyleBackColor = true;
+            this.dtp_Date.CustomFormat = "yyyy-MM-dd";
+            this.dtp_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Date.Location = new System.Drawing.Point(275, 124);
+            this.dtp_Date.Name = "dtp_Date";
+            this.dtp_Date.Size = new System.Drawing.Size(104, 21);
+            this.dtp_Date.TabIndex = 15;
             // 
             // label15
             // 
@@ -480,14 +455,42 @@
             this.label15.TabIndex = 14;
             this.label15.Text = "label15";
             // 
-            // dtp_Date
+            // btn_optimize
             // 
-            this.dtp_Date.CustomFormat = "yyyy-MM-dd";
-            this.dtp_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_Date.Location = new System.Drawing.Point(275, 124);
-            this.dtp_Date.Name = "dtp_Date";
-            this.dtp_Date.Size = new System.Drawing.Size(104, 21);
-            this.dtp_Date.TabIndex = 15;
+            this.btn_optimize.Location = new System.Drawing.Point(52, 196);
+            this.btn_optimize.Name = "btn_optimize";
+            this.btn_optimize.Size = new System.Drawing.Size(179, 27);
+            this.btn_optimize.TabIndex = 13;
+            this.btn_optimize.Text = "第四步：数据优化";
+            this.btn_optimize.UseVisualStyleBackColor = true;
+            // 
+            // btn_backup
+            // 
+            this.btn_backup.Location = new System.Drawing.Point(52, 72);
+            this.btn_backup.Name = "btn_backup";
+            this.btn_backup.Size = new System.Drawing.Size(179, 27);
+            this.btn_backup.TabIndex = 12;
+            this.btn_backup.Text = "第一步：数据备份";
+            this.btn_backup.UseVisualStyleBackColor = true;
+            // 
+            // btn_runclear
+            // 
+            this.btn_runclear.Location = new System.Drawing.Point(52, 163);
+            this.btn_runclear.Name = "btn_runclear";
+            this.btn_runclear.Size = new System.Drawing.Size(179, 27);
+            this.btn_runclear.TabIndex = 11;
+            this.btn_runclear.Text = "第三步：执行清理";
+            this.btn_runclear.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(19, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 12);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "label14";
             // 
             // Frm_initialize
             // 
@@ -547,9 +550,9 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btn_run;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_specPsw;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtb_sql;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label14;

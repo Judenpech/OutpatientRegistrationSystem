@@ -65,7 +65,7 @@ namespace OutpatientRegistrationSystem
             toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operatorNo + "（" + userHelper.operatorName + "）";
             toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
             toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("yyyy/MM/dd   HH:mm");
-            toolStripStatusLabel_prompt.Text = "欢迎使用门诊管理系统！温馨提示：工作中，累了请休息一下，多喝杯水！";
+            toolStripStatusLabel_prompt.Text = "欢迎使用门诊预约挂号系统！温馨提示：工作中，累了请休息一下，多喝杯水！";
             this.timer1.Interval = 1000;
             this.timer1.Start();
         }
