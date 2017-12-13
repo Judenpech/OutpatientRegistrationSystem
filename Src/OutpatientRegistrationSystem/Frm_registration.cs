@@ -14,43 +14,21 @@ namespace OutpatientRegistrationSystem
     public partial class Frm_registration : Form
     {
         sqlHelper mysql = new sqlHelper();
+        private string sqlstr = "";
+        private string mytable = "patientInfo";
         BindingSource mybds = new BindingSource();
+        BindingSource mybdsource = new BindingSource();
 
         public Frm_registration()
         {
             InitializeComponent();
         }
 
-        private void btn_printReg_Click(object sender, EventArgs e)
+        private void init()
         {
-            //打印预览           
-            PrintPreviewDialog ppd = new PrintPreviewDialog();
-            PrintDocument printDocument1 = new PrintDocument();
-
-            //设置边距
-            Margins margin = new Margins(20, 20, 20, 20);
-            printDocument1.DefaultPageSettings.Margins = margin;
-
-            //纸张设置默认
-            PaperSize pageSize = new PaperSize("Custum", 230, 300);
-            printDocument1.DefaultPageSettings.PaperSize = pageSize;
-
-            //打印事件设置           
-            printDocument1.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
-            ppd.Document = printDocument1;
-            DialogResult result = ppd.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                try
-                {
-                    printDocument1.Print();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "打印出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    printDocument1.PrintController.OnEndPrint(printDocument1, new PrintEventArgs());
-                }
-            }
+            DataSet myds = mysql.getds(sqlstr, mytable);
+            mybdsource.DataSource = myds.Tables[0];
+            this.dataGridView2.DataSource = mybdsource;
         }
 
         //查询子窗体是否存在
@@ -258,9 +236,41 @@ namespace OutpatientRegistrationSystem
             }
         }
 
+        private void btn_printReg_Click(object sender, EventArgs e)
+        {
+            //打印预览           
+            PrintPreviewDialog ppd = new PrintPreviewDialog();
+            PrintDocument printDocument1 = new PrintDocument();
+
+            //设置边距
+            Margins margin = new Margins(20, 20, 20, 20);
+            printDocument1.DefaultPageSettings.Margins = margin;
+
+            //纸张设置默认
+            PaperSize pageSize = new PaperSize("Custum", 230, 300);
+            printDocument1.DefaultPageSettings.PaperSize = pageSize;
+
+            //打印事件设置           
+            printDocument1.PrintPage += new PrintPageEventHandler(this.printDocument1_PrintPage);
+            ppd.Document = printDocument1;
+            DialogResult result = ppd.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    printDocument1.Print();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "打印出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    printDocument1.PrintController.OnEndPrint(printDocument1, new PrintEventArgs());
+                }
+            }
+        }
+
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            string name = "XX医院";//userHelper.hospitalName;
+            string name = userHelper.hospitalName;
             string title = "门 诊 预 约 凭 证";
             string address = userHelper.hospitalAddress;
             string cardno;

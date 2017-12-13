@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace OutpatientRegistrationSystem
 {
@@ -61,13 +62,31 @@ namespace OutpatientRegistrationSystem
                     treeView1.Nodes[i].Nodes[j].SelectedImageIndex = k;
                 }
             }
-
+            this.getHospitalInfo();
             toolStripStatusLabel_operater.Text = "操作员：" + userHelper.operatorNo + "（" + userHelper.operatorName + "）";
             toolStripStatusLabel_loginTime.Text = "登录时间：" + DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
             toolStripStatusLabel_curTime.Text = "当前时间：" + DateTime.Now.ToString("yyyy/MM/dd   HH:mm");
-            toolStripStatusLabel_prompt.Text = "欢迎使用门诊预约挂号系统！温馨提示：工作中，累了请休息一下，多喝杯水！";
+            toolStripStatusLabel_prompt.Text = "欢迎使用 "+userHelper.hospitalName+" 门诊预约挂号系统！温馨提示：工作中，累了请休息一下，多喝杯水！";
             this.timer1.Interval = 1000;
             this.timer1.Start();
+        }
+
+        //获取医院信息
+        public void getHospitalInfo()
+        {
+            sqlHelper mysql = new sqlHelper();
+            SqlConnection conn = mysql.getcon();
+            SqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "SELECT name, ADDRESS FROM tb_hospital WHERE signUpCode='" + userHelper.signUpCode + "';";
+            conn.Open();
+            SqlDataReader dr = comm.ExecuteReader();
+            if (dr.Read())
+            {
+                userHelper.hospitalName = dr["Name"].ToString();
+                userHelper.hospitalAddress = dr["ADDRESS"].ToString();
+            }
+            dr.Close();
+            conn.Close();
         }
 
         //查询子窗体是否存在

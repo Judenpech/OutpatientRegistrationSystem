@@ -33,17 +33,15 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.ckb_closeconfirm = new System.Windows.Forms.CheckBox();
-            this.tb_code = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.ckb_voice = new System.Windows.Forms.CheckBox();
             this.ckb_clientmoni = new System.Windows.Forms.CheckBox();
-            this.tb_signup = new System.Windows.Forms.TextBox();
+            this.tb_signupcode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tb_address = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_hospitalName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_rebuild = new System.Windows.Forms.Button();
@@ -94,17 +92,15 @@
             // 
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.ckb_closeconfirm);
-            this.tabPage1.Controls.Add(this.tb_code);
-            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.ckb_voice);
             this.tabPage1.Controls.Add(this.ckb_clientmoni);
-            this.tabPage1.Controls.Add(this.tb_signup);
+            this.tabPage1.Controls.Add(this.tb_signupcode);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.tb_address);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.tb_hospitalName);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.btn_cancel);
+            this.tabPage1.Controls.Add(this.btn_clear);
             this.tabPage1.Controls.Add(this.btn_ok);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -118,7 +114,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(7, 248);
+            this.label9.Location = new System.Drawing.Point(5, 248);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 12);
             this.label9.TabIndex = 15;
@@ -127,33 +123,17 @@
             // ckb_closeconfirm
             // 
             this.ckb_closeconfirm.AutoSize = true;
-            this.ckb_closeconfirm.Location = new System.Drawing.Point(104, 186);
+            this.ckb_closeconfirm.Location = new System.Drawing.Point(104, 195);
             this.ckb_closeconfirm.Name = "ckb_closeconfirm";
             this.ckb_closeconfirm.Size = new System.Drawing.Size(120, 16);
             this.ckb_closeconfirm.TabIndex = 14;
             this.ckb_closeconfirm.Text = "关闭系统需要确认";
             this.ckb_closeconfirm.UseVisualStyleBackColor = true;
             // 
-            // tb_code
-            // 
-            this.tb_code.Location = new System.Drawing.Point(134, 117);
-            this.tb_code.Name = "tb_code";
-            this.tb_code.Size = new System.Drawing.Size(204, 21);
-            this.tb_code.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(63, 122);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 12);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "编码规则：";
-            // 
             // ckb_voice
             // 
             this.ckb_voice.AutoSize = true;
-            this.ckb_voice.Location = new System.Drawing.Point(251, 186);
+            this.ckb_voice.Location = new System.Drawing.Point(251, 195);
             this.ckb_voice.Name = "ckb_voice";
             this.ckb_voice.Size = new System.Drawing.Size(108, 16);
             this.ckb_voice.TabIndex = 11;
@@ -163,24 +143,25 @@
             // ckb_clientmoni
             // 
             this.ckb_clientmoni.AutoSize = true;
-            this.ckb_clientmoni.Location = new System.Drawing.Point(251, 154);
+            this.ckb_clientmoni.Location = new System.Drawing.Point(251, 163);
             this.ckb_clientmoni.Name = "ckb_clientmoni";
             this.ckb_clientmoni.Size = new System.Drawing.Size(108, 16);
             this.ckb_clientmoni.TabIndex = 10;
             this.ckb_clientmoni.Text = "启用客户屏显示";
             this.ckb_clientmoni.UseVisualStyleBackColor = true;
             // 
-            // tb_signup
+            // tb_signupcode
             // 
-            this.tb_signup.Location = new System.Drawing.Point(134, 63);
-            this.tb_signup.Name = "tb_signup";
-            this.tb_signup.Size = new System.Drawing.Size(204, 21);
-            this.tb_signup.TabIndex = 9;
+            this.tb_signupcode.Enabled = false;
+            this.tb_signupcode.Location = new System.Drawing.Point(136, 24);
+            this.tb_signupcode.Name = "tb_signupcode";
+            this.tb_signupcode.Size = new System.Drawing.Size(204, 21);
+            this.tb_signupcode.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(63, 68);
+            this.label7.Location = new System.Drawing.Point(65, 29);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 8;
@@ -188,15 +169,16 @@
             // 
             // tb_address
             // 
-            this.tb_address.Location = new System.Drawing.Point(134, 90);
+            this.tb_address.Location = new System.Drawing.Point(136, 99);
+            this.tb_address.Multiline = true;
             this.tb_address.Name = "tb_address";
-            this.tb_address.Size = new System.Drawing.Size(204, 21);
+            this.tb_address.Size = new System.Drawing.Size(204, 58);
             this.tb_address.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(63, 95);
+            this.label6.Location = new System.Drawing.Point(65, 104);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 12);
             this.label6.TabIndex = 6;
@@ -204,7 +186,7 @@
             // 
             // tb_hospitalName
             // 
-            this.tb_hospitalName.Location = new System.Drawing.Point(134, 36);
+            this.tb_hospitalName.Location = new System.Drawing.Point(136, 62);
             this.tb_hospitalName.Name = "tb_hospitalName";
             this.tb_hospitalName.Size = new System.Drawing.Size(204, 21);
             this.tb_hospitalName.TabIndex = 5;
@@ -212,20 +194,21 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 41);
+            this.label5.Location = new System.Drawing.Point(65, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 4;
             this.label5.Text = "医院名称：";
             // 
-            // btn_cancel
+            // btn_clear
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(205, 232);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(75, 27);
-            this.btn_cancel.TabIndex = 1;
-            this.btn_cancel.Text = "取消";
-            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_clear.Location = new System.Drawing.Point(205, 232);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(75, 27);
+            this.btn_clear.TabIndex = 1;
+            this.btn_clear.Text = "重置";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_ok
             // 
@@ -235,6 +218,7 @@
             this.btn_ok.TabIndex = 0;
             this.btn_ok.Text = "确定";
             this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
             // tabPage2
             // 
@@ -522,7 +506,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btn_rebuild;
@@ -534,14 +518,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_signup;
+        private System.Windows.Forms.TextBox tb_signupcode;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tb_address;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_hospitalName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tb_code;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox ckb_voice;
         private System.Windows.Forms.CheckBox ckb_clientmoni;
         private System.Windows.Forms.CheckBox ckb_closeconfirm;

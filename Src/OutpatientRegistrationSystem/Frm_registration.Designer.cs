@@ -67,9 +67,12 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_addreg
@@ -84,7 +87,7 @@
             // 
             // btn_printReg
             // 
-            this.btn_printReg.Location = new System.Drawing.Point(755, 502);
+            this.btn_printReg.Location = new System.Drawing.Point(969, 577);
             this.btn_printReg.Name = "btn_printReg";
             this.btn_printReg.Size = new System.Drawing.Size(75, 23);
             this.btn_printReg.TabIndex = 32;
@@ -95,9 +98,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.tb_regid);
-            this.groupBox2.Controls.Add(this.btn_cancel);
             this.groupBox2.Controls.Add(this.cmb_regfee);
+            this.groupBox2.Controls.Add(this.btn_cancel);
+            this.groupBox2.Controls.Add(this.tb_regid);
             this.groupBox2.Controls.Add(this.cmb_docname);
             this.groupBox2.Controls.Add(this.cmb_regname);
             this.groupBox2.Controls.Add(this.btn_addreg);
@@ -110,7 +113,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(4, 108);
+            this.groupBox2.Location = new System.Drawing.Point(212, 103);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(841, 75);
             this.groupBox2.TabIndex = 29;
@@ -120,7 +123,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(612, 20);
+            this.label2.Location = new System.Drawing.Point(9, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 37;
@@ -129,14 +132,14 @@
             // tb_regid
             // 
             this.tb_regid.Enabled = false;
-            this.tb_regid.Location = new System.Drawing.Point(671, 16);
+            this.tb_regid.Location = new System.Drawing.Point(68, 46);
             this.tb_regid.Name = "tb_regid";
             this.tb_regid.Size = new System.Drawing.Size(48, 21);
             this.tb_regid.TabIndex = 36;
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(751, 13);
+            this.btn_cancel.Location = new System.Drawing.Point(751, 15);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 32;
@@ -148,7 +151,7 @@
             // 
             this.cmb_regfee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_regfee.FormattingEnabled = true;
-            this.cmb_regfee.Location = new System.Drawing.Point(285, 44);
+            this.cmb_regfee.Location = new System.Drawing.Point(414, 46);
             this.cmb_regfee.Name = "cmb_regfee";
             this.cmb_regfee.Size = new System.Drawing.Size(86, 20);
             this.cmb_regfee.TabIndex = 16;
@@ -157,7 +160,7 @@
             // 
             this.cmb_docname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_docname.FormattingEnabled = true;
-            this.cmb_docname.Location = new System.Drawing.Point(285, 17);
+            this.cmb_docname.Location = new System.Drawing.Point(414, 19);
             this.cmb_docname.Name = "cmb_docname";
             this.cmb_docname.Size = new System.Drawing.Size(86, 20);
             this.cmb_docname.TabIndex = 13;
@@ -167,7 +170,7 @@
             // 
             this.cmb_regname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_regname.FormattingEnabled = true;
-            this.cmb_regname.Location = new System.Drawing.Point(80, 43);
+            this.cmb_regname.Location = new System.Drawing.Point(209, 45);
             this.cmb_regname.Name = "cmb_regname";
             this.cmb_regname.Size = new System.Drawing.Size(124, 20);
             this.cmb_regname.TabIndex = 11;
@@ -177,7 +180,7 @@
             // 
             this.cmb_dept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_dept.FormattingEnabled = true;
-            this.cmb_dept.Location = new System.Drawing.Point(80, 17);
+            this.cmb_dept.Location = new System.Drawing.Point(209, 19);
             this.cmb_dept.Name = "cmb_dept";
             this.cmb_dept.Size = new System.Drawing.Size(124, 20);
             this.cmb_dept.TabIndex = 10;
@@ -186,7 +189,7 @@
             // 
             this.dtp_regDate.CustomFormat = "yyyy-MM-dd";
             this.dtp_regDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_regDate.Location = new System.Drawing.Point(463, 15);
+            this.dtp_regDate.Location = new System.Drawing.Point(592, 17);
             this.dtp_regDate.Name = "dtp_regDate";
             this.dtp_regDate.Size = new System.Drawing.Size(132, 21);
             this.dtp_regDate.TabIndex = 9;
@@ -195,7 +198,7 @@
             // 
             this.dtp_regTime.CustomFormat = "hh:mm";
             this.dtp_regTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_regTime.Location = new System.Drawing.Point(463, 46);
+            this.dtp_regTime.Location = new System.Drawing.Point(592, 48);
             this.dtp_regTime.Name = "dtp_regTime";
             this.dtp_regTime.Size = new System.Drawing.Size(132, 21);
             this.dtp_regTime.TabIndex = 7;
@@ -203,7 +206,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(220, 48);
+            this.label9.Location = new System.Drawing.Point(349, 50);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 12);
             this.label9.TabIndex = 5;
@@ -212,7 +215,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 48);
+            this.label8.Location = new System.Drawing.Point(135, 50);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 12);
             this.label8.TabIndex = 4;
@@ -221,7 +224,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(392, 21);
+            this.label7.Location = new System.Drawing.Point(521, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 3;
@@ -230,7 +233,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(392, 49);
+            this.label6.Location = new System.Drawing.Point(521, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 12);
             this.label6.TabIndex = 2;
@@ -239,7 +242,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 21);
+            this.label5.Location = new System.Drawing.Point(134, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 1;
@@ -248,7 +251,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 21);
+            this.label4.Location = new System.Drawing.Point(349, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 0;
@@ -259,10 +262,10 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 189);
+            this.dataGridView1.Location = new System.Drawing.Point(212, 184);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(841, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(841, 387);
             this.dataGridView1.TabIndex = 25;
             // 
             // groupBox1
@@ -280,7 +283,7 @@
             this.groupBox1.Controls.Add(this.cmb_name);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(7, 12);
+            this.groupBox1.Location = new System.Drawing.Point(215, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(838, 89);
             this.groupBox1.TabIndex = 33;
@@ -402,7 +405,7 @@
             // lb_operater
             // 
             this.lb_operater.AutoSize = true;
-            this.lb_operater.Location = new System.Drawing.Point(64, 507);
+            this.lb_operater.Location = new System.Drawing.Point(59, 588);
             this.lb_operater.Name = "lb_operater";
             this.lb_operater.Size = new System.Drawing.Size(0, 12);
             this.lb_operater.TabIndex = 35;
@@ -410,7 +413,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 507);
+            this.label1.Location = new System.Drawing.Point(-3, 588);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 34;
@@ -432,7 +435,7 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(648, 502);
+            this.btn_exit.Location = new System.Drawing.Point(862, 577);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 36;
@@ -440,12 +443,34 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 24);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(203, 547);
+            this.dataGridView2.TabIndex = 37;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 7);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "病人列表：";
+            // 
             // Frm_registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(849, 531);
+            this.ClientSize = new System.Drawing.Size(1059, 605);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.lb_operater);
             this.Controls.Add(this.label1);
@@ -462,6 +487,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,5 +533,7 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label10;
     }
 }

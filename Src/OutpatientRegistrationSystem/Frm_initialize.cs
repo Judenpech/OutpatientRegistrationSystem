@@ -13,6 +13,7 @@ namespace OutpatientRegistrationSystem
     public partial class Frm_initialize : Form
     {
         sqlHelper mysql = new sqlHelper();
+        int rowAffected;
         public Frm_initialize()
         {
             InitializeComponent();
@@ -22,6 +23,9 @@ namespace OutpatientRegistrationSystem
         {
             //初始化
             ckb_closeconfirm.Select();
+            tb_hospitalName.Text = userHelper.hospitalName;
+            tb_address.Text = userHelper.hospitalAddress;
+            tb_signupcode.Text = userHelper.signUpCode;
             label2.Text = "本功能将会清空医院所有业务数据，并且在清空的同时";
             label10.Text = "，可以将基础资料也清空，请谨慎使用此功能！";
             label3.Text = "此功能一般用于清空演示数据！";
@@ -36,21 +40,20 @@ namespace OutpatientRegistrationSystem
         {
             if (tb_password.Text == userHelper.operatorPsw)
             {
-                int rowCount;
                 //清空业务数据
                 if (ckb_clearBusiness.Checked)
                 {
-                    rowCount = 0;
+                    rowAffected = 0;
                     try
                     {
-                        rowCount = mysql.getcom("DELETE FROM dbo.tb_expensesRecord; DELETE FROM dbo.tb_registration; "
+                        rowAffected = mysql.getcom("DELETE FROM dbo.tb_expensesRecord; DELETE FROM dbo.tb_registration; "
                         + "DELETE FROM dbo.tb_docScore; DELETE FROM dbo.tb_receipt;");
                     }
                     catch (SqlException sqlEx)
                     {
                         MessageBox.Show("数据库异常：" + sqlEx.Message, "数据库异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    if (rowCount >= 1)
+                    if (rowAffected >= 1)
                     {
                         MessageBox.Show("清空业务数据成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -62,17 +65,17 @@ namespace OutpatientRegistrationSystem
                 //清空基础资料
                 if (ckb_clearBasic.Checked)
                 {
-                    rowCount = 0;
+                    rowAffected = 0;
                     try
                     {
-                        rowCount = mysql.getcom("DELETE FROM dbo.tb_patient; DELETE FROM dbo.tb_card; DELETE FROM dbo.tb_dept; "
+                        rowAffected = mysql.getcom("DELETE FROM dbo.tb_patient; DELETE FROM dbo.tb_card; DELETE FROM dbo.tb_dept; "
                         + "DELETE FROM dbo.tb_doctor; DELETE FROM dbo.tb_regType;");
                     }
                     catch (SqlException sqlEx)
                     {
                         MessageBox.Show("数据库异常：" + sqlEx.Message, "数据库异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    if (rowCount >= 1)
+                    if (rowAffected >= 1)
                     {
                         MessageBox.Show("清空基础资料成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -92,7 +95,7 @@ namespace OutpatientRegistrationSystem
 
         private void btn_run_Click(object sender, EventArgs e)
         {
-          
+
             if (tb_specPsw.Text == "3150707012")
             {
                 if (rtb_sql.Text != "")
@@ -126,6 +129,33 @@ namespace OutpatientRegistrationSystem
                 MessageBox.Show("特殊密码错误，请重新输入", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tb_specPsw.Focus();
                 tb_specPsw.SelectAll();
+            }
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            tb_hospitalName.Text = "";
+            tb_address.Text = "";
+        }
+
+        private void btn_ok_Click(object sender, EventArgs e)
+        {
+            rowAffected = 0;
+            try
+            {
+                rowAffected = mysql.getcom("UPDATE tb_hospital SET NAME='"+tb_hospitalName.Text.Trim()+"',ADDRESS='"+tb_address.Text.Trim()+"' WHERE signUpCode='"+userHelper.signUpCode+"';");
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show("数据库异常：" + sqlEx.Message, "数据库异常", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (rowAffected == 1)
+            {
+                MessageBox.Show("医院注册成功！请重启系统。", "提示", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else
+            {
+                MessageBox.Show("医院注册失败！请稍后重试或联系我们", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
