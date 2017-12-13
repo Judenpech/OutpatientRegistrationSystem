@@ -1,5 +1,10 @@
 # Change Logs
 
+#### 2017/12/13
+- 实现Frm_initialize窗体“医院注册”功能；
+- 完善Frm_registration窗体“患者挂号”功能；
+- 完善OPRS操作、建库脚本、数据插入。
+
 #### 2017/12/12
 - 实现Frm_initialize窗体“系统重建”功能；
 - 实现Frm_initialize窗体“高级”功能；
