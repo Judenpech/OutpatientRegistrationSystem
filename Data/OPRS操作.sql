@@ -468,18 +468,25 @@ USE OPRSBase;
 			
 			
 			
---系统重建--系统初始化；
-			--系统重建--系统初始化--清空业务数据；
+--系统初始化--系统重建；
+			--系统初始化--系统重建--清空业务数据；
 			DELETE FROM dbo.tb_expensesRecord;
 			DELETE FROM dbo.tb_registration;
 			DELETE FROM dbo.tb_docScore;
 			DELETE FROM dbo.tb_receipt;
 
-
-			--系统重建--系统初始化--清空基础资料；
+			--系统初始化--系统重建--清空基础资料；
 			DELETE FROM dbo.tb_patient;
 			DELETE FROM dbo.tb_card;
 			DELETE FROM dbo.tb_dept;
 			DELETE FROM dbo.tb_doctor;
 			DELETE FROM dbo.tb_regType;
 
+			--系统初始化--医院注册；
+			SELECT name,ADDRESS
+			FROM tb_hospital
+			WHERE signUpCode='3150707012';
+
+			UPDATE tb_hospital
+			SET NAME='123',ADDRESS='123'
+			WHERE signUpCode='3150707012';

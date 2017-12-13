@@ -2,6 +2,12 @@
 门诊挂号系统数据库--数据插入
 */
 USE OPRSBase;	
+
+----医院信息表--插入医院数据；
+INSERT INTO tb_Hospital
+	(name,address,signUpCode)
+	VALUES
+	('福建中医院大学附属医院','福建省福州市闽侯县上街镇邱阳路1号','3150707012');
 		
 ----患者表--插入患者数据；                ---添加数据
 INSERT dbo.tb_patient

@@ -23,6 +23,16 @@ USE OPRSBase;
 
 --创建表；
 
+--医院信息表；
+CREATE TABLE tb_Hospital
+	(NAME
+	VARCHAR(45)
+	,[ADDRESS]
+	VARCHAR(255)
+	,signUpCode
+	CHAR(10)
+	PRIMARY KEY);
+	
 ---操作员表；
 CREATE TABLE tb_operator
     (No 
