@@ -1,5 +1,11 @@
 # Change Logs
 
+#### 2017/12/14
+- 完善Frm_registration窗体“患者挂号”功能；
+- 完善Frm_appointment窗体“患者预约”功能；
+- 完善打印功能；
+- 完善OPRS操作、数据插入。
+
 #### 2017/12/13
 - 实现Frm_initialize窗体“医院注册”功能；
 - 完善Frm_registration窗体“患者挂号”功能；
