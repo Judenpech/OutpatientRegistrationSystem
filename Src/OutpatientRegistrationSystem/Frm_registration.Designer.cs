@@ -33,9 +33,9 @@
             this.btn_printReg = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tb_regid = new System.Windows.Forms.TextBox();
-            this.btn_cancel = new System.Windows.Forms.Button();
             this.cmb_regfee = new System.Windows.Forms.ComboBox();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.tb_regid = new System.Windows.Forms.TextBox();
             this.cmb_docname = new System.Windows.Forms.ComboBox();
             this.cmb_regname = new System.Windows.Forms.ComboBox();
             this.cmb_dept = new System.Windows.Forms.ComboBox();
@@ -49,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_name = new System.Windows.Forms.TextBox();
             this.tb_patientNo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.tb_id = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.cmb_name = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lb_operater = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@
             // 
             // btn_printReg
             // 
-            this.btn_printReg.Location = new System.Drawing.Point(969, 577);
+            this.btn_printReg.Location = new System.Drawing.Point(972, 548);
             this.btn_printReg.Name = "btn_printReg";
             this.btn_printReg.Size = new System.Drawing.Size(75, 23);
             this.btn_printReg.TabIndex = 32;
@@ -129,13 +129,14 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "候诊号：";
             // 
-            // tb_regid
+            // cmb_regfee
             // 
-            this.tb_regid.Enabled = false;
-            this.tb_regid.Location = new System.Drawing.Point(68, 46);
-            this.tb_regid.Name = "tb_regid";
-            this.tb_regid.Size = new System.Drawing.Size(48, 21);
-            this.tb_regid.TabIndex = 36;
+            this.cmb_regfee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_regfee.FormattingEnabled = true;
+            this.cmb_regfee.Location = new System.Drawing.Point(414, 46);
+            this.cmb_regfee.Name = "cmb_regfee";
+            this.cmb_regfee.Size = new System.Drawing.Size(86, 20);
+            this.cmb_regfee.TabIndex = 16;
             // 
             // btn_cancel
             // 
@@ -147,20 +148,19 @@
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
-            // cmb_regfee
+            // tb_regid
             // 
-            this.cmb_regfee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_regfee.FormattingEnabled = true;
-            this.cmb_regfee.Location = new System.Drawing.Point(414, 46);
-            this.cmb_regfee.Name = "cmb_regfee";
-            this.cmb_regfee.Size = new System.Drawing.Size(86, 20);
-            this.cmb_regfee.TabIndex = 16;
+            this.tb_regid.Enabled = false;
+            this.tb_regid.Location = new System.Drawing.Point(68, 46);
+            this.tb_regid.Name = "tb_regid";
+            this.tb_regid.Size = new System.Drawing.Size(48, 21);
+            this.tb_regid.TabIndex = 36;
             // 
             // cmb_docname
             // 
             this.cmb_docname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_docname.FormattingEnabled = true;
-            this.cmb_docname.Location = new System.Drawing.Point(414, 19);
+            this.cmb_docname.Location = new System.Drawing.Point(200, 16);
             this.cmb_docname.Name = "cmb_docname";
             this.cmb_docname.Size = new System.Drawing.Size(86, 20);
             this.cmb_docname.TabIndex = 13;
@@ -170,7 +170,7 @@
             // 
             this.cmb_regname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_regname.FormattingEnabled = true;
-            this.cmb_regname.Location = new System.Drawing.Point(209, 45);
+            this.cmb_regname.Location = new System.Drawing.Point(200, 46);
             this.cmb_regname.Name = "cmb_regname";
             this.cmb_regname.Size = new System.Drawing.Size(124, 20);
             this.cmb_regname.TabIndex = 11;
@@ -180,7 +180,7 @@
             // 
             this.cmb_dept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_dept.FormattingEnabled = true;
-            this.cmb_dept.Location = new System.Drawing.Point(209, 19);
+            this.cmb_dept.Location = new System.Drawing.Point(376, 16);
             this.cmb_dept.Name = "cmb_dept";
             this.cmb_dept.Size = new System.Drawing.Size(124, 20);
             this.cmb_dept.TabIndex = 10;
@@ -242,7 +242,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(134, 23);
+            this.label5.Location = new System.Drawing.Point(301, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 1;
@@ -251,7 +251,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(349, 23);
+            this.label4.Location = new System.Drawing.Point(135, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 0;
@@ -265,11 +265,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(212, 184);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(841, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(841, 358);
             this.dataGridView1.TabIndex = 25;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tb_name);
             this.groupBox1.Controls.Add(this.tb_patientNo);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label3);
@@ -280,7 +281,6 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.tb_id);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.cmb_name);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Location = new System.Drawing.Point(215, 7);
@@ -290,12 +290,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "病人资料";
             // 
+            // tb_name
+            // 
+            this.tb_name.Location = new System.Drawing.Point(80, 21);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(124, 21);
+            this.tb_name.TabIndex = 98;
+            // 
             // tb_patientNo
             // 
             this.tb_patientNo.Location = new System.Drawing.Point(80, 53);
             this.tb_patientNo.Name = "tb_patientNo";
             this.tb_patientNo.Size = new System.Drawing.Size(124, 21);
             this.tb_patientNo.TabIndex = 97;
+            this.tb_patientNo.TextChanged += new System.EventHandler(this.tb_patientNo_TextChanged);
             // 
             // label12
             // 
@@ -347,7 +355,6 @@
             this.tb_cardno.Name = "tb_cardno";
             this.tb_cardno.Size = new System.Drawing.Size(170, 21);
             this.tb_cardno.TabIndex = 14;
-            this.tb_cardno.TextChanged += new System.EventHandler(this.tb_cardno_TextChanged);
             // 
             // label18
             // 
@@ -374,16 +381,6 @@
             this.label17.TabIndex = 6;
             this.label17.Text = "联系电话：";
             // 
-            // cmb_name
-            // 
-            this.cmb_name.FormattingEnabled = true;
-            this.cmb_name.ItemHeight = 12;
-            this.cmb_name.Location = new System.Drawing.Point(80, 22);
-            this.cmb_name.Name = "cmb_name";
-            this.cmb_name.Size = new System.Drawing.Size(124, 20);
-            this.cmb_name.TabIndex = 6;
-            this.cmb_name.SelectedIndexChanged += new System.EventHandler(this.cmb_name_SelectedIndexChanged);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -405,7 +402,7 @@
             // lb_operater
             // 
             this.lb_operater.AutoSize = true;
-            this.lb_operater.Location = new System.Drawing.Point(59, 588);
+            this.lb_operater.Location = new System.Drawing.Point(286, 553);
             this.lb_operater.Name = "lb_operater";
             this.lb_operater.Size = new System.Drawing.Size(0, 12);
             this.lb_operater.TabIndex = 35;
@@ -413,7 +410,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(-3, 588);
+            this.label1.Location = new System.Drawing.Point(215, 553);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 34;
@@ -435,7 +432,7 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(862, 577);
+            this.btn_exit.Location = new System.Drawing.Point(865, 548);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 36;
@@ -468,7 +465,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1059, 605);
+            this.ClientSize = new System.Drawing.Size(1059, 575);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btn_exit);
@@ -522,7 +519,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cmb_name;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lb_operater;
@@ -535,5 +531,6 @@
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tb_name;
     }
 }

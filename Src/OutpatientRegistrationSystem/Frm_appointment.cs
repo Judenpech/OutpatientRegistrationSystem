@@ -14,7 +14,10 @@ namespace OutpatientRegistrationSystem
     public partial class Frm_appointment : Form
     {
         sqlHelper mysql = new sqlHelper();
+        private string sqlstr = "SELECT no 患者编号,Name 姓名 FROM tb_patient;";
+        private string mytable = "patientInfo";
         BindingSource mybds = new BindingSource();
+        BindingSource mybdsource = new BindingSource();
 
         public Frm_appointment()
         {
@@ -39,7 +42,7 @@ namespace OutpatientRegistrationSystem
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            string name = "XX医院";//userHelper.hospitalName;
+            string name = userHelper.hospitalName;
             string title = "门 诊 预 约 凭 证";
             string address = userHelper.hospitalAddress;
             string cardno;
@@ -113,32 +116,35 @@ namespace OutpatientRegistrationSystem
             }
         }
 
+        private void init()
+        {
+            DataSet myds = mysql.getds(sqlstr, mytable);
+            mybdsource.DataSource = myds.Tables[0];
+            this.dataGridView2.DataSource = mybdsource;
+        }
+
         private void Frm_appointment_Load(object sender, EventArgs e)
         {
-            this.cmb_name.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            this.cmb_name.AutoCompleteSource = AutoCompleteSource.ListItems;
-
-            //加载操作员
+            //初始化
             lb_operater.Text = userHelper.operatorNo + "（" + userHelper.operatorName + "）";
-
-            //使病人信息不可用
+            tb_name.Enabled = false;
             cmb_cardtype.Enabled = false;
             tb_cardno.Enabled = false;
             tb_tel.Enabled = false;
             tb_patientNo.Enabled = false;
             tb_id.Enabled = false;
 
-            //加载病人姓名
-            this.getname();
+            //绑定病人信息
+            this.init();
+            tb_name.DataBindings.Add("text", mybdsource, "姓名");
+            tb_patientNo.DataBindings.Add("text", mybdsource, "患者编号");
 
-            //加载医生
-            DataSet getdocnameds = mysql.getds("SELECT name FROM tb_doctor", "doctor");
+            //加载医生和科室
+            DataSet getdocnameds = mysql.getds("select name from tb_doctor", "doctor");
             for (int i = 0; i < getdocnameds.Tables[0].Rows.Count; i++)
             {
                 this.cmb_docname.Items.Add(getdocnameds.Tables[0].Rows[i][0]);
             }
-
-            //加载科室
             DataSet getdeptds = mysql.getds("SELECT name FROM tb_dept", "dept");
             for (int i = 0; i < getdeptds.Tables[0].Rows.Count; i++)
             {
@@ -165,36 +171,15 @@ namespace OutpatientRegistrationSystem
             tb_regid.DataBindings.Add("text", mybds, "预约号");
         }
 
-        private void getname()
+        private void tb_patientNo_TextChanged(object sender, EventArgs e)
         {
-            cmb_name.Items.Clear();
-            DataSet getnameds = mysql.getds("SELECT name FROM tb_patient", "patient");
-            for (int i = 0; i < getnameds.Tables[0].Rows.Count; i++)
-            {
-                this.cmb_name.Items.Add(getnameds.Tables[0].Rows[i][0]);
-            }
-        }
-
-        private void cmb_name_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string tempstr = cmb_name.Text;
-            DataSet chanagenameds = mysql.getds("SELECT * FROM tb_patient WHERE name='" + tempstr + "'", "patient");
-            tb_patientNo.Text = chanagenameds.Tables[0].Rows[0]["no"].ToString();
+            string tempstr = tb_patientNo.Text;
+            DataSet chanagenameds = mysql.getds("SELECT visitNo,id,tel,CASE WHEN visitNo IS NULL THEN '社保卡' ELSE '就诊卡' END 卡类型 "
+                + " FROM dbo.tb_patient WHERE No='" + tempstr + "';", "patient");
             tb_tel.Text = chanagenameds.Tables[0].Rows[0]["tel"].ToString();
             tb_id.Text = chanagenameds.Tables[0].Rows[0]["id"].ToString();
             tb_cardno.Text = chanagenameds.Tables[0].Rows[0]["visitNo"].ToString();
-        }
-
-        private void tb_cardno_TextChanged(object sender, EventArgs e)
-        {
-            if (tb_cardno.Text != "")
-            {
-                cmb_cardtype.SelectedIndex = 0;
-            }
-            else
-            {
-                cmb_cardtype.SelectedIndex = 1;
-            }
+            cmb_cardtype.SelectedItem = chanagenameds.Tables[0].Rows[0]["卡类型"].ToString();
         }
 
         private void cmb_regname_SelectedIndexChanged(object sender, EventArgs e)
@@ -209,7 +194,7 @@ namespace OutpatientRegistrationSystem
 
         private void btn_addappointment_Click(object sender, EventArgs e)
         {
-            if (cmb_name.Text == "")
+            if (tb_name.Text == "")
             {
                 MessageBox.Show("请选择预约病人！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

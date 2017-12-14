@@ -48,7 +48,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.cmb_name = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_regid = new System.Windows.Forms.TextBox();
@@ -67,9 +66,13 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.tb_name = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // cmb_docname
@@ -143,7 +146,6 @@
             this.tb_cardno.Name = "tb_cardno";
             this.tb_cardno.Size = new System.Drawing.Size(170, 21);
             this.tb_cardno.TabIndex = 14;
-            this.tb_cardno.TextChanged += new System.EventHandler(this.tb_cardno_TextChanged);
             // 
             // label9
             // 
@@ -243,16 +245,6 @@
             this.label17.TabIndex = 6;
             this.label17.Text = "联系电话：";
             // 
-            // cmb_name
-            // 
-            this.cmb_name.FormattingEnabled = true;
-            this.cmb_name.ItemHeight = 12;
-            this.cmb_name.Location = new System.Drawing.Point(80, 22);
-            this.cmb_name.Name = "cmb_name";
-            this.cmb_name.Size = new System.Drawing.Size(124, 20);
-            this.cmb_name.TabIndex = 6;
-            this.cmb_name.SelectedIndexChanged += new System.EventHandler(this.cmb_name_SelectedIndexChanged);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label2);
@@ -271,7 +263,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(6, 102);
+            this.groupBox2.Location = new System.Drawing.Point(216, 107);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(841, 83);
             this.groupBox2.TabIndex = 21;
@@ -328,10 +320,10 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 191);
+            this.dataGridView1.Location = new System.Drawing.Point(215, 196);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(842, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(842, 346);
             this.dataGridView1.TabIndex = 17;
             // 
             // label14
@@ -345,6 +337,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tb_name);
             this.groupBox1.Controls.Add(this.tb_patientNo);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label3);
@@ -355,10 +348,9 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.tb_id);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.cmb_name);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(5, 7);
+            this.groupBox1.Location = new System.Drawing.Point(215, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(842, 89);
             this.groupBox1.TabIndex = 20;
@@ -371,6 +363,7 @@
             this.tb_patientNo.Name = "tb_patientNo";
             this.tb_patientNo.Size = new System.Drawing.Size(124, 21);
             this.tb_patientNo.TabIndex = 97;
+            this.tb_patientNo.TextChanged += new System.EventHandler(this.tb_patientNo_TextChanged);
             // 
             // label12
             // 
@@ -392,7 +385,7 @@
             // 
             // btn_printAppo
             // 
-            this.btn_printAppo.Location = new System.Drawing.Point(754, 505);
+            this.btn_printAppo.Location = new System.Drawing.Point(964, 548);
             this.btn_printAppo.Name = "btn_printAppo";
             this.btn_printAppo.Size = new System.Drawing.Size(75, 23);
             this.btn_printAppo.TabIndex = 23;
@@ -403,7 +396,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 510);
+            this.label1.Location = new System.Drawing.Point(214, 553);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 25;
@@ -412,7 +405,7 @@
             // lb_operater
             // 
             this.lb_operater.AutoSize = true;
-            this.lb_operater.Location = new System.Drawing.Point(63, 510);
+            this.lb_operater.Location = new System.Drawing.Point(273, 553);
             this.lb_operater.Name = "lb_operater";
             this.lb_operater.Size = new System.Drawing.Size(0, 12);
             this.lb_operater.TabIndex = 26;
@@ -433,7 +426,7 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(658, 505);
+            this.btn_exit.Location = new System.Drawing.Point(868, 548);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 27;
@@ -441,12 +434,41 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // tb_name
+            // 
+            this.tb_name.Location = new System.Drawing.Point(80, 19);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(124, 21);
+            this.tb_name.TabIndex = 99;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(5, 24);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(203, 547);
+            this.dataGridView2.TabIndex = 38;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 7);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "病人列表：";
+            // 
             // Frm_appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(852, 531);
+            this.ClientSize = new System.Drawing.Size(1062, 574);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.lb_operater);
             this.Controls.Add(this.label1);
@@ -463,6 +485,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,7 +512,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cmb_name;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label3;
@@ -508,6 +530,9 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.TextBox tb_name;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label10;
 
     }
 }
