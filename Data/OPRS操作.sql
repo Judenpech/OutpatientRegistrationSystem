@@ -123,78 +123,78 @@ USE OPRSBase;
   
     
 --患者预约/挂号；
-				--患者预约--加载医生信息；
-				SELECT NAME
-				FROM dbo.tb_doctor;
+			--患者预约--加载医生信息；
+			SELECT NAME
+			FROM dbo.tb_doctor;
 
-				--患者预约--加载科室名称；
-				SELECT NAME 科室名称
-				FROM dbo.tb_dept;
+			--患者预约--加载科室名称；
+			SELECT NAME 科室名称
+			FROM dbo.tb_dept;
 
-				--患者预约--加载号别；
-				SELECT NAME,price
-				FROM dbo.tb_regType;
+			--患者预约--加载号别；
+			SELECT NAME,price
+			FROM dbo.tb_regType;
 
-				--患者预约--加载病人；
-				SELECT Name
-				FROM dbo.tb_patient;
+			--患者预约--加载病人；
+			SELECT no 患者编号,Name 姓名
+			FROM dbo.tb_patient;
 
-				--患者预约--根据病人姓名查询病人其他信息；
-				SELECT *
-				FROM dbo.tb_patient
-				WHERE Name='张三';
+			--患者预约--根据患者编号查询病人其他信息；
+			SELECT visitNo,id,tel,CASE WHEN visitNo IS NULL THEN '社保卡' ELSE '就诊卡' END 卡类型 
+			FROM dbo.tb_patient
+			WHERE No='20171116104903';
 
-				--患者预约--根据号别查询挂号价格；
-				SELECT price
-				FROM dbo.tb_regType
-				WHERE NAME='普通门诊';
+			--患者预约--根据号别查询挂号价格；
+			SELECT price
+			FROM dbo.tb_regType
+			WHERE NAME='普通门诊';
 
-				--患者预约--根据医生查询科室；
-				SELECT d1.name 
-				FROM tb_dept d1,tb_doctor d2 
-				WHERE d2.NAME='邹良能' AND d2.deptNo=d1.NO;
+			--患者预约--根据医生查询科室；
+			SELECT d1.name 
+			FROM tb_dept d1,tb_doctor d2 
+			WHERE d2.NAME='邹良能' AND d2.deptNo=d1.NO;
 
-				--患者预约--根据科室查询医生；
-				SELECT d2.NAME
-				FROM dbo.tb_dept d1
-				JOIN dbo.tb_doctor  d2 ON d1.NO=d2.deptNo
-				WHERE d1.NAME='内科';
+			--患者预约--根据科室查询医生；
+			SELECT d2.NAME
+			FROM dbo.tb_dept d1
+			JOIN dbo.tb_doctor  d2 ON d1.NO=d2.deptNo
+			WHERE d1.NAME='内科';
 
-				--患者预约--查询所有科室；
-				SELECT NO 科室编号,NAME 科室名称,DSCP 科室描述
-				FROM dbo.tb_dept;
+			--患者预约--查询所有科室；
+			SELECT NO 科室编号,NAME 科室名称,DSCP 科室描述
+			FROM dbo.tb_dept;
 
-				--患者预约--查询所有预约；
-				SELECT *
-				FROM dbo.tb_registration;
+			--患者预约--查询所有预约；
+			SELECT *
+			FROM dbo.tb_registration;
 
-				--患者预约--新增预约;
-				INSERT dbo.tb_registration
-						( patientNo ,
-						  deptNo ,
-						  docNo ,
-						  regDate ,
-						  regTime ,
-						  operater
-						)
-				SELECT '20171112102319',d2.NO,d1.No,'2017-11-12','08:23:19','3150707012'
-				FROM 
-					dbo.tb_doctor d1 
-					JOIN dbo.tb_dept d2 ON d1.deptNo = d2.NO 
-				WHERE d1.NAME='邹良能' AND d2.NAME='内科';
+			--患者预约--新增预约;
+			INSERT dbo.tb_registration
+					( patientNo ,
+					  deptNo ,
+					  docNo ,
+					  regDate ,
+					  regTime ,
+					  operater
+					)
+			SELECT '20171112102319',d2.NO,d1.No,'2017-11-12','08:23:19','3150707012'
+			FROM 
+				dbo.tb_doctor d1 
+				JOIN dbo.tb_dept d2 ON d1.deptNo = d2.NO 
+			WHERE d1.NAME='邹良能' AND d2.NAME='内科';
 
-				--患者预约--显示预约;
-				SELECT r.NO 预约号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 预约科室,d2.NAME 预约医生, r.regDate 预约日期,CONVERT(VARCHAR(5),r.regTime,114) 预约时间
-				FROM dbo.tb_registration r
-					 JOIN dbo.tb_patient p ON r.patientNo = p.No
-					 ,dbo.tb_dept d1 
-					 JOIN dbo.tb_doctor d2 ON d1.NO = d2.deptNo
-				WHERE r.patientNo=p.No AND r.docNo=d2.No AND r.done=0
-				ORDER BY r.NO,r.regDate,r.regTime;
-				
-				--患者预约--删除预约;
-				DELETE FROM dbo.tb_registration
-				WHERE NO=1;
+			--患者预约--显示预约;
+			SELECT r.NO 预约号,r.patientNo 患者编号,p.Name 患者姓名,d1.NAME 预约科室,d2.NAME 预约医生, r.regDate 预约日期,CONVERT(VARCHAR(5),r.regTime,114) 预约时间
+			FROM dbo.tb_registration r
+				 JOIN dbo.tb_patient p ON r.patientNo = p.No
+				 ,dbo.tb_dept d1 
+				 JOIN dbo.tb_doctor d2 ON d1.NO = d2.deptNo
+			WHERE r.patientNo=p.No AND r.docNo=d2.No AND r.done=0
+			ORDER BY r.NO,r.regDate,r.regTime;
+
+			--患者预约--删除预约;
+			DELETE FROM dbo.tb_registration
+			WHERE NO=1;
 
 
 
