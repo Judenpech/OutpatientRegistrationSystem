@@ -1,5 +1,8 @@
 # Change Logs
 
+#### 2018/01/10
+- 课程结束。
+
 #### 2017/12/14
 - 完善Frm_registration窗体“患者挂号”功能；
 - 完善Frm_appointment窗体“患者预约”功能；
